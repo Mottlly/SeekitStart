@@ -1,7 +1,7 @@
 body {
 font-family:'tahoma', sans-serif;
 background-color: aliceblue;
-color:#232b2b
+color:#232b2b;
 
 }
 
@@ -18,13 +18,25 @@ background-color:blueviolet;
 }
 
 #yellow {
-background-color:yellow
+background-color:yellow;
+display:flex;
+flex: 1;
+flex-direction:column
 }
 
 #pie {
-background-color:aliceblue
+background-color:aliceblue;
 }
 
 #header {
-text-align:center
+text-align:center;
+}
+
+#container {
+display:flex;
+}
+
+#right {
+display:flex;
+flex-direction: column;
 }
