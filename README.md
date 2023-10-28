@@ -1,8 +1,8 @@
 # **Welcome to SeekitStart! The beginning of a fantastic future in Coding**
 
->       #### For want is nexte to waste, and shame doeth synne ensue.
+> ####   For want is nexte to waste, and shame doeth synne ensue.
 >
->>       Richard Edwardes in *The Paradise of Dainty Devices*, 1576
+>> Richard Edwardes in *The Paradise of Dainty Devices*, 1576
 
 ## The goal of this project will be to build a simple HTML, CSS, and JavaScript based pantry tracker, in order to assist the user in identifying *about-to-spoil* items and guide their weekly food consumption. See below for an ultra simple outline of the intended result:
 
