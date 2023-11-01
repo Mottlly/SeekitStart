@@ -10,7 +10,6 @@ border-radius: 10px;
 border-style: double;
 border-color:black;
 padding:15px;
-
 }
 
 #badness {
@@ -21,11 +20,18 @@ background-color:blueviolet;
 background-color:yellow;
 display:flex;
 flex: 1;
-flex-direction:column
+flex-direction:column;
+
 }
 
 #pie {
 background-color:aliceblue;
+}
+
+#database{
+background-color:aliceblue;
+max-height:500px;
+overflow-y:scroll;
 }
 
 #header {
