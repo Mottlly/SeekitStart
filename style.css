@@ -15,7 +15,10 @@ padding:15px;
 #badness {
 background-color:blueviolet;
 min-height: 0;
+min-width: 0;
+overflow:hidden;
 overflow-y:scroll;
+overflow-x:scroll;
 
 }
 
@@ -34,7 +37,8 @@ background-color:aliceblue;
 width:300px;
 height:300px;
 border-radius:50%;
-background: conic-gradient(Green 0.00% 25.00%, Grey 25.00% 50.00%, Yellow 50.00% 75.00%, Red 75.00% 100.00% )
+background: conic-gradient(Green 0.00% 25.00%, Grey 25.00% 50.00%, Yellow 50.00% 75.00%, Red 75.00% 100.00% );
+align-self:center;
 
 }
 
@@ -51,6 +55,7 @@ text-align:center;
 #container {
 display:flex;
 max-height:700px;
+overflow:hidden;
 }
 
 #right {
