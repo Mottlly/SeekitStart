@@ -14,6 +14,9 @@ padding:15px;
 
 #badness {
 background-color:blueviolet;
+min-height: 0;
+overflow-y:scroll;
+
 }
 
 #yellow {
@@ -21,6 +24,8 @@ background-color:yellow;
 display:flex;
 flex: 1;
 flex-direction:column;
+max-height:700px;
+overflow-y:scroll;
 
 }
 
@@ -30,7 +35,7 @@ background-color:aliceblue;
 
 #database{
 background-color:aliceblue;
-max-height:500px;
+max-height:400px;
 overflow-y:scroll;
 }
 
@@ -40,6 +45,7 @@ text-align:center;
 
 #container {
 display:flex;
+max-height:700px;
 }
 
 #right {
@@ -54,8 +60,9 @@ margin-right:auto;
 border: 2px black solid;
 border-collapse:collapse;
 font-size:1.5em;
-overflow: auto;
 background-color:white;
+max-height:100%;
+table-layout:fixed;
 
 }
 
