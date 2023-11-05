@@ -49,7 +49,10 @@ overflow-y:scroll;
 }
 
 #navbar {
-text-align:center;
+margin:0;
+align-self: auto;
+padding:0;
+overflow:hidden;
 }
 
 #container {
@@ -108,18 +111,6 @@ tr:nth-child(odd) td {
     background-color:azure;
 }
 
-ul {
-position:fixed;
-top:0;
-width:100%;
-background-color:aqua;
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow:hidden;
-
-}
-
 li {
 float:left;
 }
@@ -138,12 +129,21 @@ li a:hover {
     background-color:aquamarine;
 }
 
-
-
 .heading {
 text-align:center;
 margin-left:auto;
 margin-right:auto;
 text-decoration:underline;
 
+}
+
+.navul {
+    position:fixed;
+    top:0;
+    width:100%;
+    background-color:aqua;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow:hidden;
 }
