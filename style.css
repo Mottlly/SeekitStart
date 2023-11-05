@@ -5,13 +5,6 @@ color:#232b2b;
 
 }
 
-div {
-border-radius: 10px;
-border-style: double;
-border-color:black;
-padding:15px;
-}
-
 #badness {
 background-color:blueviolet;
 min-height: 0;
@@ -51,6 +44,7 @@ overflow-y:scroll;
 #navbar {
 margin:0;
 padding:0;
+min-height:60px;
 
 }
 
@@ -112,6 +106,8 @@ tr:nth-child(odd) td {
 
 li {
 float:left;
+border-right:solid 1px black;
+
 }
 
 li a {
@@ -145,4 +141,11 @@ text-decoration:underline;
     margin: 0px;
     padding: 0px;
     overflow:hidden;
+}
+
+.bordereddiv {
+border-radius: 10px;
+border-style: double;
+border-color:black;
+padding:15px;
 }
