@@ -50,9 +50,8 @@ overflow-y:scroll;
 
 #navbar {
 margin:0;
-align-self: auto;
 padding:0;
-overflow:hidden;
+
 }
 
 #container {
