@@ -109,11 +109,35 @@ tr:nth-child(odd) td {
 }
 
 ul {
+position:fixed;
+top:0;
+width:100%;
+background-color:aqua;
 list-style-type: none;
 margin: 0;
 padding: 0;
+overflow:hidden;
 
 }
+
+li {
+float:left;
+}
+
+li a {
+display:block;
+color:black;
+text-align:center;
+padding: 20px 25px;
+text-decoration:underline;
+
+}
+
+li a:hover {
+    background-color:aquamarine;
+}
+
+
 
 .heading {
 text-align:center;
