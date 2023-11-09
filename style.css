@@ -36,10 +36,15 @@ align-self:center;
 
 }
 
-#database{
+#databasedash{
 background-color:aliceblue;
 max-height:400px;
 overflow-y:scroll;
+}
+
+#databasemain{
+    background-color:aliceblue;
+    overflow-y:scroll;
 }
 
 #navbar {
@@ -149,7 +154,11 @@ border-color:black;
 padding:15px;
 }
 
+.database_form {
+    padding:0;
+}
+
 input {
     width: 90%;
-
+    height: 99%;
 }
