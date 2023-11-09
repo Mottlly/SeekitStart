@@ -125,7 +125,7 @@ font-weight:bold;
 }
 
 li a:hover {
-    background-color:aquamarine;
+    background-color:#1F2833;
 }
 
 .heading {
@@ -152,6 +152,10 @@ border-radius: 10px;
 border-style: double;
 border-color:#66FCF1;
 padding:15px;
+}
+
+.unbordereddiv {
+padding:15px;    
 }
 
 .database_form {
