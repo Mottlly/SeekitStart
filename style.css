@@ -12,7 +12,6 @@ min-height: 0;
 min-width: 0;
 overflow:hidden;
 overflow-y:scroll;
-overflow-x:scroll;
 
 }
 
@@ -153,6 +152,26 @@ border-style: double;
 border-color:#66FCF1;
 padding:15px;
 }
+
+    .bordereddiv::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+
+    .borderddiv::-webkit-scrollbar-thumb {
+    background-color:#66FCF1;
+    border-radius: 5px;
+    }
+
+    .bordereddiv::-webkit-scrollbar-track {
+    background-color:#1F2833;
+    border:1px solid #45A29E;
+    }
+
+    .bordereddiv::-webkit-scrollbar-button {
+    background-color:#45A29E;
+    border-radius:5px;
+    }
 
 .unbordereddiv {
 padding:15px;    
