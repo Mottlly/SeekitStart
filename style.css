@@ -1,13 +1,13 @@
 body {
 font-family:'tahoma', sans-serif;
-background-color: aliceblue;
-color:#232b2b;
+background-color: #0B0C10;
+color:#66FCF1;
 margin:0px;
 
 }
 
 #badness {
-background-color:blueviolet;
+background-color:#0B0C10;
 min-height: 0;
 min-width: 0;
 overflow:hidden;
@@ -17,7 +17,7 @@ overflow-x:scroll;
 }
 
 #yellow {
-background-color:yellow;
+background-color:#0B0C10;
 display:flex;
 flex: 1;
 flex-direction:column;
@@ -27,7 +27,7 @@ min-width:500px;
 }
 
 #pie {
-background-color:aliceblue;
+background-color:#0B0C10;
 width:300px;
 height:300px;
 border-radius:50%;
@@ -37,13 +37,13 @@ align-self:center;
 }
 
 #databasedash{
-background-color:aliceblue;
+background-color:#0B0C10;
 max-height:400px;
 overflow-y:scroll;
 }
 
 #databasemain{
-    background-color:aliceblue;
+    background-color:#0B0C10;
     overflow-y:scroll;
 }
 
@@ -71,17 +71,17 @@ table {
 vertical-align: middle;
 margin-left:auto;
 margin-right:auto;
-border: 2px black solid;
+border: 2px #66FCF1 solid;
 border-collapse:collapse;
 font-size:1.3em;
-background-color:white;
+background-color:#0B0C10;
 max-height:100%;
 table-layout:fixed;
 
 }
 
 td {
-border: 1px solid black;
+border: 1px solid #66FCF1;
 padding: 10px;
 text-align: center;
 overflow:hidden;
@@ -90,10 +90,10 @@ white-space:nowrap;
 }
 
 th {
-border: 1px solid black;
+border: 1px solid #66FCF1;
 padding: 10px;
 text-align: center;
-background-color:azure;
+background-color:#0B0C10;
 overflow:hidden;
 text-overflow:ellipsis;
 white-space:nowrap;
@@ -101,22 +101,22 @@ white-space:nowrap;
 }
 
 tr:nth-child(even) td {
-    background-color: white;
+    background-color: #1F2833;
 }
 
 tr:nth-child(odd) td {
-    background-color:azure;
+    background-color:#0B0C10;
 }
 
 li {
 float:left;
-border-right:solid 1px black;
+border-right:solid 1px #45A29E;
 
 }
 
 li a {
 display:block;
-color:black;
+color:#66FCF1;
 text-align:center;
 padding: 20px 25px;
 text-decoration:solid;
@@ -140,7 +140,7 @@ text-decoration:underline;
     position:fixed;
     top:0;
     width:100%;
-    background-color:aqua;
+    background-color:#0B0C10;
     list-style-type: none;
     margin: 0px;
     padding: 0px;
@@ -150,7 +150,7 @@ text-decoration:underline;
 .bordereddiv {
 border-radius: 10px;
 border-style: double;
-border-color:black;
+border-color:#66FCF1;
 padding:15px;
 }
 
