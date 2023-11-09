@@ -51,9 +51,6 @@ min-height:60px;
 
 #container {
 display:flex;
-max-height:700px;
-overflow:hidden;
-overflow-y:scroll;
 flex-wrap:wrap;
 }
 
