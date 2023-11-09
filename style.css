@@ -162,7 +162,10 @@ padding:15px;
     padding:0;
 }
 
-input {
+input[type="text"] {
     width: 90%;
     height: 99%;
+    background-color:#1F2833;
+    color:#66FCF1;
+
 }
