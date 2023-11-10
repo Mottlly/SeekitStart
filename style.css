@@ -73,6 +73,13 @@ width:auto;
     padding: 15px;
 }
 
+#expander {
+padding:30px;
+border-radius: 10px;
+border-style: double;
+border-color:#66FCF1;
+}
+
 table {
 vertical-align: middle;
 margin-left:auto;
@@ -198,6 +205,7 @@ input[type="text"] {
 
 details {
     user-select: none;
+    margin-left:50px;
 }
 
 details>summary span.icon {
@@ -218,4 +226,6 @@ summary {
   
   summary::-webkit-details-marker {
     display: none;
+    margin-left: 100px;
   }
+
