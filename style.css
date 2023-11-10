@@ -66,6 +66,12 @@ align-self:center;
 width:auto;
 }
 
+#footer {
+    text-align:center;
+    background-color:#1F2833;
+    padding: 15px;
+}
+
 table {
 vertical-align: middle;
 margin-left:auto;
