@@ -44,6 +44,7 @@ overflow-y:scroll;
 #databasemain{
     background-color:#0B0C10;
     overflow-y:scroll;
+    height:70vh;
 }
 
 #navbar {
@@ -68,9 +69,11 @@ width:auto;
 }
 
 #footer {
+    bottom:0;
     text-align:center;
     background-color:#1F2833;
     padding: 15px;
+
 }
 
 #expander {
