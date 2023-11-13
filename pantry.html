@@ -96,47 +96,27 @@
                 <td> Connor </td>
                 <td> 2.79 </td>
             </tr>
-            <tr>
-                <td class="database_form">
-                    <form>
-                        <input type="text" placeholder="Food Name">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Expiry Date">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Food Type">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Number">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Owner">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Cost Per Unit">
-                    </form>
-                </td>
-            </tr>
+
         </table>
 
     </div>
 
-    <div id="pantrybuttons">
-
+    <div id="pantryform" class="bordereddiv">
+        <h1 class="heading"> Add New Items Here! </h1>
+        <form id="submitform">
+            <input type="text" placeholder="Food Name" class="pantryform">
+            <input type="text" placeholder="Expiry Date"class="pantryform">
+            <input type="text" placeholder="Food Type"class="pantryform">
+            <input type="text" placeholder="Number"class="pantryform">
+            <input type="text" placeholder="Owner"class="pantryform">
+            <input type="text" placeholder="Cost Per Unit"class="pantryform">
+        </form>
+        <div id="pantryformbut">
         <button id="submititem" type="button" onclick="SubmitAlert()">Submit</button>
+        <button id="clearitem" type="button">Clear</button>
+        </div>
+</div>
 
-    </div>
 
     <div id="footer" class="bordereddiv">
         <h1> Thank You For Visiting the SeekIt Project!  </h1>
