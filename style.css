@@ -88,6 +88,19 @@ flex-direction:column;
 gap:3em;
 }
 
+#submitform {
+    display:flex;
+    padding: 40px;
+    justify-content:space-evenly;
+    gap:1em;
+}
+
+#pantryformbut {
+    display:flex;
+    justify-content:center;
+    gap:2em;
+}
+
 table {
 vertical-align: middle;
 margin-left:auto;
@@ -240,4 +253,22 @@ summary {
 .help_list {
 display:flex;
 flex-direction:column;
+}
+
+.pantryform {
+width:30px;
+height:auto;
+padding:10px;
+border-color:#66FCF1;
+border-radius:10px;
+
+}
+
+.button {
+    background-color:#1F2833;
+    color:#66FCF1;
+    border-style:double;
+    font-size:1.5em;
+    border-radius:10px;
+    border-color:#66FCF1;
 }

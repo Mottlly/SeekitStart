@@ -5,7 +5,7 @@
         <title> Seekit </title>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <meta charset="utf-8" />
-        <script src="index.js" type="scripttype"></script>
+        <script src="index.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -32,111 +32,26 @@
                 <th> Owner </th>
                 <th> Unit Price (CAD) </th>
             </tr>
-            <tr>
-                <td> Bananas </td>
-                <td> Spoiled </td>
-                <td> F&V </td>
-                <td> 6 </td>
-                <td> Tommy </td>
-                <td> 3.97  </td>
-            </tr>
-            <tr>
-                <td> Meatballs (Frozen) </td>
-                <td> Spoiled </td>
-                <td> Proteins </td>
-                <td> 2x Boxes </td>
-                <td> Tommy </td>
-                <td> 8.99  </td>
-            </tr>
-            <tr>
-                <td> Avocados (whole) </td>
-                <td> Stale </td>
-                <td> F&V </td>
-                <td> 5 </td>
-                <td> Connor </td>
-                <td> 2.59  </td>
-            </tr>
-            <tr>
-                <td> Pasta (Rigatoni)</td>
-                <td> Shelf Stable </td>
-                <td> Carbohydrates </td>
-                <td> 3x boxes </td>
-                <td> Tommy </td>
-                <td> 1.59  </td>
-            </tr>
-            <tr>
-                <td> Pasta (Bowtie)</td>
-                <td> Shelf Stable </td>
-                <td> Carbohydrates</td>
-                <td> 82x boxes </td>
-                <td> Tommy </td>
-                <td> 1.29 </td>
-            </tr>
-            <tr>
-                <td> Peaches </td>
-                <td> Stale </td>
-                <td> F&V </td>
-                <td> 1 </td>
-                <td> Tommy </td>
-                <td> 2.39 </td>
-            </tr>
-            <tr>
-                <td> Strawberries </td>
-                <td> Stale </td>
-                <td> F&V </td>
-                <td> 2x containers </td>
-                <td> Tommy </td>
-                <td> 3.99 </td>
-            </tr>
-            <tr>
-                <td> Mangoes </td>
-                <td> Stale </td>
-                <td> F&V </td>
-                <td> 1 </td>
-                <td> Connor </td>
-                <td> 2.79 </td>
-            </tr>
-            <tr>
-                <td class="database_form">
-                    <form>
-                        <input type="text" placeholder="Food Name">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Expiry Date">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Food Type">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Number">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Owner">
-                    </form>
-                </td>
-                <td>
-                    <form>
-                        <input type="text" placeholder="Cost Per Unit">
-                    </form>
-                </td>
-            </tr>
         </table>
 
     </div>
 
-    <div id="pantrybuttons">
+    <div id="pantryform" class="bordereddiv">
+        <h1 class="heading"> Add New Items Here! </h1>
+        <form id="submitform">
+            <input  id="fname" type="text" placeholder="FoodName" class="pantryform">
+            <input  id="expdate" type="text" placeholder="ExpiryDate"class="pantryform">
+            <input  id="ftype" type="text" placeholder="FoodType"class="pantryform">
+            <input  id="numb" type="text" placeholder="Number"class="pantryform">
+            <input  id="owns" type="text" placeholder="Owner"class="pantryform">
+            <input  id ="costpu" type="text" placeholder="CostPerUnit"class="pantryform">
+        </form>
+        <div id="pantryformbut">
+        <button id="submititem" class="button" type="button" onclick=PublishTab()>Submit</button>
+        <button id="clearitem" class="button" type="button" onclick="ClearForm()">Clear</button>
+        </div>
+</div>
 
-    <button id="SubmitButton">Submit</button>
-
-    </div>
 
     <div id="footer" class="bordereddiv">
         <h1> Thank You For Visiting the SeekIt Project!  </h1>
