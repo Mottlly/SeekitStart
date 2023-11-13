@@ -5,3 +5,7 @@
 // 4. have close to expiry items display on dashboard in order of ripeness
 // 5. have graphic update on dashboard
 
+function SubmitAlert () {
+    alert("You clicked the button!");
+}
+
