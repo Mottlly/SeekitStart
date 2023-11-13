@@ -8,3 +8,7 @@
 function SubmitAlert () {
     alert ("Item Added!")
 }
+
+function SubmitForm () {
+    document.getElementById("submitform").submit();
+  }
