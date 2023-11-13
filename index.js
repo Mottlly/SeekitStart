@@ -5,9 +5,3 @@
 // 4. have close to expiry items display on dashboard in order of ripeness
 // 5. have graphic update on dashboard
 
-function ShowAlert () {
-    alert("Food item added!");
-}
-
-var button = document.getElementById("SubmitItem");
-button.onclick = ShowAlert;
