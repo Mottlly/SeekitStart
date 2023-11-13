@@ -12,6 +12,7 @@ function PublishTab () {
     const numb = document.getElementById('numb').value;
     const owns = document.getElementById('owns').value;
     const costpu = document.getElementById('costpu').value;
+    const FormToReset = document.getElementById ("submitform");
 
         const tableElement = document.getElementById('database');
         const trElement = document.createElement('tr');
@@ -37,7 +38,8 @@ function PublishTab () {
                     tbodyElement.appendChild(trElement);
                     tableElement.appendChild(tbodyElement);
 
-                    alert ("Item Added!")
+                    alert ("Item Added!");
+                    FormToReset.reset ();
 
 }
 
