@@ -263,3 +263,12 @@ border-color:#66FCF1;
 border-radius:10px;
 
 }
+
+.button {
+    background-color:#1F2833;
+    color:#66FCF1;
+    border-style:double;
+    font-size:1.5em;
+    border-radius:10px;
+    border-color:#66FCF1;
+}
