@@ -40,3 +40,9 @@ function PublishTab () {
                     alert ("Item Added!")
 
 }
+
+function ClearForm () {
+    const FormToReset = document.getElementById ("submitform");
+        FormToReset.reset ();
+
+}
