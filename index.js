@@ -5,10 +5,38 @@
 // 4. have close to expiry items display on dashboard in order of ripeness
 // 5. have graphic update on dashboard
 
-function SubmitAlert () {
-    alert ("Item Added!")
-}
+function PublishTab () {
+    const fname = document.getElementById('fname').value;
+    const expdate = document.getElementById('expdate').value;
+    const ftype = document.getElementById('ftype').value;
+    const numb = document.getElementById('numb').value;
+    const owns = document.getElementById('owns').value;
+    const costpu = document.getElementById('costpu').value;
 
-function SubmitForm () {
-    document.getElementById("submitform").submit();
-  }
+        const tableElement = document.getElementById('database');
+        const trElement = document.createElement('tr');
+        const tbodyElement = document.createElement('tbody');
+        const fnameEle = document.createElement('td');
+        const expdateEle = document.createElement('td');
+        const ftypeEle = document.createElement('td');
+        const numbEle = document.createElement('td');
+        const ownsEle = document.createElement('td');
+        const costpuEle = document.createElement('td');
+            fnameEle.innerHTML = fname;
+            expdateEle.innerHTML = expdate;
+            ftypeEle.innerHTML = ftype;
+            numbEle.innerHTML = numb;
+            ownsEle.innerHTML = owns;
+            costpuEle.innerHTML = costpu;
+                trElement.appendChild(fnameEle);
+                trElement.appendChild(expdateEle);
+                trElement.appendChild(ftypeEle);
+                trElement.appendChild(numbEle);
+                trElement.appendChild(ownsEle);
+                trElement.appendChild(costpuEle);
+                    tbodyElement.appendChild(trElement);
+                    tableElement.appendChild(tbodyElement);
+
+                    alert ("Item Added!")
+
+}
