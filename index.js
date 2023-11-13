@@ -1,5 +1,5 @@
 //things I need to make be able do
-// 1. Add food item to pantry
+// 1. Add food item to pantry !!Check!!
 // 2. have pantry update in dashboard
 // 3. have bad items display on dashboard
 // 4. have close to expiry items display on dashboard in order of ripeness
