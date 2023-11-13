@@ -6,6 +6,5 @@
 // 5. have graphic update on dashboard
 
 function SubmitAlert () {
-    alert("You clicked the button!");
+    alert ("Item Added!")
 }
-
