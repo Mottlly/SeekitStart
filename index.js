@@ -48,3 +48,15 @@ function ClearForm () {
         FormToReset.reset ();
 
 }
+
+function StoreFood () {
+
+    const inputArray = [];
+    const fname = document.getElementById("fname");
+    const expdate = document.getElementById("expdate");
+    const ftype = document.getElementById("ftype");
+    const numb = document.getElementById("numb");
+    const owns = document.getElementById("owns");
+    const costpu = document.getElementById("costpu");
+
+}
