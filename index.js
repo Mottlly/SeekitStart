@@ -59,4 +59,15 @@ function StoreFood () {
     const owns = document.getElementById("owns");
     const costpu = document.getElementById("costpu");
 
+    const fname = fname.value;
+    const expdate = expdate.value;
+    const ftype = ftype.value;
+    const numb = numb.value;
+    const owns = owns.value;
+    const costpu = costpu.value;
+
+    inputArray.push(fname, expdate, ftype, numb, owns, costpu);
+
+    console.log(inputArray);
+
 }
