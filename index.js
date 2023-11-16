@@ -69,8 +69,3 @@ function StoreFood () {
     console.log(inputArray);
 
 }
-
-function ResetForm () {
-
-    FormToReset.reset ();
-}
