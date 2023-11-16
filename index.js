@@ -5,8 +5,9 @@
 // 4. have close to expiry items display on dashboard in order of ripeness
 // 5. have graphic update on dashboard
 
-const inputArray = [];
+let inputArray = [];
 
+//This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
 function PublishTab () {
     let fname = document.getElementById('fname').value;
     let expdate = document.getElementById('expdate').value;
@@ -65,7 +66,7 @@ function StoreFood () {
     let value5 = input5.value;
     let value6 = input6.value;
 
-    inputArray.push(value1, value2, value3, value4, value5, value6);
+    inputArray.push([value1, value2, value3, value4, value5, value6]);
 
     console.log(inputArray);
 
@@ -73,7 +74,20 @@ function StoreFood () {
 
 function PopTab () {
 
-    let Array = inputArray;
-
-    
+    array = inputArray;
+    table = document.getElementById('database');
+    //sets the i variable
+    for(let i = 0; i < array.length; i++)
+    {
+        // creates a new row with the j variable
+        let newRow = table.insertRow(table.length);
+        for(var j = 0; j < array[i].length; j++)
+        {
+            // creates a new cell
+            let cell = newRow.insertCell(j);
+            
+            // adds value to the cell
+            cell.innerHTML = array[i][j];
+        }
+    }
 }
