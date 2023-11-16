@@ -6,23 +6,23 @@
 // 5. have graphic update on dashboard
 
 function PublishTab () {
-    const fname = document.getElementById('fname').value;
-    const expdate = document.getElementById('expdate').value;
-    const ftype = document.getElementById('ftype').value;
-    const numb = document.getElementById('numb').value;
-    const owns = document.getElementById('owns').value;
-    const costpu = document.getElementById('costpu').value;
-    const FormToReset = document.getElementById ("submitform");
+    let fname = document.getElementById('fname').value;
+    let expdate = document.getElementById('expdate').value;
+    let ftype = document.getElementById('ftype').value;
+    let numb = document.getElementById('numb').value;
+    let owns = document.getElementById('owns').value;
+    let costpu = document.getElementById('costpu').value;
+    let FormToReset = document.getElementById ("submitform");
 
-        const tableElement = document.getElementById('database');
-        const trElement = document.createElement('tr');
-        const tbodyElement = document.createElement('tbody');
-        const fnameEle = document.createElement('td');
-        const expdateEle = document.createElement('td');
-        const ftypeEle = document.createElement('td');
-        const numbEle = document.createElement('td');
-        const ownsEle = document.createElement('td');
-        const costpuEle = document.createElement('td');
+        let tableElement = document.getElementById('database');
+        let trElement = document.createElement('tr');
+        let tbodyElement = document.createElement('tbody');
+        let fnameEle = document.createElement('td');
+        let expdateEle = document.createElement('td');
+        let ftypeEle = document.createElement('td');
+        let numbEle = document.createElement('td');
+        let ownsEle = document.createElement('td');
+        let costpuEle = document.createElement('td');
             fnameEle.innerHTML = fname;
             expdateEle.innerHTML = expdate;
             ftypeEle.innerHTML = ftype;
@@ -52,21 +52,21 @@ function ClearForm () {
 function StoreFood () {
 
     const inputArray = [];
-    const fname = document.getElementById("fname");
-    const expdate = document.getElementById("expdate");
-    const ftype = document.getElementById("ftype");
-    const numb = document.getElementById("numb");
-    const owns = document.getElementById("owns");
-    const costpu = document.getElementById("costpu");
+    let input1 = document.getElementById("fname");
+    let input2 = document.getElementById("expdate");
+    let input3 = document.getElementById("ftype");
+    let input4 = document.getElementById("numb");
+    let input5 = document.getElementById("owns");
+    let input6 = document.getElementById("costpu");
 
-    const fname = fname.value;
-    const expdate = expdate.value;
-    const ftype = ftype.value;
-    const numb = numb.value;
-    const owns = owns.value;
-    const costpu = costpu.value;
+    let value1 = input1.value;
+    let value2 = input2.value;
+    let value3 = input3.value;
+    let value4 = input4.value;
+    let value5 = input5.value;
+    let value6 = input6.value;
 
-    inputArray.push(fname, expdate, ftype, numb, owns, costpu);
+    inputArray.push(value1, value2, value3, value4, value5, value6);
 
     console.log(inputArray);
 
