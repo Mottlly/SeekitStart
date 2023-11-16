@@ -39,8 +39,6 @@ function PublishTab () {
                     tableElement.appendChild(tbodyElement);
 
                     alert ("Item Added!");
-                    FormToReset.reset ();
-
 }
 
 function ClearForm () {
@@ -70,4 +68,9 @@ function StoreFood () {
 
     console.log(inputArray);
 
+}
+
+function ResetForm () {
+
+    FormToReset.reset ();
 }
