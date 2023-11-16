@@ -5,6 +5,8 @@
 // 4. have close to expiry items display on dashboard in order of ripeness
 // 5. have graphic update on dashboard
 
+const inputArray = [];
+
 function PublishTab () {
     let fname = document.getElementById('fname').value;
     let expdate = document.getElementById('expdate').value;
@@ -49,7 +51,6 @@ function ClearForm () {
 
 function StoreFood () {
 
-    const inputArray = [];
     let input1 = document.getElementById("fname");
     let input2 = document.getElementById("expdate");
     let input3 = document.getElementById("ftype");
@@ -71,8 +72,8 @@ function StoreFood () {
 }
 
 function PopTab () {
-    let data=inputArray
 
-    for(let i in data)
+    let Array = inputArray;
 
+    
 }
