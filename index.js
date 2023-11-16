@@ -69,3 +69,10 @@ function StoreFood () {
     console.log(inputArray);
 
 }
+
+function PopTab () {
+    let data=inputArray
+
+    for(let i in data)
+
+}
