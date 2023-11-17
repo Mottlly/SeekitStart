@@ -78,7 +78,7 @@ function PopTab () {
     array = inputArray;
     table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = 0; i < array.length; i++)
+    for(let i = array.length-1; i < array.length; i++)
     {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
