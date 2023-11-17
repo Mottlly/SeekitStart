@@ -91,10 +91,12 @@ function PopTab () {
         }
     }
    
-    localStorage.setItem("dash_Array", JSON.stringify(inputArray));
+    localStorage.setItem("inputArray", JSON.stringify(inputArray));
+    
     alert ("Item Added!");
 }
 
 function loadData () {
-    
+
+
 }
