@@ -91,4 +91,5 @@ function PopTab () {
             cell.innerHTML = array[i][j];
         }
     }
+    alert ("Item Added!");
 }
