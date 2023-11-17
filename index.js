@@ -91,5 +91,11 @@ function PopTab () {
             cell.innerHTML = array[i][j];
         }
     }
+    window.localStorage.setItem(inputArray, JSON.stringify(array));
     alert ("Item Added!");
+}
+
+function loadData () {
+   let cart = JSON.parse(window.localStorage.getItem(inputArray));
+   console.log(inputArray)
 }
