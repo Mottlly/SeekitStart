@@ -225,6 +225,14 @@ input[type="text"] {
 
 }
 
+input[type="date"] {
+    width: 90%;
+    height: 99%;
+    background-color:#1F2833;
+    color:#66FCF1;
+}
+
+
 details {
     user-select: none;
     margin-left:50px;
