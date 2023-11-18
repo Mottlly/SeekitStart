@@ -98,9 +98,23 @@ function PopTab () {
 
 function loadPantryData () {
     let table = JSON.parse(window.localStorage.getItem("inputArray"));
+    
+    for(let i = inputArray.length-1; i < inputArray.length; i++)
+    {
+        // creates a new row with the j(Y) variable
+        let newRow = table.insertRow(table.length);
+        for(var j = 0; j < inputArray[i].length; j++)
+        {
+            // creates the new cells
+            let cell = newRow.insertCell(j);
+            
+            // adds array values to the cell
+            cell.innerHTML = inputArray[i][j];
+        }
+    }
 
 }
 
 function loadPieData () {
-    
+    let data = JSON.parse(window.localStorage.getItem("inputArray"));
 }
