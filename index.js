@@ -96,7 +96,11 @@ function PopTab () {
     alert ("Item Added!");
 }
 
-function loadData () {
+function loadPantryData () {
+    let table = JSON.parse(window.localStorage.getItem("inputArray"));
 
+}
 
+function loadPieData () {
+    
 }
