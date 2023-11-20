@@ -5,8 +5,6 @@
 // 4. have close to expiry items display on dashboard in order of ripeness
 // 5. have graphic update on dashboard
 
-let inputArray = [];
-
 //This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
 function PublishTab () {
     let fname = document.getElementById('fname').value;
@@ -52,6 +50,8 @@ function ClearForm () {
 
 function StoreFood () {
 
+    let inputArray = [];
+
     let input1 = document.getElementById("fname");
     let input2 = document.getElementById("expdate");
     let input3 = document.getElementById("ftype");
@@ -68,6 +68,8 @@ function StoreFood () {
 
     inputArray.push([value1, value2, value3, value4, value5, value6]);
 
+    localStorage.setItem("inputArray", JSON.stringify(inputArray));
+
     console.log(inputArray);
 
 }
@@ -75,6 +77,7 @@ function StoreFood () {
 function PopTab () {
     //work in progress, problem is that it keeps adding the WHOLE array, which results in duplicates. Need to make it only populate the most recent submit, or omit existing rows.
 
+    const inputArray = JSON.parse(window.localStorage.getItem("inputArray"));
     table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = inputArray.length-1; i < inputArray.length; i++)
@@ -90,8 +93,6 @@ function PopTab () {
             cell.innerHTML = inputArray[i][j];
         }
     }
-   
-    localStorage.setItem("inputArray", JSON.stringify(inputArray));
     
     alert ("Item Added!");
 }
