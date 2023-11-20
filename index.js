@@ -75,7 +75,6 @@ function StoreFood () {
 }
 
 function PopTab () {
-    //work in progress, problem is that it keeps adding the WHOLE array, which results in duplicates. Need to make it only populate the most recent submit, or omit existing rows.
 
     const inputArray = JSON.parse(window.localStorage.getItem("inputArray"));
     table = document.getElementById('database');
@@ -98,9 +97,11 @@ function PopTab () {
 }
 
 function loadPantryData () {
-    let table = JSON.parse(window.localStorage.getItem("inputArray"));
-    
-    for(let i = inputArray.length-1; i < inputArray.length; i++)
+
+    const inputArray = JSON.parse(window.localStorage.getItem("inputArray"));
+    table = document.getElementById('database');
+    //sets the i(X)variable, or else it will only be 1 cell with the whole array
+    for(let i = inputArray.length; i < inputArray.length; i++)
     {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
@@ -113,7 +114,7 @@ function loadPantryData () {
             cell.innerHTML = inputArray[i][j];
         }
     }
-
+    
 }
 
 function loadPieData () {
