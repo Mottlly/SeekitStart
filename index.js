@@ -101,7 +101,7 @@ function loadPantryData () {
     const inputArray = JSON.parse(window.localStorage.getItem("inputArray"));
     table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = inputArray.length; i < inputArray.length; i++)
+    for(let i = inputArray.length-1; i < inputArray.length; i++)
     {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
@@ -115,6 +115,7 @@ function loadPantryData () {
         }
     }
     
+    console.log(inputArray);
 }
 
 function loadPieData () {
