@@ -40,7 +40,7 @@
                 <th> Owner 
                     <select class="pantry_filter"></select>
                 </th>
-                <th> Unit Price (CAD) 
+                <th> Unit Price
                     <select class="pantry_filter"></select>
                 </th>
             </tr>
@@ -74,5 +74,16 @@
         <a href="https://getcodingcommunity.slack.com/team/U060312UJAX"> <img src="Assets/images/slack.png" width="100" height="100" alt="slack_link"></a>
 
     </div>
+
+
+    <script>
+        window.onload = () => {
+            console.log(document.querySelector("database > tbody > tr:nth-child(1) > td:nth-child(2) ").innerHTML);
+        };
+
+        getUniqueValuesFromColumn()
+        
+    </script>
+
 
 </body>
