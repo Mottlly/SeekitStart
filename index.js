@@ -66,6 +66,11 @@ function StoreFood () {
     let value5 = input5.value;
     let value6 = input6.value;
 
+    if(!input1.value||!input2.value||!input3.value||!input4.value||!input5.value||!input6.value){
+        alert("Please ensure all fields are added, then try again")}
+
+    else{
+
     inputArray.push([value1, value2, value3, value4, value5, value6]);
 
     localStorage.setItem("inputArray", JSON.stringify(inputArray));
@@ -93,6 +98,7 @@ function StoreFood () {
         }
 
         alert ("Item Added!");
+    }
     }        
 
 
