@@ -51,7 +51,7 @@ function ClearForm () {
 function StoreFood () {
 
     let inputArray = [];
-
+    
     let input1 = document.getElementById("fname");
     let input2 = document.getElementById("expdate");
     let input3 = document.getElementById("ftype");
@@ -75,9 +75,29 @@ function StoreFood () {
     //clearformfunction next
         const FormToReset = document.getElementById ("submitform");
             FormToReset.reset ();
-            
-}
 
+            let inputPull = JSON.parse(window.localStorage.getItem("inputArray"));
+            table = document.getElementById('database');
+    //sets the i(X)variable, or else it will only be 1 cell with the whole array
+    for(let i = inputArray.length-1; i < inputArray.length; i++)
+    {
+        // creates a new row with the j(Y) variable
+        let newRow = table.insertRow(table.length);
+        for(var j = 0; j < inputArray[i].length; j++)
+        {
+            // creates the new cells
+            let cell = newRow.insertCell(j);
+            
+            // adds array values to the cell
+            cell.innerHTML = inputPull[i][j];
+        }
+
+        alert ("Item Added!");
+    }        
+
+
+
+//legacy code
 function PopTab () {
 
     const inputArray = JSON.parse(window.localStorage.getItem("inputArray"));
@@ -99,6 +119,9 @@ function PopTab () {
     
     alert ("Item Added!");
 }
+//legacy code
+
+
 
 function loadPantryData () {
 
@@ -124,4 +147,5 @@ function loadPantryData () {
 
 function loadPieData () {
     let data = JSON.parse(window.localStorage.getItem("inputArray"));
+}
 }
