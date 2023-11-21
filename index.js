@@ -72,6 +72,10 @@ function StoreFood () {
 
     console.log(inputArray);
 
+    //clearformfunction next
+        const FormToReset = document.getElementById ("submitform");
+            FormToReset.reset ();
+            
 }
 
 function PopTab () {
