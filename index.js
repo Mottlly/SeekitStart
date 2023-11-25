@@ -6,6 +6,8 @@
 // 5. have graphic update on dashboard
 
 //This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
+let inputArray = [];
+
 function PublishTab () {
     let fname = document.getElementById('fname').value;
     let expdate = document.getElementById('expdate').value;
@@ -50,8 +52,6 @@ function ClearForm () {
 
 function StoreFood () {
 
-    let inputArray = [];
-    
     let input1 = document.getElementById("fname");
     let input2 = document.getElementById("expdate");
     let input3 = document.getElementById("ftype");
@@ -100,37 +100,37 @@ function StoreFood () {
     alert ("Item Added!");
 }
     }
-//legacy code
+}
 
+//legacy code
 
 
 function loadPantryData () {
 
-    const inputArray = JSON.parse(window.localStorage.getItem("inputArray"));
+    const DisplayArray = JSON.parse(window.localStorage.getItem("inputArray"));
     table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = inputArray.length-1; i < inputArray.length; i++)
+    for(let i = DisplayArray.length-1; i < Display.length; i++)
     {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
-        for(var j = 0; j < inputArray[i].length; j++)
+        for(var j = 0; j < Display[i].length; j++)
         {
             // creates the new cells
             let cell = newRow.insertCell(j);
             
             // adds array values to the cell
-            cell.innerHTML = inputArray[i][j];
+            cell.innerHTML = Display[i][j];
         }
     }
     
-    console.log(inputArray);
+    console.log(DisplayArray);
 }
 
-function loadPieData () {
-    let data = JSON.parse(window.localStorage.getItem("inputArray"));
+window.onload = () => {
+    console.log('I am here')
+    loadPantryData()
 }
-}
-
 
 
 
