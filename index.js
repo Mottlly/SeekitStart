@@ -6,7 +6,7 @@
 // 5. have graphic update on dashboard
 
 //This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
-let inputArray = [];
+var inputArray = [];
 
 function PublishTab () {
     let fname = document.getElementById('fname').value;
@@ -73,7 +73,7 @@ function StoreFood () {
 
     inputArray.push([value1, value2, value3, value4, value5, value6]);
 
-    localStorage.setItem("inputArray", JSON.stringify(inputArray));
+    localStorage.setItem("GlobalArray", JSON.stringify(inputArray));
 
     console.log(inputArray);
 
@@ -81,14 +81,14 @@ function StoreFood () {
         const FormToReset = document.getElementById ("submitform");
             FormToReset.reset ();
 
-            let inputPull = JSON.parse(window.localStorage.getItem("inputArray"));
+            let inputPull = JSON.parse(window.localStorage.getItem("GlobalArray"));
             table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = inputArray.length-1; i < inputArray.length; i++)
+    for(let i = inputPull.length-1; i < inputPull.length; i++)
     {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
-        for(var j = 0; j < inputArray[i].length; j++)
+        for(var j = 0; j < inputPull[i].length; j++)
         {
             // creates the new cells
             let cell = newRow.insertCell(j);
@@ -96,6 +96,7 @@ function StoreFood () {
             // adds array values to the cell
             cell.innerHTML = inputPull[i][j];
         }
+    console.log(inputPull);
        
     alert ("Item Added!");
 }
@@ -107,20 +108,20 @@ function StoreFood () {
 
 function loadPantryData () {
 
-    const DisplayArray = JSON.parse(window.localStorage.getItem("inputArray"));
+    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
     table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = DisplayArray.length-1; i < Display.length; i++)
+    for(let i = DisplayArray.length-1; i < DisplayArray.length; i++)
     {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
-        for(var j = 0; j < Display[i].length; j++)
+        for(var j = 0; j < DisplayArray[i].length; j++)
         {
             // creates the new cells
             let cell = newRow.insertCell(j);
             
             // adds array values to the cell
-            cell.innerHTML = Display[i][j];
+            cell.innerHTML = DisplayArray[i][j];
         }
     }
     
