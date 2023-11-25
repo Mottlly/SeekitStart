@@ -115,7 +115,7 @@ function loadPantryData () {
     {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
-        for(var j = 0; j < DisplayArray[i].length; j++)
+        for(let j = 0; j < DisplayArray[i].length; j++)
         {
             // creates the new cells
             let cell = newRow.insertCell(j);
@@ -129,7 +129,6 @@ function loadPantryData () {
 }
 
 window.onload = () => {
-    console.log('I am here')
     loadPantryData()
 }
 
