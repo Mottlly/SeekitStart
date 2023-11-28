@@ -85,7 +85,7 @@ function StoreFood () {
             table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = inputPull.length-1; i < inputPull.length; i++)
-    {
+{
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
         for(var j = 0; j < inputPull[i].length; j++)
@@ -111,7 +111,7 @@ function loadPantryData () {
     const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
     table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = DisplayArray.length-1; i < DisplayArray.length; i++)
+    for(let i = 0; i < DisplayArray.length; i++)
     {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
