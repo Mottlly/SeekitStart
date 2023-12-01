@@ -128,8 +128,56 @@ function loadPantryData () {
     console.log(DisplayArray);
 }
 
+function loadExpiryData1 () {
+
+    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
+    table = document.getElementById("almostexpiredfood");
+    //sets the i(X)variable, or else it will only be 1 cell with the whole array
+    for(let i = 0; i < DisplayArray.length; i++)
+    {
+        // creates a new row with the j(Y) variable
+        let newRow = table.insertRow(table.length);
+        for(let j = 0; j < DisplayArray[i].length; j++)
+        {
+            // creates the new cells
+            let cell = newRow.insertCell(j);
+            
+            // adds array values to the cell
+            cell.innerHTML = DisplayArray[i][j];
+        }
+    }
+    
+    console.log(DisplayArray);
+}
+
+function loadExpiryData2 () {
+
+    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
+    table = document.getElementById("expiredfood");
+    //sets the i(X)variable, or else it will only be 1 cell with the whole array
+    for(let i = 0; i < DisplayArray.length; i++)
+    {
+        // creates a new row with the j(Y) variable
+        let newRow = table.insertRow(table.length);
+        for(let j = 0; j < DisplayArray[i].length; j++)
+        {
+            // creates the new cells
+            let cell = newRow.insertCell(j);
+            
+            // adds array values to the cell
+            cell.innerHTML = DisplayArray[i][j];
+        }
+    }
+    
+    console.log(DisplayArray);
+}
+
+
+
 window.onload = () => {
-    loadPantryData()
+    loadPantryData();
+    loadExpiryData1();
+    loadExpiryData2();
 }
 
 
