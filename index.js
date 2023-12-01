@@ -80,6 +80,14 @@ function StoreFood () {
                 alert("you must enter a number in the cost field")
             }
             else{
+            let namestring = String(document.getElementById("fname").value)
+                if(!isNaN(namestring) && namestring.length != 0)
+                    alert("you must enter a name in the name field")
+                else{
+                let ownerstring = String(document.getElementById("owns").value)
+                    if(!isNaN(ownerstring) && ownerstring.length != 0)
+                        alert("you must enter a name in the owner field")
+                    else{
 
     inputArray.push([value1, value2, value3, value4, value5, value6]);
 
@@ -114,7 +122,8 @@ function StoreFood () {
 }
     }
 }
-
+    }
+}
 //legacy code
 
 
