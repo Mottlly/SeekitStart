@@ -109,7 +109,7 @@ function StoreFood () {
 function loadPantryData () {
 
     const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
-    table = document.getElementById('database');
+    table = document.getElementById("database");
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
     {
