@@ -170,7 +170,6 @@ function loadExpiryData1 () {
         }
     }
     
-    console.log(DisplayArray);
 }
 
 function loadExpiryData2 () {
@@ -200,9 +199,7 @@ function loadExpiryData2 () {
             cell.innerHTML = ExpiredArray[i][j];
         }
     }
-    
-    console.log(DisplayArray);
-    console.log(ExpiredArray);
+
 }
 
 window.onload = () => {
