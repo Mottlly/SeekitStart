@@ -5,8 +5,9 @@
 // 4. have close to expiry items display on dashboard in order of ripeness
 // 5. have graphic update on dashboard
 
-
 var inputArray = [];
+var todayDate = new Date().toISOString().slice(0, 10);
+console.log(todayDate)
 
 //This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
 function PublishTab () {
@@ -128,7 +129,6 @@ function StoreFood () {
 
 //legacy code
 
-
 function loadPantryData () {
 
     const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
@@ -176,23 +176,33 @@ function loadExpiryData1 () {
 function loadExpiryData2 () {
 
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
+
+    let ExpiredArray = DisplayArray.filter(expiryFilter);
+    function expiryFilter(date) {
+        return date < todayDate;
+    }
+
+    console.log('help');
+    console.log(ExpiredArray);
+    
     table = document.getElementById("expiredfood");
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = 0; i < DisplayArray.length; i++)
+    for(let i = 0; i < ExpiredArray.length; i++)
     {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
-        for(let j = 0; j < DisplayArray[i].length; j++)
+        for(let j = 0; j < ExpiredArray[i].length; j++)
         {
             // creates the new cells
             let cell = newRow.insertCell(j);
             
             // adds array values to the cell
-            cell.innerHTML = DisplayArray[i][j];
+            cell.innerHTML = ExpiredArray[i][j];
         }
     }
     
     console.log(DisplayArray);
+    console.log(ExpiredArray);
 }
 
 window.onload = () => {
