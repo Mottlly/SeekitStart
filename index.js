@@ -86,7 +86,7 @@ function StoreFood () {
                 else{
                 let ownerstring = String(document.getElementById("owns").value)
                     if(!isNaN(ownerstring) && ownerstring.length != 0)
-                        alert("you must enter a name in the owner field")
+                        alert("you must enter a name in the name field")
                     else{
 
     inputArray.push([value1, value2, value3, value4, value5, value6]);
