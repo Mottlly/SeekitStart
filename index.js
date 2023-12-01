@@ -70,6 +70,16 @@ function StoreFood () {
         alert("Please ensure all fields are added, then try again")}
 
     else{
+    let numbinteger = Number(document.getElementById("numb").value);
+        if(isNaN(numbinteger)){
+            alert("you must enter a number in the number field")
+        }
+        else{
+        let costinteger = Number(document.getElementById("costpu").value);
+            if(isNaN(costinteger)){
+                alert("you must enter a number in the cost field")
+            }
+            else{
 
     inputArray.push([value1, value2, value3, value4, value5, value6]);
 
@@ -99,6 +109,8 @@ function StoreFood () {
     console.log(inputPull);
        
     alert ("Item Added!");
+}
+    }
 }
     }
 }
@@ -171,8 +183,6 @@ function loadExpiryData2 () {
     
     console.log(DisplayArray);
 }
-
-
 
 window.onload = () => {
     loadPantryData();
