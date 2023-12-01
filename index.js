@@ -5,9 +5,10 @@
 // 4. have close to expiry items display on dashboard in order of ripeness
 // 5. have graphic update on dashboard
 
-//This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
+
 var inputArray = [];
 
+//This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
 function PublishTab () {
     let fname = document.getElementById('fname').value;
     let expdate = document.getElementById('expdate').value;
@@ -86,9 +87,9 @@ function StoreFood () {
                 else{
                 let ownerstring = String(document.getElementById("owns").value)
                     if(!isNaN(ownerstring) && ownerstring.length != 0)
-                        alert("you must enter a name in the name field")
+                        alert("you must enter a name in the owner field")
                     else{
-
+                    
     inputArray.push([value1, value2, value3, value4, value5, value6]);
 
     localStorage.setItem("GlobalArray", JSON.stringify(inputArray));
@@ -124,6 +125,7 @@ function StoreFood () {
 }
     }
 }
+
 //legacy code
 
 
