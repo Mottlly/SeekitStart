@@ -90,8 +90,30 @@ function StoreFood () {
                     if(!isNaN(ownerstring) && ownerstring.length != 0)
                         alert("you must enter a name in the owner field")
                     else{
-                    
-    inputArray.push([value1, value2, value3, value4, value5, value6]);
+    
+    let object = {};
+    let firstKey = 'foodname';
+    let firstKeyValue = value1;
+    let secondKey = 'expdate';
+    let secondKeyValue = value2;
+    let thirdKey = 'ftype';
+    let thirdKeyValue = value3;
+    let fourthKey = 'numb';
+    let fourthKeyValue = value4;
+    let fifthKey = 'owns';
+    let fifthKeyValue = value5;
+    let sixthKey = 'costpu';
+    let sixthKeyValue = value6;
+
+    object[firstKey] = firstKeyValue;
+    object[secondKey] = secondKeyValue;
+    object[thirdKey] = thirdKeyValue;
+    object[fourthKey] = fourthKeyValue;
+    object[fifthKey] = fifthKeyValue;
+    object[sixthKey] = sixthKeyValue;
+    console.log(object);
+                        
+    inputArray.push(object);
 
     localStorage.setItem("GlobalArray", JSON.stringify(inputArray));
 
@@ -104,7 +126,7 @@ function StoreFood () {
             let inputPull = JSON.parse(window.localStorage.getItem("GlobalArray"));
             table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = inputPull.length-1; i < inputPull.length; i++)
+    for(let i = 0; i < inputPull.length; i++)
 {
         // creates a new row with the j(Y) variable
         let newRow = table.insertRow(table.length);
