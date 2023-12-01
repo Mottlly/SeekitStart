@@ -7,9 +7,6 @@
 
 
 var inputArray = [];
-const currentDate = new Date()
-const expireSoon = new Date(currentDate.setDate(currentDate.getDate() + 3));
-console.log(currentDate)
 
 //This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
 function PublishTab () {
@@ -179,9 +176,6 @@ function loadExpiryData1 () {
 function loadExpiryData2 () {
 
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
-    let ExpiredArray = DisplayArray.filter((item: any) => 
-        item.date.getTime() >= currentDate.getTime() && item.date.getTime() <= expireSoon.getTime()
-    )
     table = document.getElementById("expiredfood");
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
