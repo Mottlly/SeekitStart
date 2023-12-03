@@ -9,8 +9,6 @@ var inputArray = [];
 var todayDate = new Date().toLocaleDateString('en-CA');
 var soonDate = addDays(new Date(),3).toLocaleDateString('en-CA');
 
-
-
 console.log(todayDate);
 
 function addDays(date, days) {
@@ -18,7 +16,6 @@ function addDays(date, days) {
     return date;
   }
 
-console.log(todayDate);
 console.log(soonDate);
 //This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
 function PublishTab () {
