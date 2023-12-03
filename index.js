@@ -128,16 +128,31 @@ function StoreFood () {
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < inputPull.length; i++)
 {
-        // creates a new row with the j(Y) variable
-        let newRow = table.insertRow(table.length);
-        for(var j = 0; j < inputPull[i].length; j++)
-        {
-            // creates the new cells
-            let cell = newRow.insertCell(j);
-            
-            // adds array values to the cell
-            cell.innerHTML = inputPull[i][j];
-        }
+    var table = document.getElementById('database');
+    var row = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+    var cell6 = document.createElement("td");
+    cell1.innerHTML = inputPull[i].foodname;
+    cell2.innerHTML = inputPull[i].expdate;
+    cell3.innerHTML = inputPull[i].ftype;
+    cell4.innerHTML = inputPull[i].numb;
+    cell5.innerHTML = inputPull[i].owns;
+    cell6.innerHTML = inputPull[i].costpu;
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+    row.appendChild(cell3);
+    row.appendChild(cell4);
+    row.appendChild(cell5);
+    row.appendChild(cell6);
+    table.appendChild(row);
+
+
+
+
     console.log(inputPull);
        
     alert ("Item Added!");
@@ -158,20 +173,32 @@ function loadPantryData () {
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
     {
-        // creates a new row with the j(Y) variable
-        let newRow = table.insertRow(table.length);
-        for(let j = 0; j < DisplayArray[i].length; j++)
-        {
-            // creates the new cells
-            let cell = newRow.insertCell(j);
-            
-            // adds array values to the cell
-            cell.innerHTML = DisplayArray[i][j];
-        }
-    }
-    
+        var table = document.getElementById('database');
+        var row = document.createElement("tr");
+        var cell1 = document.createElement("td");
+        var cell2 = document.createElement("td");
+        var cell3 = document.createElement("td");
+        var cell4 = document.createElement("td");
+        var cell5 = document.createElement("td");
+        var cell6 = document.createElement("td");
+        cell1.innerHTML = DisplayArray[i].foodname;
+        cell2.innerHTML = DisplayArray[i].expdate;
+        cell3.innerHTML = DisplayArray[i].ftype;
+        cell4.innerHTML = DisplayArray[i].numb;
+        cell5.innerHTML = DisplayArray[i].owns;
+        cell6.innerHTML = DisplayArray[i].costpu;
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+        row.appendChild(cell4);
+        row.appendChild(cell5);
+        row.appendChild(cell6);
+        table.appendChild(row);
+        
     console.log(DisplayArray);
 }
+}
+
 
 function loadExpiryData1 () {
 
@@ -180,19 +207,30 @@ function loadExpiryData1 () {
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
     {
-        // creates a new row with the j(Y) variable
-        let newRow = table.insertRow(table.length);
-        for(let j = 0; j < DisplayArray[i].length; j++)
-        {
-            // creates the new cells
-            let cell = newRow.insertCell(j);
-            
-            // adds array values to the cell
-            cell.innerHTML = DisplayArray[i][j];
+        var table = document.getElementById("almostexpiredfood");
+        var row = document.createElement("tr");
+        var cell1 = document.createElement("td");
+        var cell2 = document.createElement("td");
+        var cell3 = document.createElement("td");
+        var cell4 = document.createElement("td");
+        var cell5 = document.createElement("td");
+        var cell6 = document.createElement("td");
+        cell1.innerHTML = DisplayArray[i].foodname;
+        cell2.innerHTML = DisplayArray[i].expdate;
+        cell3.innerHTML = DisplayArray[i].ftype;
+        cell4.innerHTML = DisplayArray[i].numb;
+        cell5.innerHTML = DisplayArray[i].owns;
+        cell6.innerHTML = DisplayArray[i].costpu;
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+        row.appendChild(cell4);
+        row.appendChild(cell5);
+        row.appendChild(cell6);
+        table.appendChild(row);
         }
     }
-    
-}
+
 
 function loadExpiryData2 () {
 
@@ -208,21 +246,31 @@ function loadExpiryData2 () {
     
     table = document.getElementById("expiredfood");
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = 0; i < ExpiredArray.length; i++)
+    for(let i = 0; i < DisplayArray.length; i++)
     {
-        // creates a new row with the j(Y) variable
-        let newRow = table.insertRow(table.length);
-        for(let j = 0; j < ExpiredArray[i].length; j++)
-        {
-            // creates the new cells
-            let cell = newRow.insertCell(j);
-            
-            // adds array values to the cell
-            cell.innerHTML = ExpiredArray[i][j];
+        var table = document.getElementById("expiredfood");
+        var row = document.createElement("tr");
+        var cell1 = document.createElement("td");
+        var cell2 = document.createElement("td");
+        var cell3 = document.createElement("td");
+        var cell4 = document.createElement("td");
+        var cell5 = document.createElement("td");
+        var cell6 = document.createElement("td");
+        cell1.innerHTML = DisplayArray[i].foodname;
+        cell2.innerHTML = DisplayArray[i].expdate;
+        cell3.innerHTML = DisplayArray[i].ftype;
+        cell4.innerHTML = DisplayArray[i].numb;
+        cell5.innerHTML = DisplayArray[i].owns;
+        cell6.innerHTML = DisplayArray[i].costpu;
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+        row.appendChild(cell4);
+        row.appendChild(cell5);
+        row.appendChild(cell6);
+        table.appendChild(row);
         }
     }
-
-}
 
 window.onload = () => {
     loadPantryData();
