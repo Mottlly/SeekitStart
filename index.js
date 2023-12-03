@@ -17,6 +17,8 @@ function addDays(date, days) {
   }
 
 console.log(soonDate);
+
+
 //This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
 function PublishTab () {
     let fname = document.getElementById('fname').value;
@@ -61,6 +63,7 @@ function ClearForm () {
 }
 
 function StoreFood () {
+    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
 
     let input1 = document.getElementById("fname");
     let input2 = document.getElementById("expdate");
@@ -120,7 +123,8 @@ function StoreFood () {
     object[fifthKey] = fifthKeyValue;
     object[sixthKey] = sixthKeyValue;
     console.log(object);
-                        
+
+    let inputArray = DisplayArray;                    
     inputArray.push(object);
 
     localStorage.setItem("GlobalArray", JSON.stringify(inputArray));
@@ -177,7 +181,10 @@ function StoreFood () {
 function loadPantryData () {
 
     const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
+    let inputArray = DisplayArray;
     table = document.getElementById("database");
+
+    console.log(inputArray);
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
     {
