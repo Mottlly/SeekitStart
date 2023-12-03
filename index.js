@@ -6,9 +6,20 @@
 // 5. have graphic update on dashboard
 
 var inputArray = [];
-var todayDate = new Date().toISOString().slice(0, 10);
-console.log(todayDate)
+var todayDate = new Date().toLocaleDateString('en-CA');
+var soonDate = addDays(new Date(),3).toLocaleDateString('en-CA');
 
+
+
+console.log(todayDate);
+
+function addDays(date, days) {
+    date.setDate(date.getDate() + days);
+    return date;
+  }
+
+console.log(todayDate);
+console.log(soonDate);
 //This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
 function PublishTab () {
     let fname = document.getElementById('fname').value;
@@ -126,7 +137,7 @@ function StoreFood () {
             let inputPull = JSON.parse(window.localStorage.getItem("GlobalArray"));
             table = document.getElementById('database');
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = 0; i < inputPull.length; i++)
+    for(let i = inputPull.length-1; i < inputPull.length; i++)
 {
     var table = document.getElementById('database');
     var row = document.createElement("tr");
@@ -221,13 +232,15 @@ function loadExpiryData1 () {
         cell4.innerHTML = DisplayArray[i].numb;
         cell5.innerHTML = DisplayArray[i].owns;
         cell6.innerHTML = DisplayArray[i].costpu;
-        row.appendChild(cell1);
-        row.appendChild(cell2);
-        row.appendChild(cell3);
-        row.appendChild(cell4);
-        row.appendChild(cell5);
-        row.appendChild(cell6);
-        table.appendChild(row);
+        if (DisplayArray[i].expdate > todayDate && DisplayArray[i].expdate < soonDate) { 
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            row.appendChild(cell3);
+            row.appendChild(cell4);
+            row.appendChild(cell5);
+            row.appendChild(cell6);
+            table.appendChild(row);
+                }
         }
     }
 
