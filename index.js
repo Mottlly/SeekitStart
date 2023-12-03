@@ -235,15 +235,6 @@ function loadExpiryData1 () {
 function loadExpiryData2 () {
 
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
-
-    let ExpiredArray = DisplayArray.filter(expiryFilter);
-    function expiryFilter(date) {
-        return date < todayDate;
-    }
-
-    console.log('help');
-    console.log(ExpiredArray);
-    
     table = document.getElementById("expiredfood");
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
