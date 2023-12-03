@@ -236,8 +236,16 @@ function loadExpiryData2 () {
 
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
     table = document.getElementById("expiredfood");
+    const ExpiredArray = DisplayArray.filter(expiryFunction)
+        function expiryFunction (expdate) {
+            let date = new Date(expdate).getTime();
+            return date < todayDate;
+
+        } 
+
+        console.log(ExpiredArray);
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
-    for(let i = 0; i < DisplayArray.length; i++)
+    for(let i = 0; i < ExpiredArray.length; i++)
     {
         var table = document.getElementById("expiredfood");
         var row = document.createElement("tr");
@@ -247,12 +255,12 @@ function loadExpiryData2 () {
         var cell4 = document.createElement("td");
         var cell5 = document.createElement("td");
         var cell6 = document.createElement("td");
-        cell1.innerHTML = DisplayArray[i].foodname;
-        cell2.innerHTML = DisplayArray[i].expdate;
-        cell3.innerHTML = DisplayArray[i].ftype;
-        cell4.innerHTML = DisplayArray[i].numb;
-        cell5.innerHTML = DisplayArray[i].owns;
-        cell6.innerHTML = DisplayArray[i].costpu;
+        cell1.innerHTML = ExpiredArray[i].foodname;
+        cell2.innerHTML = ExpiredArray[i].expdate;
+        cell3.innerHTML = ExpiredArray[i].ftype;
+        cell4.innerHTML = ExpiredArray[i].numb;
+        cell5.innerHTML = ExpiredArray[i].owns;
+        cell6.innerHTML = ExpiredArray[i].costpu;
         row.appendChild(cell1);
         row.appendChild(cell2);
         row.appendChild(cell3);
