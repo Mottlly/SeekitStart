@@ -238,7 +238,7 @@ function loadExpiryData2 () {
     table = document.getElementById("expiredfood");
     const ExpiredArray = DisplayArray.filter(expiryFunction)
         function expiryFunction (expdate) {
-            let date = new Date(expdate).getTime();
+            let date = expdate
             return date < todayDate;
 
         } 
