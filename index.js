@@ -1,8 +1,4 @@
 //things I need to make be able do
-// 1. Add food item to pantry !!Check!!
-// 2. have pantry update in dashboard
-// 3. have bad items display on dashboard
-// 4. have close to expiry items display on dashboard in order of ripeness
 // 5. have graphic update on dashboard
 
 var inputArray = [];
@@ -283,6 +279,16 @@ function loadExpiryData2 () {
         }
     }
 
+
+    //TESTING AREA
+
+function filterByFType (item) {
+    if (item.ftype = )
+
+
+}
+
+    //TESTING AREA
 window.onload = () => {
     loadPantryData();
     loadExpiryData1();
