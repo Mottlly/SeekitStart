@@ -59,7 +59,7 @@ function ClearForm () {
 }
 
 function StoreFood () {
-    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
+    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
 
     let input1 = document.getElementById("fname");
     let input2 = document.getElementById("expdate");
@@ -282,11 +282,11 @@ function loadExpiryData2 () {
 
     //TESTING AREA
 
-function filterByFType (item) {
-    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
-    DisplayArray.filter((item))
+function filterByFType (filtervalue) {
+    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
+    const filteredpantryitems = DisplayArray.filter((pantryitem) => pantryitem.ftype === filtervalue);
 
-
+    //now rebuild table from this array
 }
 
     //TESTING AREA
