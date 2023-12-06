@@ -283,7 +283,8 @@ function loadExpiryData2 () {
     //TESTING AREA
 
 function filterByFType (item) {
-    if (item.ftype = )
+    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray"));
+    DisplayArray.filter((item))
 
 
 }
