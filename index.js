@@ -285,8 +285,39 @@ function loadExpiryData2 () {
 function filterByFType (filtervalue) {
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
     const filteredpantryitems = DisplayArray.filter((pantryitem) => pantryitem.ftype === filtervalue);
-
+    console.log('done');
+    console.log(filteredpantryitems);
     //now rebuild table from this array
+    let table = document.getElementById("database");
+
+        while (table.rows.length > 1) {
+        table.deleteRow(1);
+}
+    //sets the i(X)variable, or else it will only be 1 cell with the whole array
+    for(let i = 0; i < filteredpantryitems.length; i++)
+    {
+        var row = document.createElement("tr");
+        var cell1 = document.createElement("td");
+        var cell2 = document.createElement("td");
+        var cell3 = document.createElement("td");
+        var cell4 = document.createElement("td");
+        var cell5 = document.createElement("td");
+        var cell6 = document.createElement("td");
+        cell1.innerHTML = filteredpantryitems[i].foodname;
+        cell2.innerHTML = filteredpantryitems[i].expdate;
+        cell3.innerHTML = filteredpantryitems[i].ftype;
+        cell4.innerHTML = filteredpantryitems[i].numb;
+        cell5.innerHTML = filteredpantryitems[i].owns;
+        cell6.innerHTML = filteredpantryitems[i].costpu;
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+        row.appendChild(cell4);
+        row.appendChild(cell5);
+        row.appendChild(cell6);
+        table.appendChild(row);
+
+}
 }
 
     //TESTING AREA
