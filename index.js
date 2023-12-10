@@ -317,13 +317,15 @@ function filterByFType (filtervalue) {
 }
 }
 
-function sortbydate () {
+function sortbydate (sortvalue) {
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
-    const orderedpantryitemsdate = DisplayArray.sort(function(a,b){
+    if (sortvalue === "Newest_To_Oldest") {
+    let orderedpantryitemsdate = DisplayArray.sort(function(a,b){
         // Turn your strings into dates, and then subtract them
         // to get a value that is either negative, positive, or zero.
         return new Date(b.expdate) - new Date(a.expdate);
       });
+    
       let table = document.getElementById("database");
 
         while (table.rows.length > 1) {
@@ -351,14 +353,51 @@ for(let i = 0; i < orderedpantryitemsdate.length; i++)
         row.appendChild(cell5);
         row.appendChild(cell6);
         table.appendChild(row);
-        
-
-
+    }
     console.log(orderedpantryitemsdate);
+} 
+if (sortvalue === "Oldest_To_Newest") {
+    let orderedpantryitemsdate = DisplayArray.sort(function(a,b){
+        // Turn your strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(a.expdate) - new Date(b.expdate);
+      });
+    
+      let table = document.getElementById("database");
+
+        while (table.rows.length > 1) {
+        table.deleteRow(1);
+}
+for(let i = 0; i < orderedpantryitemsdate.length; i++)
+    {
+        var row = document.createElement("tr");
+        var cell1 = document.createElement("td");
+        var cell2 = document.createElement("td");
+        var cell3 = document.createElement("td");
+        var cell4 = document.createElement("td");
+        var cell5 = document.createElement("td");
+        var cell6 = document.createElement("td");
+        cell1.innerHTML = orderedpantryitemsdate[i].foodname;
+        cell2.innerHTML = orderedpantryitemsdate[i].expdate;
+        cell3.innerHTML = orderedpantryitemsdate[i].ftype;
+        cell4.innerHTML = orderedpantryitemsdate[i].numb;
+        cell5.innerHTML = orderedpantryitemsdate[i].owns;
+        cell6.innerHTML = orderedpantryitemsdate[i].costpu;
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+        row.appendChild(cell4);
+        row.appendChild(cell5);
+        row.appendChild(cell6);
+        table.appendChild(row);
+    }
+    console.log(orderedpantryitemsdate);
+} 
+
 
 
 }
-}
+
 
 window.onload = () => {
     loadPantryData();
