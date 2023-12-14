@@ -394,7 +394,7 @@ for(let i = 0; i < orderedpantryitemsdate.length; i++)
 
 function sortbyname (sortvalue) {
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
-    if (sortvalue = "A_to_Z") {
+    if (sortvalue === "A_To_Z") {
         let alphaorderedpantry = DisplayArray.sort(function (a,b) {
             if (a.foodname < b.foodname) {
                 return -1;
@@ -436,7 +436,7 @@ function sortbyname (sortvalue) {
     }
     console.log(alphaorderedpantry);
     }
-    if (sortvalue = "Z_to_A") {
+    if (sortvalue === "Z_To_A") {
         let alphaorderedpantry = DisplayArray.sort(function (a,b) {
             if (a.foodname > b.foodname) {
                 return -1;
