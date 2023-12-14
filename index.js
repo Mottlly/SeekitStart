@@ -282,7 +282,6 @@ function loadExpiryData2 () {
 function filterByFType (filtervalue) {
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
     const filteredpantryitems = DisplayArray.filter((pantryitem) => pantryitem.ftype === filtervalue);
-    console.log('done');
     console.log(filteredpantryitems);
     //now rebuild table from this array
     let table = document.getElementById("database");
@@ -358,8 +357,6 @@ for(let i = 0; i < orderedpantryitemsdate.length; i++)
 } 
 if (sortvalue === "Oldest_To_Newest") {
     let orderedpantryitemsdate = DisplayArray.sort(function(a,b){
-        // Turn your strings into dates, and then subtract them
-        // to get a value that is either negative, positive, or zero.
         return new Date(a.expdate) - new Date(b.expdate);
       });
     
@@ -393,8 +390,94 @@ for(let i = 0; i < orderedpantryitemsdate.length; i++)
     }
     console.log(orderedpantryitemsdate);
 } 
+}
 
+function sortbyname (sortvalue) {
+    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
+    if (sortvalue = "A_to_Z") {
+        let alphaorderedpantry = DisplayArray.sort(function (a,b) {
+            if (a.foodname < b.foodname) {
+                return -1;
+            }
+            if (a.foodname > b.foodname) {
+                return 1;
+            }
+            else return 0;
+        }
 
+    );
+
+    let table = document.getElementById("database");
+    while (table.rows.length > 1) {
+        table.deleteRow(1);
+    }
+    for(let i = 0; i < alphaorderedpantry.length; i++)
+    {
+        var row = document.createElement("tr");
+        var cell1 = document.createElement("td");
+        var cell2 = document.createElement("td");
+        var cell3 = document.createElement("td");
+        var cell4 = document.createElement("td");
+        var cell5 = document.createElement("td");
+        var cell6 = document.createElement("td");
+        cell1.innerHTML = alphaorderedpantry[i].foodname;
+        cell2.innerHTML = alphaorderedpantry[i].expdate;
+        cell3.innerHTML = alphaorderedpantry[i].ftype;
+        cell4.innerHTML = alphaorderedpantry[i].numb;
+        cell5.innerHTML = alphaorderedpantry[i].owns;
+        cell6.innerHTML = alphaorderedpantry[i].costpu;
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+        row.appendChild(cell4);
+        row.appendChild(cell5);
+        row.appendChild(cell6);
+        table.appendChild(row);
+    }
+    console.log(alphaorderedpantry);
+    }
+    if (sortvalue = "Z_to_A") {
+        let alphaorderedpantry = DisplayArray.sort(function (a,b) {
+            if (a.foodname > b.foodname) {
+                return -1;
+            }
+            if (a.foodname < b.foodname) {
+                return 1;
+            }
+            else return 0;
+        }
+
+    );
+
+    let table = document.getElementById("database");
+    while (table.rows.length > 1) {
+        table.deleteRow(1);
+    }
+    for(let i = 0; i < alphaorderedpantry.length; i++)
+    {
+        var row = document.createElement("tr");
+        var cell1 = document.createElement("td");
+        var cell2 = document.createElement("td");
+        var cell3 = document.createElement("td");
+        var cell4 = document.createElement("td");
+        var cell5 = document.createElement("td");
+        var cell6 = document.createElement("td");
+        cell1.innerHTML = alphaorderedpantry[i].foodname;
+        cell2.innerHTML = alphaorderedpantry[i].expdate;
+        cell3.innerHTML = alphaorderedpantry[i].ftype;
+        cell4.innerHTML = alphaorderedpantry[i].numb;
+        cell5.innerHTML = alphaorderedpantry[i].owns;
+        cell6.innerHTML = alphaorderedpantry[i].costpu;
+        row.appendChild(cell1);
+        row.appendChild(cell2);
+        row.appendChild(cell3);
+        row.appendChild(cell4);
+        row.appendChild(cell5);
+        row.appendChild(cell6);
+        table.appendChild(row);
+    }
+    console.log(alphaorderedpantry);
+    }
 
 }
 
