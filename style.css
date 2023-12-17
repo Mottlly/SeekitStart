@@ -131,7 +131,7 @@ text-align: center;
 background-color:#0B0C10;
 overflow:hidden;
 text-overflow:ellipsis;
-white-space:nowrap;
+/*white-space:nowrap;*/
 
 }
 
