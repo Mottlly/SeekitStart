@@ -59,7 +59,7 @@ function ClearForm () {
 }
 
 function StoreFood () {
-    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
+    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
 
     let input1 = document.getElementById("fname");
     let input2 = document.getElementById("expdate");
@@ -176,7 +176,7 @@ function StoreFood () {
 
 function loadPantryData () {
 
-    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
+    const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
     let inputArray = DisplayArray;
     table = document.getElementById("database");
 
@@ -213,7 +213,7 @@ function loadPantryData () {
 
 function loadExpiryData1 () {
 
-    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
+    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
     table = document.getElementById("almostexpiredfood");
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
@@ -247,7 +247,7 @@ function loadExpiryData1 () {
 
 function loadExpiryData2 () {
 
-    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
+    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
     table = document.getElementById("expiredfood");
 
     //sets the i(X)variable, or else it will only be 1 cell with the whole array
@@ -280,7 +280,7 @@ function loadExpiryData2 () {
     }
 
 function filterByFType (filtervalue) {
-    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
+    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
     const filteredpantryitems = DisplayArray.filter((pantryitem) => pantryitem.ftype === filtervalue);
     console.log(filteredpantryitems);
     //now rebuild table from this array
@@ -317,7 +317,7 @@ function filterByFType (filtervalue) {
 }
 
 function sortbydate (sortvalue) {
-    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
+    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
     if (sortvalue === "Newest_To_Oldest") {
     let orderedpantryitemsdate = DisplayArray.sort(function(a,b){
         // Turn your strings into dates, and then subtract them
@@ -393,7 +393,7 @@ for(let i = 0; i < orderedpantryitemsdate.length; i++)
 }
 
 function sortbyname (sortvalue) {
-    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || {};
+    let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
     if (sortvalue === "A_To_Z") {
         let alphaorderedpantry = DisplayArray.sort(function (a,b) {
             if (a.foodname < b.foodname) {
