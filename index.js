@@ -281,6 +281,14 @@ function loadExpiryData2 () {
 
 function filterByFType (filtervalue) {
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
+    if (filtervalue === "Nil" ) {
+        let table = document.getElementById("database");
+        while (table.rows.length > 1) {
+            table.deleteRow(1);
+    }
+        loadPantryData ();
+    }
+    else {
     const filteredpantryitems = DisplayArray.filter((pantryitem) => pantryitem.ftype === filtervalue);
     console.log(filteredpantryitems);
     //now rebuild table from this array
@@ -312,12 +320,20 @@ function filterByFType (filtervalue) {
         row.appendChild(cell5);
         row.appendChild(cell6);
         table.appendChild(row);
-
+    }
 }
 }
 
 function sortbydate (sortvalue) {
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
+    if (sortvalue === "Nil" ) {
+        let table = document.getElementById("database");
+        while (table.rows.length > 1) {
+            table.deleteRow(1);
+    }
+        loadPantryData ();
+    }
+    else{
     if (sortvalue === "Newest_To_Oldest") {
     let orderedpantryitemsdate = DisplayArray.sort(function(a,b){
         // Turn your strings into dates, and then subtract them
@@ -389,11 +405,20 @@ for(let i = 0; i < orderedpantryitemsdate.length; i++)
         table.appendChild(row);
     }
     console.log(orderedpantryitemsdate);
+}
 } 
 }
 
 function sortbyname (sortvalue) {
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
+    if (sortvalue === "Nil" ) {
+        let table = document.getElementById("database");
+        while (table.rows.length > 1) {
+            table.deleteRow(1);
+    }
+        loadPantryData ();
+    }
+    else{
     if (sortvalue === "A_To_Z") {
         let alphaorderedpantry = DisplayArray.sort(function (a,b) {
             if (a.foodname < b.foodname) {
@@ -478,7 +503,7 @@ function sortbyname (sortvalue) {
     }
     console.log(alphaorderedpantry);
     }
-
+    }
 }
 
 
