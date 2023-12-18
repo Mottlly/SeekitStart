@@ -30,9 +30,19 @@ background-color:#0B0C10;
 width:300px;
 height:300px;
 border-radius:50%;
-background: conic-gradient(#5CDB95 0.00% 25.00%, #45A29E 25.00% 50.00%, #C5C6C7 50.00% 75.00%, #1F2833 75.00% 100.00% );
+background: conic-gradient(#5CDB95 0.00% 33.33333333333333%, #45A29E 33.33333333333333% 66.66666666666666%, #1F2833 66.66666666666666% 100% );;
 align-self:center;
 
+}
+
+#graphics {
+display:flex;
+flex-direction:column;
+}
+
+#legend {
+display:flex;
+justify-content:space-around;
 }
 
 #databasedash{
