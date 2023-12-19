@@ -43,7 +43,9 @@ flex-direction:column;
 #legend {
 display:flex;
 justify-content:space-around;
+align-items: center;
 }
+
 
 #databasedash{
 background-color:#0B0C10;
@@ -110,6 +112,27 @@ overflow-y:scroll;
     display:flex;
     justify-content:center;
     gap:2em;
+}
+
+#greenbox {
+background-color:#5CDB95;
+width:30px;
+height:30px;
+padding:10px;
+}
+
+#bluebox {
+background-color:#45A29E;
+width:30px;
+height:30px;
+padding:10px;
+}
+
+#blackbox {
+background-color:#1F2833;
+width:30px;
+height:30px;
+padding:10px;
 }
 
 table {
@@ -225,6 +248,17 @@ padding:15px;
 
 .database_form {
     padding:0;
+}
+
+.colourlegend {
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.legendstrings {
+    padding:15px;
 }
 
 input[type="text"] {
