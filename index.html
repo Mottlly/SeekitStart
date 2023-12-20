@@ -47,9 +47,18 @@
                     </div>
 
                     <div id="legend" class="unbordereddiv">
-                        <h2> Green:  Fresh</h2>
-                        <h2> Blue:   About to Spoil (within 3 days)</h2>
-                        <h2> Black:  Spoiled</h2>
+                        <div id="greenlegend" class="colourlegend">
+                            <div id="greenbox"> </div>
+                            <h2 class="legendstrings">:Fresh</h2>
+                        </div>
+                        <div id="bluelegend" class="colourlegend">
+                            <div id="bluebox"></div>
+                            <h2 class="legendstrings"> :About to Spoil (within 3 days)</h2>
+                        </div>
+                        <div id="blacklegend" class="colourlegend">
+                            <div id="blackbox"></div>
+                            <h2 class="legendstrings"> :Spoiled</h2>
+                        </div>
                     </div>
             </div>
             <div id="badness" class="bordereddiv">
@@ -86,6 +95,28 @@
         </table>
 
     </div>
+    <div id="pantryform" class="bordereddiv">
+        <h1 class="heading"> Add New Items Here! </h1>
+        <form id="submitform">
+            <input  id="fname" type="text" placeholder="FoodName" class="pantryform">
+            <input  id="expdate" type="date" placeholder="ExpiryDate"class="pantryform">
+            <input  id="ftype" type="text" placeholder="FoodType"class="pantryform"  list="foodtypes">
+                <datalist id="foodtypes">
+                    <option value="Fruits"></option>
+                    <option value="Vegetables"></option>
+                    <option value="Starches"></option>
+                    <option value="Meats or Seafood"></option>
+                    <option value="Dairy"></option>
+                </datalist>
+            <input  id="numb" type="text" placeholder="Number"class="pantryform">
+            <input  id="owns" type="text" placeholder="Owner"class="pantryform">
+            <input  id ="costpu" type="text" placeholder="CostPerUnit"class="pantryform">
+        </form>
+        <div id="pantryformbut">
+        <button id="submititem" class="button" type="button" onclick="StoreFood()">Submit</button>
+        <button id="clearitem" class="button" type="button" onclick="ClearForm()">Clear</button>
+        </div>
+</div>
 
     <div id="footer" class="bordereddiv">
         <h1> Thank You For Visiting the SeekIt Project!  </h1>

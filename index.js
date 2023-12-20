@@ -1,5 +1,3 @@
-//things I need to make be able do
-// 5. have graphic update on dashboard
 
 var inputArray = [];
 var todayDate = new Date().toLocaleDateString('en-CA');
@@ -13,44 +11,6 @@ function addDays(date, days) {
   }
 
 console.log(soonDate);
-
-
-//This is now not being used, as table is populating from the array, not the form. Will keep for later tho.
-function PublishTab () {
-    let fname = document.getElementById('fname').value;
-    let expdate = document.getElementById('expdate').value;
-    let ftype = document.getElementById('ftype').value;
-    let numb = document.getElementById('numb').value;
-    let owns = document.getElementById('owns').value;
-    let costpu = document.getElementById('costpu').value;
-    let FormToReset = document.getElementById ("submitform");
-
-        let tableElement = document.getElementById('database');
-        let trElement = document.createElement('tr');
-        let tbodyElement = document.createElement('tbody');
-        let fnameEle = document.createElement('td');
-        let expdateEle = document.createElement('td');
-        let ftypeEle = document.createElement('td');
-        let numbEle = document.createElement('td');
-        let ownsEle = document.createElement('td');
-        let costpuEle = document.createElement('td');
-            fnameEle.innerHTML = fname;
-            expdateEle.innerHTML = expdate;
-            ftypeEle.innerHTML = ftype;
-            numbEle.innerHTML = numb;
-            ownsEle.innerHTML = owns;
-            costpuEle.innerHTML = costpu;
-                trElement.appendChild(fnameEle);
-                trElement.appendChild(expdateEle);
-                trElement.appendChild(ftypeEle);
-                trElement.appendChild(numbEle);
-                trElement.appendChild(ownsEle);
-                trElement.appendChild(costpuEle);
-                    tbodyElement.appendChild(trElement);
-                    tableElement.appendChild(tbodyElement);
-
-                    alert ("Item Added!");
-}
 
 function ClearForm () {
     const FormToReset = document.getElementById ("submitform");
@@ -133,7 +93,6 @@ function StoreFood () {
 
             let inputPull = JSON.parse(window.localStorage.getItem("GlobalArray"));
             table = document.getElementById('database');
-    //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = inputPull.length-1; i < inputPull.length; i++)
 {
     var table = document.getElementById('database');
@@ -172,8 +131,6 @@ function StoreFood () {
     }
 }
 
-//legacy code
-
 function loadPantryData () {
 
     const DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
@@ -181,7 +138,6 @@ function loadPantryData () {
     table = document.getElementById("database");
 
     console.log(inputArray);
-    //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
     {
         var table = document.getElementById('database');
@@ -215,7 +171,6 @@ function loadExpiryData1 () {
 
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
     table = document.getElementById("almostexpiredfood");
-    //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
     {
         var table = document.getElementById("almostexpiredfood");
@@ -249,8 +204,6 @@ function loadExpiryData2 () {
 
     let DisplayArray = JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
     table = document.getElementById("expiredfood");
-
-    //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < DisplayArray.length; i++)
     {
         var table = document.getElementById("expiredfood");
@@ -297,7 +250,6 @@ function filterByFType (filtervalue) {
         while (table.rows.length > 1) {
         table.deleteRow(1);
 }
-    //sets the i(X)variable, or else it will only be 1 cell with the whole array
     for(let i = 0; i < filteredpantryitems.length; i++)
     {
         var row = document.createElement("tr");
@@ -533,8 +485,6 @@ function setGradient () {
 console.log(newGrad);
 
 graph.style.background = newGrad;
-
-//console.log(graph.style.background);
 }
 
 
