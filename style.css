@@ -117,22 +117,16 @@ overflow-y:scroll;
 #greenbox {
 background-color:#5CDB95;
 width:30px;
-height:30px;
-padding:10px;
 }
 
 #bluebox {
 background-color:#45A29E;
 width:30px;
-height:30px;
-padding:10px;
 }
 
 #blackbox {
 background-color:#1F2833;
 width:30px;
-height:30px;
-padding:10px;
 }
 
 table {
@@ -254,7 +248,9 @@ padding:15px;
     display:flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    align-items: center; 
+    align-items: center;
+    height:30px;
+    padding:10px; 
 }
 
 .legendstrings {
