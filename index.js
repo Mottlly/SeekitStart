@@ -477,6 +477,12 @@ function setGradient() {
   graph.style.background = newGrad;
 }
 
+function ClearPantry() {
+  const ClearArray = [];
+  localStorage.setItem("GlobalArray", JSON.stringify(ClearArray));
+  loadPantryData();
+}
+
 window.onload = () => {
   loadPantryData();
   loadExpiryData1();
