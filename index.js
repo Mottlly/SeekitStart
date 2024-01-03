@@ -110,7 +110,7 @@ function StoreFood() {
               var cell5 = document.createElement("td");
               var cell6 = document.createElement("td");
               cell1.innerHTML =
-                "<button class='deletebutton'> X </button>" +
+                "<button id='deletebutton' class='deletebutton' onclick='deleteRow (1)'> X </button>" +
                 "  " +
                 inputPull[i].foodname;
               cell2.innerHTML = inputPull[i].expdate;
@@ -154,7 +154,7 @@ function loadPantryData() {
     var cell5 = document.createElement("td");
     var cell6 = document.createElement("td");
     cell1.innerHTML =
-      "<button class='deletebutton'> X </button>" +
+      "<button id='deletebutton' class='deletebutton' onclick='deleteRow (1)'> X </button>" +
       "  " +
       DisplayArray[i].foodname;
     cell2.innerHTML = DisplayArray[i].expdate;
@@ -172,6 +172,10 @@ function loadPantryData() {
 
     console.log(DisplayArray);
   }
+}
+
+function deleteRow(thisrow) {
+  document.getElementById("database").deleteRow(thisrow);
 }
 
 function loadExpiryData1() {
