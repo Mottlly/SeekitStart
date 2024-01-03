@@ -322,6 +322,15 @@ border-radius:10px;
     border-color:#66FCF1;
 }
 
+.deletebutton {
+    background-color:#1F2833;
+    color:#66FCF1;
+    border-style:double;
+    font-size:0.75em;
+    border-radius:10px;
+    border-color:#66FCF1;  
+}
+
 .wideimage {
     max-width: 100%;
     height:5%;

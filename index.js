@@ -65,7 +65,7 @@ function StoreFood() {
           else {
             let object = {};
             let firstKey = "foodname";
-            let firstKeyValue = deleteButton + value1;
+            let firstKeyValue = value1;
             let secondKey = "expdate";
             let secondKeyValue = value2;
             let thirdKey = "ftype";
@@ -109,7 +109,10 @@ function StoreFood() {
               var cell4 = document.createElement("td");
               var cell5 = document.createElement("td");
               var cell6 = document.createElement("td");
-              cell1.innerHTML = inputPull[i].foodname;
+              cell1.innerHTML =
+                "<button class='deletebutton'> X </button>" +
+                "  " +
+                inputPull[i].foodname;
               cell2.innerHTML = inputPull[i].expdate;
               cell3.innerHTML = inputPull[i].ftype;
               cell4.innerHTML = inputPull[i].numb;
@@ -150,7 +153,10 @@ function loadPantryData() {
     var cell4 = document.createElement("td");
     var cell5 = document.createElement("td");
     var cell6 = document.createElement("td");
-    cell1.innerHTML = DisplayArray[i].foodname;
+    cell1.innerHTML =
+      "<button class='deletebutton'> X </button>" +
+      "  " +
+      DisplayArray[i].foodname;
     cell2.innerHTML = DisplayArray[i].expdate;
     cell3.innerHTML = DisplayArray[i].ftype;
     cell4.innerHTML = DisplayArray[i].numb;
