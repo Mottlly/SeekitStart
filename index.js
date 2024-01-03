@@ -20,6 +20,9 @@ function StoreFood() {
   const DisplayArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
 
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "X";
+
   let input1 = document.getElementById("fname");
   let input2 = document.getElementById("expdate");
   let input3 = document.getElementById("ftype");
@@ -58,11 +61,11 @@ function StoreFood() {
         else {
           let ownerstring = String(document.getElementById("owns").value);
           if (!isNaN(ownerstring) && ownerstring.length != 0)
-            alert("you must enter a name in the owner field");
+            alert("you must enter something in the owner field");
           else {
             let object = {};
             let firstKey = "foodname";
-            let firstKeyValue = value1;
+            let firstKeyValue = deleteButton + value1;
             let secondKey = "expdate";
             let secondKeyValue = value2;
             let thirdKey = "ftype";
