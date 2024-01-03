@@ -457,10 +457,7 @@ function setGradient() {
   var expiredPercent = ((expiredTable.rows.length - 1) / totalItems) * 100;
   var closeExpiredPercent =
     ((closeExpiredTable.rows.length - 1) / totalItems) * 100 + expiredPercent;
-  console.log(expiredPercent);
-  console.log(closeExpiredPercent);
   var expiredPercentString = expiredPercent.toString();
-  console.log(expiredPercentString);
   var closeExpiredString = closeExpiredPercent.toString();
   let newGrad =
     "conic-gradient(#1F2833 0.00% " +
