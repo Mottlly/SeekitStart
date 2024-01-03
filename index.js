@@ -481,6 +481,7 @@ function ClearPantry() {
   const ClearArray = [];
   localStorage.setItem("GlobalArray", JSON.stringify(ClearArray));
   loadPantryData();
+  location.reload();
 }
 
 window.onload = () => {
