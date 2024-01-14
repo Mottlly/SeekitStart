@@ -109,9 +109,12 @@ function StoreFood() {
               var cell4 = document.createElement("td");
               var cell5 = document.createElement("td");
               var cell6 = document.createElement("td");
+              let rowid = [i];
               cell1.innerHTML =
-                "<button id='deletebutton' class='deletebutton' onclick='deleteRow (1)'> X </button>" +
-                "  " +
+                "<button id='deletebutton' class='deletebutton' " +
+                "value =" +
+                [i] +
+                "onclick='removeitem(this.value)'> X </button>" +
                 inputPull[i].foodname;
               cell2.innerHTML = inputPull[i].expdate;
               cell3.innerHTML = inputPull[i].ftype;
@@ -125,8 +128,6 @@ function StoreFood() {
               row.appendChild(cell5);
               row.appendChild(cell6);
               table.appendChild(row);
-
-              console.log(inputPull);
 
               alert("Item Added!");
             }
@@ -153,10 +154,14 @@ function loadPantryData() {
     var cell4 = document.createElement("td");
     var cell5 = document.createElement("td");
     var cell6 = document.createElement("td");
+    var rowid = [i];
     cell1.innerHTML =
-      "<button id='deletebutton' class='deletebutton' onclick='deleteRow (1)'> X </button>" +
-      "  " +
+      "<button id=deletebutton class=deletebutton value =" +
+      [i] +
+      " " +
+      "onclick='removeitem(this.value)'> X </button>" +
       DisplayArray[i].foodname;
+    console.log(cell1.innerHTML);
     cell2.innerHTML = DisplayArray[i].expdate;
     cell3.innerHTML = DisplayArray[i].ftype;
     cell4.innerHTML = DisplayArray[i].numb;
@@ -169,13 +174,16 @@ function loadPantryData() {
     row.appendChild(cell5);
     row.appendChild(cell6);
     table.appendChild(row);
-
     console.log(DisplayArray);
   }
 }
 
-function deleteRow(thisrow) {
-  document.getElementById("database").deleteRow(thisrow);
+function removeitem(row) {
+  const SmallerArray =
+    JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
+  SmallerArray.splice(row, 1);
+  localStorage.setItem("GlobalArray", JSON.stringify(SmallerArray));
+  loadPantryData();
 }
 
 function loadExpiryData1() {
