@@ -111,11 +111,11 @@ function StoreFood() {
               var cell6 = document.createElement("td");
               let rowid = [i];
               cell1.innerHTML =
-                "<button id='deletebutton' class='deletebutton' " +
-                "value =" +
+                "<button id=deletebutton class=deletebutton value =" +
                 [i] +
+                " " +
                 "onclick='removeitem(this.value)'> X </button>" +
-                inputPull[i].foodname;
+                DisplayArray[i].foodname;
               cell2.innerHTML = inputPull[i].expdate;
               cell3.innerHTML = inputPull[i].ftype;
               cell4.innerHTML = inputPull[i].numb;
@@ -143,7 +143,6 @@ function loadPantryData() {
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
   let inputArray = DisplayArray;
   table = document.getElementById("database");
-
   console.log(inputArray);
   for (let i = 0; i < DisplayArray.length; i++) {
     var table = document.getElementById("database");
@@ -181,9 +180,9 @@ function loadPantryData() {
 function removeitem(row) {
   const SmallerArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
+  ClearPantry();
   SmallerArray.splice(row, 1);
   localStorage.setItem("GlobalArray", JSON.stringify(SmallerArray));
-  loadPantryData();
 }
 
 function loadExpiryData1() {
