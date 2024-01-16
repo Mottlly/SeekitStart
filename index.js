@@ -141,39 +141,26 @@ function StoreFood() {
 function loadPantryData() {
   const DisplayArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
-  let inputArray = DisplayArray;
   table = document.getElementById("database");
-  console.log(inputArray);
   for (let i = 0; i < DisplayArray.length; i++) {
     var table = document.getElementById("database");
     var row = document.createElement("tr");
-    var cell1 = document.createElement("td");
-    var cell2 = document.createElement("td");
-    var cell3 = document.createElement("td");
-    var cell4 = document.createElement("td");
-    var cell5 = document.createElement("td");
-    var cell6 = document.createElement("td");
-    var rowid = [i];
-    cell1.innerHTML =
-      "<button id=deletebutton class=deletebutton value =" +
-      [i] +
-      " " +
-      "onclick='removeitem(this.value)'> X </button>" +
-      DisplayArray[i].foodname;
-    console.log(cell1.innerHTML);
-    cell2.innerHTML = DisplayArray[i].expdate;
-    cell3.innerHTML = DisplayArray[i].ftype;
-    cell4.innerHTML = DisplayArray[i].numb;
-    cell5.innerHTML = DisplayArray[i].owns;
-    cell6.innerHTML = DisplayArray[i].costpu;
-    row.appendChild(cell1);
-    row.appendChild(cell2);
-    row.appendChild(cell3);
-    row.appendChild(cell4);
-    row.appendChild(cell5);
-    row.appendChild(cell6);
-    table.appendChild(row);
-    console.log(DisplayArray);
+    for (let j = 0; j < Object.keys(DisplayArray[i]).length; j++) {
+      var cell = document.createElement("td");
+      if (Object.keys(DisplayArray[i])[j] === "foodname") {
+        cell.innerHTML =
+          "<button id=deletebutton class=deletebutton value =" +
+          [i] +
+          " " +
+          "onclick='removeitem(this.value)'> X </button>" +
+          DisplayArray[i].foodname;
+        row.appendChild(cell);
+      } else {
+        cell.innerHTML = Object.values(DisplayArray[i])[j];
+        row.appendChild(cell);
+        table.appendChild(row);
+      }
+    }
   }
 }
 
