@@ -226,8 +226,6 @@ function filterByFType(filtervalue) {
     const filteredpantryitems = DisplayArray.filter(
       (pantryitem) => pantryitem.ftype === filtervalue
     );
-    console.log(filteredpantryitems);
-    //now rebuild table from this array
     let table = document.getElementById("database");
 
     while (table.rows.length > 1) {
@@ -269,7 +267,7 @@ function sortbydate(sortvalue) {
     loadPantryData();
   } else {
     if (sortvalue === "Newest_To_Oldest") {
-      let orderedpantryitemsdate = DisplayArray.sort(function (a, b) {
+      let filteredpantryitems = DisplayArray.sort(function (a, b) {
         // Turn your strings into dates, and then subtract them
         // to get a value that is either negative, positive, or zero.
         return new Date(b.expdate) - new Date(a.expdate);
@@ -280,7 +278,7 @@ function sortbydate(sortvalue) {
       while (table.rows.length > 1) {
         table.deleteRow(1);
       }
-      for (let i = 0; i < orderedpantryitemsdate.length; i++) {
+      for (let i = 0; i < filteredpantryitems.length; i++) {
         var row = document.createElement("tr");
         var cell1 = document.createElement("td");
         var cell2 = document.createElement("td");
@@ -288,12 +286,12 @@ function sortbydate(sortvalue) {
         var cell4 = document.createElement("td");
         var cell5 = document.createElement("td");
         var cell6 = document.createElement("td");
-        cell1.innerHTML = orderedpantryitemsdate[i].foodname;
-        cell2.innerHTML = orderedpantryitemsdate[i].expdate;
-        cell3.innerHTML = orderedpantryitemsdate[i].ftype;
-        cell4.innerHTML = orderedpantryitemsdate[i].numb;
-        cell5.innerHTML = orderedpantryitemsdate[i].owns;
-        cell6.innerHTML = orderedpantryitemsdate[i].costpu;
+        cell1.innerHTML = filteredpantryitems[i].foodname;
+        cell2.innerHTML = filteredpantryitems[i].expdate;
+        cell3.innerHTML = filteredpantryitems[i].ftype;
+        cell4.innerHTML = filteredpantryitems[i].numb;
+        cell5.innerHTML = filteredpantryitems[i].owns;
+        cell6.innerHTML = filteredpantryitems[i].costpu;
         row.appendChild(cell1);
         row.appendChild(cell2);
         row.appendChild(cell3);
@@ -302,10 +300,9 @@ function sortbydate(sortvalue) {
         row.appendChild(cell6);
         table.appendChild(row);
       }
-      console.log(orderedpantryitemsdate);
     }
     if (sortvalue === "Oldest_To_Newest") {
-      let orderedpantryitemsdate = DisplayArray.sort(function (a, b) {
+      let filteredpantryitems = DisplayArray.sort(function (a, b) {
         return new Date(a.expdate) - new Date(b.expdate);
       });
 
@@ -314,7 +311,7 @@ function sortbydate(sortvalue) {
       while (table.rows.length > 1) {
         table.deleteRow(1);
       }
-      for (let i = 0; i < orderedpantryitemsdate.length; i++) {
+      for (let i = 0; i < filteredpantryitems.length; i++) {
         var row = document.createElement("tr");
         var cell1 = document.createElement("td");
         var cell2 = document.createElement("td");
@@ -322,12 +319,12 @@ function sortbydate(sortvalue) {
         var cell4 = document.createElement("td");
         var cell5 = document.createElement("td");
         var cell6 = document.createElement("td");
-        cell1.innerHTML = orderedpantryitemsdate[i].foodname;
-        cell2.innerHTML = orderedpantryitemsdate[i].expdate;
-        cell3.innerHTML = orderedpantryitemsdate[i].ftype;
-        cell4.innerHTML = orderedpantryitemsdate[i].numb;
-        cell5.innerHTML = orderedpantryitemsdate[i].owns;
-        cell6.innerHTML = orderedpantryitemsdate[i].costpu;
+        cell1.innerHTML = filteredpantryitems[i].foodname;
+        cell2.innerHTML = filteredpantryitems[i].expdate;
+        cell3.innerHTML = filteredpantryitems[i].ftype;
+        cell4.innerHTML = filteredpantryitems[i].numb;
+        cell5.innerHTML = filteredpantryitems[i].owns;
+        cell6.innerHTML = filteredpantryitems[i].costpu;
         row.appendChild(cell1);
         row.appendChild(cell2);
         row.appendChild(cell3);
@@ -336,7 +333,6 @@ function sortbydate(sortvalue) {
         row.appendChild(cell6);
         table.appendChild(row);
       }
-      console.log(orderedpantryitemsdate);
     }
   }
 }
@@ -352,7 +348,7 @@ function sortbyname(sortvalue) {
     loadPantryData();
   } else {
     if (sortvalue === "A_To_Z") {
-      let alphaorderedpantry = DisplayArray.sort(function (a, b) {
+      let filteredpantryitems = DisplayArray.sort(function (a, b) {
         if (a.foodname < b.foodname) {
           return -1;
         }
@@ -365,7 +361,7 @@ function sortbyname(sortvalue) {
       while (table.rows.length > 1) {
         table.deleteRow(1);
       }
-      for (let i = 0; i < alphaorderedpantry.length; i++) {
+      for (let i = 0; i < filteredpantryitems.length; i++) {
         var row = document.createElement("tr");
         var cell1 = document.createElement("td");
         var cell2 = document.createElement("td");
@@ -373,12 +369,12 @@ function sortbyname(sortvalue) {
         var cell4 = document.createElement("td");
         var cell5 = document.createElement("td");
         var cell6 = document.createElement("td");
-        cell1.innerHTML = alphaorderedpantry[i].foodname;
-        cell2.innerHTML = alphaorderedpantry[i].expdate;
-        cell3.innerHTML = alphaorderedpantry[i].ftype;
-        cell4.innerHTML = alphaorderedpantry[i].numb;
-        cell5.innerHTML = alphaorderedpantry[i].owns;
-        cell6.innerHTML = alphaorderedpantry[i].costpu;
+        cell1.innerHTML = filteredpantryitems[i].foodname;
+        cell2.innerHTML = filteredpantryitems[i].expdate;
+        cell3.innerHTML = filteredpantryitems[i].ftype;
+        cell4.innerHTML = filteredpantryitems[i].numb;
+        cell5.innerHTML = filteredpantryitems[i].owns;
+        cell6.innerHTML = filteredpantryitems[i].costpu;
         row.appendChild(cell1);
         row.appendChild(cell2);
         row.appendChild(cell3);
@@ -387,10 +383,9 @@ function sortbyname(sortvalue) {
         row.appendChild(cell6);
         table.appendChild(row);
       }
-      console.log(alphaorderedpantry);
     }
     if (sortvalue === "Z_To_A") {
-      let alphaorderedpantry = DisplayArray.sort(function (a, b) {
+      let filteredpantryitems = DisplayArray.sort(function (a, b) {
         if (a.foodname > b.foodname) {
           return -1;
         }
@@ -403,7 +398,7 @@ function sortbyname(sortvalue) {
       while (table.rows.length > 1) {
         table.deleteRow(1);
       }
-      for (let i = 0; i < alphaorderedpantry.length; i++) {
+      for (let i = 0; i < filteredpantryitems.length; i++) {
         var row = document.createElement("tr");
         var cell1 = document.createElement("td");
         var cell2 = document.createElement("td");
@@ -411,12 +406,12 @@ function sortbyname(sortvalue) {
         var cell4 = document.createElement("td");
         var cell5 = document.createElement("td");
         var cell6 = document.createElement("td");
-        cell1.innerHTML = alphaorderedpantry[i].foodname;
-        cell2.innerHTML = alphaorderedpantry[i].expdate;
-        cell3.innerHTML = alphaorderedpantry[i].ftype;
-        cell4.innerHTML = alphaorderedpantry[i].numb;
-        cell5.innerHTML = alphaorderedpantry[i].owns;
-        cell6.innerHTML = alphaorderedpantry[i].costpu;
+        cell1.innerHTML = filteredpantryitems[i].foodname;
+        cell2.innerHTML = filteredpantryitems[i].expdate;
+        cell3.innerHTML = filteredpantryitems[i].ftype;
+        cell4.innerHTML = filteredpantryitems[i].numb;
+        cell5.innerHTML = filteredpantryitems[i].owns;
+        cell6.innerHTML = filteredpantryitems[i].costpu;
         row.appendChild(cell1);
         row.appendChild(cell2);
         row.appendChild(cell3);
@@ -425,7 +420,6 @@ function sortbyname(sortvalue) {
         row.appendChild(cell6);
         table.appendChild(row);
       }
-      console.log(alphaorderedpantry);
     }
   }
 }
