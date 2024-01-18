@@ -458,6 +458,8 @@ function ClearPantry() {
   location.reload();
 }
 
+function RebuildTable() {}
+
 window.onload = () => {
   loadPantryData();
   loadExpiryData1();
