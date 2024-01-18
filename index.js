@@ -202,26 +202,13 @@ function loadExpiryData2() {
   for (let i = 0; i < DisplayArray.length; i++) {
     var table = document.getElementById("expiredfood");
     var row = document.createElement("tr");
-    var cell1 = document.createElement("td");
-    var cell2 = document.createElement("td");
-    var cell3 = document.createElement("td");
-    var cell4 = document.createElement("td");
-    var cell5 = document.createElement("td");
-    var cell6 = document.createElement("td");
-    cell1.innerHTML = DisplayArray[i].foodname;
-    cell2.innerHTML = DisplayArray[i].expdate;
-    cell3.innerHTML = DisplayArray[i].ftype;
-    cell4.innerHTML = DisplayArray[i].numb;
-    cell5.innerHTML = DisplayArray[i].owns;
-    cell6.innerHTML = DisplayArray[i].costpu;
     if (DisplayArray[i].expdate < todayDate) {
-      row.appendChild(cell1);
-      row.appendChild(cell2);
-      row.appendChild(cell3);
-      row.appendChild(cell4);
-      row.appendChild(cell5);
-      row.appendChild(cell6);
-      table.appendChild(row);
+      for (let j = 0; j < Object.keys(DisplayArray[i]).length; j++) {
+        var cell = document.createElement("td");
+        cell.innerHTML = Object.values(DisplayArray[i])[j];
+        row.appendChild(cell);
+        table.appendChild(row);
+      }
     }
   }
 }
