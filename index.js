@@ -226,33 +226,7 @@ function filterByFType(filtervalue) {
     const filteredpantryitems = DisplayArray.filter(
       (pantryitem) => pantryitem.ftype === filtervalue
     );
-    let table = document.getElementById("database");
-
-    while (table.rows.length > 1) {
-      table.deleteRow(1);
-    }
-    for (let i = 0; i < filteredpantryitems.length; i++) {
-      var row = document.createElement("tr");
-      var cell1 = document.createElement("td");
-      var cell2 = document.createElement("td");
-      var cell3 = document.createElement("td");
-      var cell4 = document.createElement("td");
-      var cell5 = document.createElement("td");
-      var cell6 = document.createElement("td");
-      cell1.innerHTML = filteredpantryitems[i].foodname;
-      cell2.innerHTML = filteredpantryitems[i].expdate;
-      cell3.innerHTML = filteredpantryitems[i].ftype;
-      cell4.innerHTML = filteredpantryitems[i].numb;
-      cell5.innerHTML = filteredpantryitems[i].owns;
-      cell6.innerHTML = filteredpantryitems[i].costpu;
-      row.appendChild(cell1);
-      row.appendChild(cell2);
-      row.appendChild(cell3);
-      row.appendChild(cell4);
-      row.appendChild(cell5);
-      row.appendChild(cell6);
-      table.appendChild(row);
-    }
+    RebuildTable(filteredpantryitems);
   }
 }
 
@@ -268,71 +242,17 @@ function sortbydate(sortvalue) {
   } else {
     if (sortvalue === "Newest_To_Oldest") {
       let filteredpantryitems = DisplayArray.sort(function (a, b) {
-        // Turn your strings into dates, and then subtract them
-        // to get a value that is either negative, positive, or zero.
         return new Date(b.expdate) - new Date(a.expdate);
       });
 
       let table = document.getElementById("database");
-
-      while (table.rows.length > 1) {
-        table.deleteRow(1);
-      }
-      for (let i = 0; i < filteredpantryitems.length; i++) {
-        var row = document.createElement("tr");
-        var cell1 = document.createElement("td");
-        var cell2 = document.createElement("td");
-        var cell3 = document.createElement("td");
-        var cell4 = document.createElement("td");
-        var cell5 = document.createElement("td");
-        var cell6 = document.createElement("td");
-        cell1.innerHTML = filteredpantryitems[i].foodname;
-        cell2.innerHTML = filteredpantryitems[i].expdate;
-        cell3.innerHTML = filteredpantryitems[i].ftype;
-        cell4.innerHTML = filteredpantryitems[i].numb;
-        cell5.innerHTML = filteredpantryitems[i].owns;
-        cell6.innerHTML = filteredpantryitems[i].costpu;
-        row.appendChild(cell1);
-        row.appendChild(cell2);
-        row.appendChild(cell3);
-        row.appendChild(cell4);
-        row.appendChild(cell5);
-        row.appendChild(cell6);
-        table.appendChild(row);
-      }
+      RebuildTable(filteredpantryitems);
     }
     if (sortvalue === "Oldest_To_Newest") {
       let filteredpantryitems = DisplayArray.sort(function (a, b) {
         return new Date(a.expdate) - new Date(b.expdate);
       });
-
-      let table = document.getElementById("database");
-
-      while (table.rows.length > 1) {
-        table.deleteRow(1);
-      }
-      for (let i = 0; i < filteredpantryitems.length; i++) {
-        var row = document.createElement("tr");
-        var cell1 = document.createElement("td");
-        var cell2 = document.createElement("td");
-        var cell3 = document.createElement("td");
-        var cell4 = document.createElement("td");
-        var cell5 = document.createElement("td");
-        var cell6 = document.createElement("td");
-        cell1.innerHTML = filteredpantryitems[i].foodname;
-        cell2.innerHTML = filteredpantryitems[i].expdate;
-        cell3.innerHTML = filteredpantryitems[i].ftype;
-        cell4.innerHTML = filteredpantryitems[i].numb;
-        cell5.innerHTML = filteredpantryitems[i].owns;
-        cell6.innerHTML = filteredpantryitems[i].costpu;
-        row.appendChild(cell1);
-        row.appendChild(cell2);
-        row.appendChild(cell3);
-        row.appendChild(cell4);
-        row.appendChild(cell5);
-        row.appendChild(cell6);
-        table.appendChild(row);
-      }
+      RebuildTable(filteredpantryitems);
     }
   }
 }
@@ -356,33 +276,7 @@ function sortbyname(sortvalue) {
           return 1;
         } else return 0;
       });
-
-      let table = document.getElementById("database");
-      while (table.rows.length > 1) {
-        table.deleteRow(1);
-      }
-      for (let i = 0; i < filteredpantryitems.length; i++) {
-        var row = document.createElement("tr");
-        var cell1 = document.createElement("td");
-        var cell2 = document.createElement("td");
-        var cell3 = document.createElement("td");
-        var cell4 = document.createElement("td");
-        var cell5 = document.createElement("td");
-        var cell6 = document.createElement("td");
-        cell1.innerHTML = filteredpantryitems[i].foodname;
-        cell2.innerHTML = filteredpantryitems[i].expdate;
-        cell3.innerHTML = filteredpantryitems[i].ftype;
-        cell4.innerHTML = filteredpantryitems[i].numb;
-        cell5.innerHTML = filteredpantryitems[i].owns;
-        cell6.innerHTML = filteredpantryitems[i].costpu;
-        row.appendChild(cell1);
-        row.appendChild(cell2);
-        row.appendChild(cell3);
-        row.appendChild(cell4);
-        row.appendChild(cell5);
-        row.appendChild(cell6);
-        table.appendChild(row);
-      }
+      RebuildTable(filteredpantryitems);
     }
     if (sortvalue === "Z_To_A") {
       let filteredpantryitems = DisplayArray.sort(function (a, b) {
@@ -393,33 +287,7 @@ function sortbyname(sortvalue) {
           return 1;
         } else return 0;
       });
-
-      let table = document.getElementById("database");
-      while (table.rows.length > 1) {
-        table.deleteRow(1);
-      }
-      for (let i = 0; i < filteredpantryitems.length; i++) {
-        var row = document.createElement("tr");
-        var cell1 = document.createElement("td");
-        var cell2 = document.createElement("td");
-        var cell3 = document.createElement("td");
-        var cell4 = document.createElement("td");
-        var cell5 = document.createElement("td");
-        var cell6 = document.createElement("td");
-        cell1.innerHTML = filteredpantryitems[i].foodname;
-        cell2.innerHTML = filteredpantryitems[i].expdate;
-        cell3.innerHTML = filteredpantryitems[i].ftype;
-        cell4.innerHTML = filteredpantryitems[i].numb;
-        cell5.innerHTML = filteredpantryitems[i].owns;
-        cell6.innerHTML = filteredpantryitems[i].costpu;
-        row.appendChild(cell1);
-        row.appendChild(cell2);
-        row.appendChild(cell3);
-        row.appendChild(cell4);
-        row.appendChild(cell5);
-        row.appendChild(cell6);
-        table.appendChild(row);
-      }
+      RebuildTable(filteredpantryitems);
     }
   }
 }
@@ -458,7 +326,34 @@ function ClearPantry() {
   location.reload();
 }
 
-function RebuildTable() {}
+function RebuildTable(filtereditems) {
+  let table = document.getElementById("database");
+  while (table.rows.length > 1) {
+    table.deleteRow(1);
+  }
+  for (let i = 0; i < filtereditems.length; i++) {
+    var row = document.createElement("tr");
+    var cell1 = document.createElement("td");
+    var cell2 = document.createElement("td");
+    var cell3 = document.createElement("td");
+    var cell4 = document.createElement("td");
+    var cell5 = document.createElement("td");
+    var cell6 = document.createElement("td");
+    cell1.innerHTML = filtereditems[i].foodname;
+    cell2.innerHTML = filtereditems[i].expdate;
+    cell3.innerHTML = filtereditems[i].ftype;
+    cell4.innerHTML = filtereditems[i].numb;
+    cell5.innerHTML = filtereditems[i].owns;
+    cell6.innerHTML = filtereditems[i].costpu;
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+    row.appendChild(cell3);
+    row.appendChild(cell4);
+    row.appendChild(cell5);
+    row.appendChild(cell6);
+    table.appendChild(row);
+  }
+}
 
 window.onload = () => {
   loadPantryData();
