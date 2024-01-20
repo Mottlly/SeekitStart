@@ -109,7 +109,6 @@ function StoreFood() {
               var cell4 = document.createElement("td");
               var cell5 = document.createElement("td");
               var cell6 = document.createElement("td");
-              let rowid = [i];
               cell1.innerHTML =
                 "<button id=deletebutton class=deletebutton value =" +
                 [i] +
@@ -339,7 +338,12 @@ function RebuildTable(filtereditems) {
     var cell4 = document.createElement("td");
     var cell5 = document.createElement("td");
     var cell6 = document.createElement("td");
-    cell1.innerHTML = filtereditems[i].foodname;
+    cell1.innerHTML =
+      "<button id=deletebutton class=deletebutton value =" +
+      [i] +
+      " " +
+      "onclick='removeitem(this.value)'> X </button>" +
+      filtereditems[i].foodname;
     cell2.innerHTML = filtereditems[i].expdate;
     cell3.innerHTML = filtereditems[i].ftype;
     cell4.innerHTML = filtereditems[i].numb;
