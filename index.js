@@ -200,8 +200,8 @@ function filterByFType(filtervalue) {
 function sortbydate(sortvalue) {
   let DisplayArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
+  let table = document.getElementById("database");
   if (sortvalue === "Nil") {
-    let table = document.getElementById("database");
     while (table.rows.length > 1) {
       table.deleteRow(1);
     }
@@ -212,7 +212,6 @@ function sortbydate(sortvalue) {
         return new Date(b.expdate) - new Date(a.expdate);
       });
 
-      let table = document.getElementById("database");
       RebuildTable(filteredpantryitems);
     }
     if (sortvalue === "Oldest_To_Newest") {
