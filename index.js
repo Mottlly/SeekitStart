@@ -99,37 +99,8 @@ function StoreFood() {
             let inputPull = JSON.parse(
               window.localStorage.getItem("GlobalArray")
             );
-            table = document.getElementById("database");
-            for (let i = inputPull.length - 1; i < inputPull.length; i++) {
-              var table = document.getElementById("database");
-              var row = document.createElement("tr");
-              var cell1 = document.createElement("td");
-              var cell2 = document.createElement("td");
-              var cell3 = document.createElement("td");
-              var cell4 = document.createElement("td");
-              var cell5 = document.createElement("td");
-              var cell6 = document.createElement("td");
-              cell1.innerHTML =
-                "<button id=deletebutton class=deletebutton value =" +
-                [i] +
-                " " +
-                "onclick='removeitem(this.value)'> X </button>" +
-                DisplayArray[i].foodname;
-              cell2.innerHTML = inputPull[i].expdate;
-              cell3.innerHTML = inputPull[i].ftype;
-              cell4.innerHTML = inputPull[i].numb;
-              cell5.innerHTML = inputPull[i].owns;
-              cell6.innerHTML = inputPull[i].costpu;
-              row.appendChild(cell1);
-              row.appendChild(cell2);
-              row.appendChild(cell3);
-              row.appendChild(cell4);
-              row.appendChild(cell5);
-              row.appendChild(cell6);
-              table.appendChild(row);
-
-              alert("Item Added!");
-            }
+            RebuildTable(inputPull);
+            alert("Item Added!");
           }
         }
       }
