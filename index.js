@@ -2,14 +2,10 @@ var inputArray = [];
 var todayDate = new Date().toLocaleDateString("en-CA");
 var soonDate = addDays(new Date(), 3).toLocaleDateString("en-CA");
 
-console.log(todayDate);
-
 function addDays(date, days) {
   date.setDate(date.getDate() + days);
   return date;
 }
-
-console.log(soonDate);
 
 function ClearForm() {
   const FormToReset = document.getElementById("submitform");
@@ -92,7 +88,6 @@ function StoreFood() {
 
             console.log(inputArray);
 
-            //clearformfunction next
             const FormToReset = document.getElementById("submitform");
             FormToReset.reset();
 
@@ -168,16 +163,18 @@ function loadExpiryData1() {
 function loadExpiryData2() {
   let DisplayArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
-  table = document.getElementById("expiredfood");
-  for (let i = 0; i < DisplayArray.length; i++) {
-    var table = document.getElementById("expiredfood");
-    var row = document.createElement("tr");
-    if (DisplayArray[i].expdate < todayDate) {
-      for (let j = 0; j < Object.keys(DisplayArray[i]).length; j++) {
-        var cell = document.createElement("td");
-        cell.innerHTML = Object.values(DisplayArray[i])[j];
-        row.appendChild(cell);
-        table.appendChild(row);
+  if (document.getElementById("expiredfood") != null) {
+    table = document.getElementById("expiredfood");
+    for (let i = 0; i < DisplayArray.length; i++) {
+      var table = document.getElementById("expiredfood");
+      var row = document.createElement("tr");
+      if (DisplayArray[i].expdate < todayDate) {
+        for (let j = 0; j < Object.keys(DisplayArray[i]).length; j++) {
+          var cell = document.createElement("td");
+          cell.innerHTML = Object.values(DisplayArray[i])[j];
+          row.appendChild(cell);
+          table.appendChild(row);
+        }
       }
     }
   }
@@ -263,30 +260,32 @@ function sortbyname(sortvalue) {
 }
 
 function setGradient() {
-  var graph = document.getElementById("pie");
-  var expiredTable = document.getElementById("expiredfood");
-  var closeExpiredTable = document.getElementById("almostexpiredfood");
-  var pantryTable = document.getElementById("database");
+  if (document.getElementById("pie") != null) {
+    var graph = document.getElementById("pie");
+    var expiredTable = document.getElementById("expiredfood");
+    var closeExpiredTable = document.getElementById("almostexpiredfood");
+    var pantryTable = document.getElementById("database");
 
-  var totalItems = pantryTable.rows.length - 1;
-  var expiredPercent = ((expiredTable.rows.length - 1) / totalItems) * 100;
-  var closeExpiredPercent =
-    ((closeExpiredTable.rows.length - 1) / totalItems) * 100 + expiredPercent;
-  var expiredPercentString = expiredPercent.toString();
-  var closeExpiredString = closeExpiredPercent.toString();
-  let newGrad =
-    "conic-gradient(#1F2833 0.00% " +
-    expiredPercentString +
-    "%, #45A29E " +
-    expiredPercentString +
-    "% " +
-    closeExpiredString +
-    "%, #5CDB95 " +
-    closeExpiredString +
-    "% 100.00% )";
-  console.log(newGrad);
+    var totalItems = pantryTable.rows.length - 1;
+    var expiredPercent = ((expiredTable.rows.length - 1) / totalItems) * 100;
+    var closeExpiredPercent =
+      ((closeExpiredTable.rows.length - 1) / totalItems) * 100 + expiredPercent;
+    var expiredPercentString = expiredPercent.toString();
+    var closeExpiredString = closeExpiredPercent.toString();
+    let newGrad =
+      "conic-gradient(#1F2833 0.00% " +
+      expiredPercentString +
+      "%, #45A29E " +
+      expiredPercentString +
+      "% " +
+      closeExpiredString +
+      "%, #5CDB95 " +
+      closeExpiredString +
+      "% 100.00% )";
+    console.log(newGrad);
 
-  graph.style.background = newGrad;
+    graph.style.background = newGrad;
+  }
 }
 
 function ClearPantry() {
