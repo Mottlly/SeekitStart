@@ -303,30 +303,22 @@ function RebuildTable(filtereditems) {
   }
   for (let i = 0; i < filtereditems.length; i++) {
     var row = document.createElement("tr");
-    var cell1 = document.createElement("td");
-    var cell2 = document.createElement("td");
-    var cell3 = document.createElement("td");
-    var cell4 = document.createElement("td");
-    var cell5 = document.createElement("td");
-    var cell6 = document.createElement("td");
-    cell1.innerHTML =
-      "<button id=deletebutton class=deletebutton value =" +
-      [i] +
-      " " +
-      "onclick='removeitem(this.value)'> X </button>" +
-      filtereditems[i].foodname;
-    cell2.innerHTML = filtereditems[i].expdate;
-    cell3.innerHTML = filtereditems[i].ftype;
-    cell4.innerHTML = filtereditems[i].numb;
-    cell5.innerHTML = filtereditems[i].owns;
-    cell6.innerHTML = filtereditems[i].costpu;
-    row.appendChild(cell1);
-    row.appendChild(cell2);
-    row.appendChild(cell3);
-    row.appendChild(cell4);
-    row.appendChild(cell5);
-    row.appendChild(cell6);
-    table.appendChild(row);
+    for (let j = 0; j < Object.keys(filtereditems[i]).length; j++) {
+      var cell = document.createElement("td");
+      if (Object.keys(filtereditems[i])[j] === "foodname") {
+        cell.innerHTML =
+          "<button id=deletebutton class=deletebutton value =" +
+          [i] +
+          " " +
+          "onclick='removeitem(this.value)'> X </button>" +
+          filtereditems[i].foodname;
+        row.appendChild(cell);
+      } else {
+        cell.innerHTML = Object.values(filtereditems[i])[j];
+        row.appendChild(cell);
+        table.appendChild(row);
+      }
+    }
   }
 }
 
