@@ -79,14 +79,11 @@ function StoreFood() {
             object[fourthKey] = fourthKeyValue;
             object[fifthKey] = fifthKeyValue;
             object[sixthKey] = sixthKeyValue;
-            console.log(object);
 
             let inputArray = DisplayArray;
             inputArray.push(object);
 
             localStorage.setItem("GlobalArray", JSON.stringify(inputArray));
-
-            console.log(inputArray);
 
             const FormToReset = document.getElementById("submitform");
             FormToReset.reset();
