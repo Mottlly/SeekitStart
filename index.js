@@ -137,20 +137,22 @@ function removeitem(row) {
 function loadExpiryData1() {
   let DisplayArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
-  table = document.getElementById("almostexpiredfood");
-  for (let i = 0; i < DisplayArray.length; i++) {
-    var table = document.getElementById("almostexpiredfood");
-    var row = document.createElement("tr");
-    if (
-      DisplayArray[i].expdate > todayDate &&
-      DisplayArray[i].expdate < soonDate
-    ) {
-      for (let j = 0; j < Object.keys(DisplayArray[i]).length; j++) {
-        var cell = document.createElement("td");
-        cell.innerHTML = Object.values(DisplayArray[i])[j];
-        {
-          row.appendChild(cell);
-          table.appendChild(row);
+  if (document.getElementById("almostexpiredfood") != null) {
+    table = document.getElementById("almostexpiredfood");
+    for (let i = 0; i < DisplayArray.length; i++) {
+      var table = document.getElementById("almostexpiredfood");
+      var row = document.createElement("tr");
+      if (
+        DisplayArray[i].expdate > todayDate &&
+        DisplayArray[i].expdate < soonDate
+      ) {
+        for (let j = 0; j < Object.keys(DisplayArray[i]).length; j++) {
+          var cell = document.createElement("td");
+          cell.innerHTML = Object.values(DisplayArray[i])[j];
+          {
+            row.appendChild(cell);
+            table.appendChild(row);
+          }
         }
       }
     }
