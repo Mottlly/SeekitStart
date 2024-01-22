@@ -319,9 +319,30 @@ function RebuildTable(filtereditems) {
   }
 }
 
+function CallEdamam() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.open(
+    "GET",
+    "https://api.edamam.com/api/recipes/v2?app_id=05567a42&app_key=b62303535d6536769387714d37717b61&type=public&q=chicken",
+    true
+  );
+  xhttp.send();
+  xhttp.onload = () => {
+    if (xhttp.readyState === xhttp.DONE) {
+      console.log(xhttp.status);
+      console.log(xhttp.response);
+      console.log(xhttp.responseText);
+    }
+  };
+}
+
+//https://example.com/path/to/page?name=ferret&color=purple
+// API ID: 05567a42
+
 window.onload = () => {
   loadPantryData();
   loadExpiryData1();
   loadExpiryData2();
   setGradient();
+  CallEdamam();
 };
