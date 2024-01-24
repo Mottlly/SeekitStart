@@ -103,24 +103,26 @@ function StoreFood() {
 function loadPantryData() {
   const DisplayArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
-  table = document.getElementById("database");
-  for (let i = 0; i < DisplayArray.length; i++) {
-    var table = document.getElementById("database");
-    var row = document.createElement("tr");
-    for (let j = 0; j < Object.keys(DisplayArray[i]).length; j++) {
-      var cell = document.createElement("td");
-      if (Object.keys(DisplayArray[i])[j] === "foodname") {
-        cell.innerHTML =
-          "<button id=deletebutton class=deletebutton value =" +
-          [i] +
-          " " +
-          "onclick='removeitem(this.value)'> X </button>" +
-          DisplayArray[i].foodname;
-        row.appendChild(cell);
-      } else {
-        cell.innerHTML = Object.values(DisplayArray[i])[j];
-        row.appendChild(cell);
-        table.appendChild(row);
+  if (document.getElementById("database") != null) {
+    table = document.getElementById("database");
+    for (let i = 0; i < DisplayArray.length; i++) {
+      var table = document.getElementById("database");
+      var row = document.createElement("tr");
+      for (let j = 0; j < Object.keys(DisplayArray[i]).length; j++) {
+        var cell = document.createElement("td");
+        if (Object.keys(DisplayArray[i])[j] === "foodname") {
+          cell.innerHTML =
+            "<button id=deletebutton class=deletebutton value =" +
+            [i] +
+            " " +
+            "onclick='removeitem(this.value)'> X </button>" +
+            DisplayArray[i].foodname;
+          row.appendChild(cell);
+        } else {
+          cell.innerHTML = Object.values(DisplayArray[i])[j];
+          row.appendChild(cell);
+          table.appendChild(row);
+        }
       }
     }
   }
@@ -321,19 +323,21 @@ function RebuildTable(filtereditems) {
 
 function CallEdamam() {
   var xhttp = new XMLHttpRequest();
-  xhttp.open(
-    "GET",
-    "https://api.edamam.com/api/recipes/v2?app_id=05567a42&app_key=b62303535d6536769387714d37717b61&type=public&q=chicken",
-    true
-  );
-  xhttp.send();
-  xhttp.onload = () => {
-    if (xhttp.readyState === xhttp.DONE) {
-      console.log(xhttp.status);
-      console.log(xhttp.response);
-      console.log(xhttp.responseText);
-    }
-  };
+  if (document.getElementById("recipes") != null) {
+    xhttp.open(
+      "GET",
+      "https://api.edamam.com/api/recipes/v2?app_id=05567a42&app_key=b62303535d6536769387714d37717b61&type=public&q=chicken",
+      true
+    );
+    xhttp.send();
+    xhttp.onload = () => {
+      if (xhttp.readyState === xhttp.DONE) {
+        console.log(xhttp.status);
+        console.log(xhttp.response);
+        console.log(xhttp.responseText);
+      }
+    };
+  }
 }
 
 //https://example.com/path/to/page?name=ferret&color=purple
