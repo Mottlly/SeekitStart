@@ -332,8 +332,8 @@ function CallEdamam() {
     xhttp.send();
     xhttp.onload = () => {
       if (xhttp.readyState === xhttp.DONE) {
-        console.log(xhttp.status);
-        console.log(xhttp.response);
+        let recipedata = JSON.parse(xhttp.response);
+        console.log(recipedata);
         MakeWords(xhttp);
       }
     };
