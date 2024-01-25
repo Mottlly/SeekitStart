@@ -271,9 +271,22 @@ border-radius:5px;
     padding:10px; 
 }
 
-.legendstrings {
+.freshlegendstring {
     padding:15px;
+    color: #0B0C10;
     background-color:#5CDB95;
+}
+
+.aboutlegendstring {
+    padding:15px;
+    background-color:#45A29E;
+    color: #0B0C10;
+}
+
+.spoillegendstring {
+    padding:15px;
+    background-color:#1F2833;
+    color:#66FCF1;
 }
 
 input[type="text"] {
