@@ -326,7 +326,7 @@ function CallEdamam() {
   if (document.getElementById("recipes") != null) {
     xhttp.open(
       "GET",
-      "https://api.edamam.com/api/recipes/v2?app_id=05567a42&app_key=b62303535d6536769387714d37717b61&type=public&q=chicken",
+      "https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=05567a42&app_key=b62303535d6536769387714d37717b61&field=label&field=image&field=source&field=url",
       true
     );
     xhttp.send();
@@ -334,10 +334,14 @@ function CallEdamam() {
       if (xhttp.readyState === xhttp.DONE) {
         console.log(xhttp.status);
         console.log(xhttp.response);
-        console.log(xhttp.responseText);
+        MakeWords(xhttp);
       }
     };
   }
+}
+
+function MakeWords(xhttp) {
+  document.getElementById("recipes").innerHTML = xhttp.response;
 }
 
 //https://example.com/path/to/page?name=ferret&color=purple
