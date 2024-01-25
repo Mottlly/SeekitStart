@@ -158,7 +158,6 @@ text-align: center;
 background-color:#0B0C10;
 overflow:hidden;
 text-overflow:ellipsis;
-/*white-space:nowrap;*/
 
 }
 
@@ -274,6 +273,7 @@ border-radius:5px;
 
 .legendstrings {
     padding:15px;
+    background-color:#5CDB95;
 }
 
 input[type="text"] {
