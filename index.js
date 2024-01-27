@@ -333,13 +333,15 @@ function CallEdamam() {
     xhttp.onload = () => {
       if (xhttp.readyState === xhttp.DONE) {
         let recipedata = JSON.parse(xhttp.response);
-        console.log(recipedata);
+        localStorage.setItem("recipedata", JSON.stringify(recipedata));
       }
     };
   }
 }
 
-function ShowRecipes(recipedata) {
+function ShowRecipes() {
+  const recipedata =
+    JSON.parse(window.localStorage.getItem("recipedata")) || [];
   if (recipedata.length != 0) {
     console.log(recipedata);
   }
