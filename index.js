@@ -339,6 +339,12 @@ function CallEdamam() {
   }
 }
 
+function ShowRecipes(recipedata) {
+  if (recipedata.length != 0) {
+    console.log(recipedata);
+  }
+}
+
 //https://example.com/path/to/page?name=ferret&color=purple
 // API ID: 05567a42
 

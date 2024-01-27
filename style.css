@@ -140,8 +140,17 @@ text-align: center;
     justify-content: center;
     }
 
+#recipesearcher {
+    display:flex;
+    justify-content: center;
+}
+
 #apisearch {
     height:3vh;
+}
+
+#apisearchbutton {
+max-height:max-content;
 }
 
 table {
@@ -313,7 +322,7 @@ input[type="text"] {
 }
 
 input[type="apitext"] {
-    width: 30%;
+    width: 90%;
     height: 99%;
     background-color:#1F2833;
     color:#66FCF1;
