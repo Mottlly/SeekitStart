@@ -340,12 +340,31 @@ function CallEdamam() {
 }
 
 function ShowRecipes() {
-  const recipedata =
-    JSON.parse(window.localStorage.getItem("recipedata")) || [];
-  if (recipedata.length != 0) {
-    console.log(recipedata);
+  var xhttp = new XMLHttpRequest();
+  let foodvalue = document.getElementById("keyword");
+  let keyword = foodvalue.value;
+  if (document.getElementById("recipes") != null) {
+    xhttp.open(
+      "GET",
+      "https://api.edamam.com/api/recipes/v2?type=public&q=" +
+        keyword +
+        "&app_id=05567a42&app_key=b62303535d6536769387714d37717b61&field=label&field=image&field=source&field=url",
+      true
+    );
+    xhttp.send();
+    xhttp.onload = () => {
+      if (xhttp.readyState === xhttp.DONE) {
+        let recipedata = JSON.parse(xhttp.response);
+        console.log(recipedata);
+      }
+    };
   }
 }
+
+//let recipedata = JSON.parse(xhttp.response);
+//const recipedata =
+//JSON.parse(window.localStorage.getItem("recipedata")) || [];
+//if (recipedata.length != 0) {
 
 //https://example.com/path/to/page?name=ferret&color=purple
 // API ID: 05567a42
