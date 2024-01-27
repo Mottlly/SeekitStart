@@ -354,17 +354,18 @@ function ShowRecipes() {
     xhttp.send();
     xhttp.onload = () => {
       if (xhttp.readyState === xhttp.DONE) {
-        let recipedata = JSON.parse(xhttp.response);
+        let response = JSON.parse(xhttp.response);
+        let recipedata = response.hits;
         console.log(recipedata);
+        if (recipedata.length != 0) {
+          for (let i = 0; i < recipedata.length; i++) {
+            console.log("yeet");
+          }
+        }
       }
     };
   }
 }
-
-//let recipedata = JSON.parse(xhttp.response);
-//const recipedata =
-//JSON.parse(window.localStorage.getItem("recipedata")) || [];
-//if (recipedata.length != 0) {
 
 //https://example.com/path/to/page?name=ferret&color=purple
 // API ID: 05567a42
