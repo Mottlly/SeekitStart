@@ -334,14 +334,9 @@ function CallEdamam() {
       if (xhttp.readyState === xhttp.DONE) {
         let recipedata = JSON.parse(xhttp.response);
         console.log(recipedata);
-        MakeWords(xhttp);
       }
     };
   }
-}
-
-function MakeWords(xhttp) {
-  document.getElementById("recipes").innerHTML = xhttp.response;
 }
 
 //https://example.com/path/to/page?name=ferret&color=purple

@@ -129,6 +129,21 @@ background-color:#1F2833;
 width:30px;
 }
 
+#recipetitle {
+text-align: center;
+}
+
+#recipetitle2 {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+#apisearch {
+    height:3vh;
+}
+
 table {
 vertical-align: middle;
 margin-left:auto;
@@ -291,6 +306,14 @@ border-radius:5px;
 
 input[type="text"] {
     width: 90%;
+    height: 99%;
+    background-color:#1F2833;
+    color:#66FCF1;
+
+}
+
+input[type="apitext"] {
+    width: 30%;
     height: 99%;
     background-color:#1F2833;
     color:#66FCF1;
