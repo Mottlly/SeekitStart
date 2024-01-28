@@ -366,6 +366,9 @@ function ShowRecipes() {
             parentDiv.setAttribute("id", "recipe" + [i]);
             titleDiv.setAttribute("id", "title" + [i]);
             imageDiv.setAttribute("id", "image" + [i]);
+            parentDiv.setAttribute("class", "recipediv");
+            titleDiv.setAttribute("class", "recipediv");
+            imageDiv.setAttribute("class", "recipediv");
             let recipetitle = recipedata[i].recipe.label;
             let recipeimage = document.createElement("img");
             recipeimage.src = recipedata[i].recipe.image;
