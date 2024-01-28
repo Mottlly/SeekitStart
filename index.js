@@ -361,7 +361,8 @@ function ShowRecipes() {
           for (let i = 0; i < recipedata.length; i++) {
             let createDiv = document.createElement("div");
             const parent = document.getElementById("recipes");
-            createDiv.innerHTML = "yeet";
+            let recipetitle = recipedata[i].recipe.label;
+            createDiv.innerHTML = recipetitle;
             createDiv.className = "bordereddiv";
             console.log(createDiv.innerHTML);
             parent.appendChild(createDiv);
