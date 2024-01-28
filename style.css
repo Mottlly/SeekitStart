@@ -150,13 +150,14 @@ text-align: center;
 }
 
 #recipes {
-    display:flex;
-    justify-content:center;
-    justify-self:center;
-    background-color:#0B0C10;
-    max-height:400px;
-    overflow-y:scroll;
-    width:90%;
+    display: flex;
+    justify-self: center;
+    background-color: #0B0C10;
+    max-height: 400px;
+    overflow-y: scroll;
+    width: 90%;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 #apisearch {
