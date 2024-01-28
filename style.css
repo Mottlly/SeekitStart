@@ -145,6 +145,20 @@ text-align: center;
     justify-content: center;
 }
 
+#apidisplay {
+    display:grid;
+}
+
+#recipes {
+    display:flex;
+    justify-content:center;
+    justify-self:center;
+    background-color:#0B0C10;
+    max-height:400px;
+    overflow-y:scroll;
+    width:90%;
+}
+
 #apisearch {
     height:3vh;
 }
