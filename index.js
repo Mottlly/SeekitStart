@@ -381,41 +381,6 @@ function ShowRecipes() {
   }
 }
 
-//playground
-
-// for (let i = 0; i < recipedata.length; i++) {
-//   let grandparent = document.getElementById("recipes");
-//   let parentDiv = document.createElement("div");
-//   let titleDiv = document.createElement("div");
-//   let imageDiv = document.createElement("div");
-//   parentDiv.setAttribute("id", "recipe" + [i]);
-//   titleDiv.setAttribute("id", "title" + [i]);
-//   imageDiv.setAttribute("id", "image" + [i]);
-//   let recipetitle = recipedata[i].recipe.label;
-//   let recipeimage = document.createElement("img");
-//   recipeimage.src = recipedata[i].recipe.image;
-//   titleDiv.innerHTML = recipetitle;
-//   document.getElementById("title" + [i]).appendChild(recipetitle);
-//   document.getElementById("image" + [i]).appendChild(recipeimage);
-//   grandparent.appendChild(parentDiv);
-//   parentDiv.appendChild(titleDiv);
-//   parentDiv.appendChild(imageDiv);
-// }
-
-// for (let i = 0; i < recipedata.length; i++) {
-//   let createDiv = document.createElement("div");
-//   let parent = document.getElementById("recipes");
-//   let recipetitle = recipedata[i].recipe.label;
-//   let recipeimage = document.createElement("img");
-//   recipeimage.src = recipedata[i].recipe.image;
-//   console.log(recipeimage);
-//   createDiv.innerHTML = recipetitle;
-//   // createDiv.className = "bordereddiv";
-//   createDiv.setAttribute("id", "recipe" + [i]);
-//   // console.log(createDiv);
-//   // parent.appendChild(createDiv);
-//   document.getElementById("recipe" + [i]).appendChild(recipeimage);
-
 //https://example.com/path/to/page?name=ferret&color=purple
 // API ID: 05567a42
 
