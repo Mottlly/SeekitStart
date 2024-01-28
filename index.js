@@ -359,7 +359,12 @@ function ShowRecipes() {
         console.log(recipedata);
         if (recipedata.length != 0) {
           for (let i = 0; i < recipedata.length; i++) {
-            console.log("yeet");
+            let createDiv = document.createElement("div");
+            const parent = document.getElementById("recipes");
+            createDiv.innerHTML = "yeet";
+            createDiv.className = "bordereddiv";
+            console.log(createDiv.innerHTML);
+            parent.appendChild(createDiv);
           }
         }
       }
