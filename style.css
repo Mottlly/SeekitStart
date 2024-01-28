@@ -85,7 +85,15 @@ width:auto;
     text-align:center;
     background-color:#1F2833;
     padding: 15px;
+}
 
+#footerapi {
+    bottom:0;
+    text-align:center;
+    align-self: center;
+    background-color:#1F2833;
+    padding: 15px;
+    width: -webkit-fill-available;
 }
 
 #expander {
@@ -146,7 +154,11 @@ text-align: center;
 }
 
 #apidisplay {
-    display:grid;
+    display: flex;
+    min-height: 80vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #recipes {
@@ -158,6 +170,8 @@ text-align: center;
     width: 90%;
     flex-direction: column;
     justify-content: flex-start;
+    padding: 3vw;
+    margin: 20px;
 }
 
 #apisearch {
