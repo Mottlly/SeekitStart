@@ -360,12 +360,17 @@ function ShowRecipes() {
         if (recipedata.length != 0) {
           for (let i = 0; i < recipedata.length; i++) {
             let createDiv = document.createElement("div");
-            const parent = document.getElementById("recipes");
+            let parent = document.getElementById("recipes");
             let recipetitle = recipedata[i].recipe.label;
+            let recipeimage = document.createElement("img");
+            recipeimage.src = recipedata[i].recipe.image;
+            console.log(recipeimage);
             createDiv.innerHTML = recipetitle;
             createDiv.className = "bordereddiv";
-            console.log(createDiv.innerHTML);
+            createDiv.setAttribute("id", "recipe" + [i]);
+            console.log(createDiv);
             parent.appendChild(createDiv);
+            document.getElementById("recipe" + [i]).appendChild(recipeimage);
           }
         }
       }
