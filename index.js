@@ -367,6 +367,7 @@ function ShowRecipes() {
             let leftrec = document.createElement("div");
             let rightrec = document.createElement("div");
             let sourceDiv = document.createElement("div");
+            let ingredientList = document.createElement("div");
             parentDiv.setAttribute("id", "recipe" + [i]);
             contentDiv.setAttribute("id", "recipe" + [i]);
             leftrec.setAttribute("id", "lefty" + [i]);
@@ -374,6 +375,7 @@ function ShowRecipes() {
             titleDiv.setAttribute("id", "title" + [i]);
             imageDiv.setAttribute("id", "image" + [i]);
             sourceDiv.setAttribute("id", "source" + [i]);
+            ingredientList.setAttribute("id", "ingredients" + [i]);
             parentDiv.setAttribute("class", "recipediv");
             contentDiv.setAttribute("class", "recipediv");
             leftrec.setAttribute("class", "recipediv");
@@ -381,8 +383,15 @@ function ShowRecipes() {
             titleDiv.setAttribute("class", "recipediv");
             imageDiv.setAttribute("class", "recipediv");
             sourceDiv.setAttribute("class", "recipediv");
+            ingredientList.setAttribute("class", "recipediv");
             let recipetitle = recipedata[i].recipe.label;
             let sourcename = recipedata[i].recipe.source;
+            let recingredientsarray = recipedata[i].recipe.ingredients;
+            for (let j = 0; j < recingredientsarray.length; j++) {
+              let ingredientadd = document.createElement("div");
+              ingredientadd.innerHTML = recingredientsarray[j].food;
+              ingredientList.appendChild(ingredientadd);
+            }
             let recipeimage = document.createElement("img");
             sourceDiv.innerHTML = sourcename;
             recipeimage.src = recipedata[i].recipe.image;
@@ -394,6 +403,7 @@ function ShowRecipes() {
             contentDiv.appendChild(rightrec);
             leftrec.appendChild(imageDiv);
             leftrec.appendChild(sourceDiv);
+            rightrec.appendChild(ingredientList);
             document.getElementById("image" + [i]).appendChild(recipeimage);
           }
         }
@@ -402,6 +412,10 @@ function ShowRecipes() {
   }
 }
 
+// function ingredientsTable(recipedata) {
+//   let ingredients = recipedata.recipe.ingredients;
+//   console.log(ingredients);
+//}
 //https://example.com/path/to/page?name=ferret&color=purple
 // API ID: 05567a42
 
