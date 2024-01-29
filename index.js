@@ -348,7 +348,7 @@ function ShowRecipes() {
       "GET",
       "https://api.edamam.com/api/recipes/v2?type=public&q=" +
         keyword +
-        "&app_id=05567a42&app_key=b62303535d6536769387714d37717b61&field=label&field=image&field=source&field=url",
+        "&app_id=05567a42&app_key=b62303535d6536769387714d37717b61&random=true&field=label&field=image&field=source&field=url&field=ingredients",
       true
     );
     xhttp.send();
