@@ -363,10 +363,16 @@ function ShowRecipes() {
             let parentDiv = document.createElement("div");
             let titleDiv = document.createElement("div");
             let imageDiv = document.createElement("div");
+            let leftrec = document.createElement("div");
+            let rightrec = document.createElement("div");
             parentDiv.setAttribute("id", "recipe" + [i]);
+            leftrec.setAttribute("id", "lefty" + [i]);
+            rightrec.setAttribute("id", "righty" + [i]);
             titleDiv.setAttribute("id", "title" + [i]);
             imageDiv.setAttribute("id", "image" + [i]);
             parentDiv.setAttribute("class", "recipediv");
+            leftrec.setAttribute("class", "recipediv");
+            rightrec.setAttribute("class", "recipediv");
             titleDiv.setAttribute("class", "recipediv");
             imageDiv.setAttribute("class", "recipediv");
             let recipetitle = recipedata[i].recipe.label;
@@ -374,8 +380,10 @@ function ShowRecipes() {
             recipeimage.src = recipedata[i].recipe.image;
             titleDiv.innerHTML = recipetitle;
             grandparent.appendChild(parentDiv);
-            parentDiv.appendChild(titleDiv);
-            parentDiv.appendChild(imageDiv);
+            parentDiv.appendChild(leftrec);
+            parentDiv.appendChild(rightrec);
+            leftrec.appendChild(titleDiv);
+            leftrec.appendChild(imageDiv);
             document.getElementById("image" + [i]).appendChild(recipeimage);
           }
         }
