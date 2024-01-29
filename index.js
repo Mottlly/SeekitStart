@@ -376,14 +376,14 @@ function ShowRecipes() {
             imageDiv.setAttribute("id", "image" + [i]);
             sourceDiv.setAttribute("id", "source" + [i]);
             ingredientList.setAttribute("id", "ingredients" + [i]);
-            parentDiv.setAttribute("class", "recipediv");
+            parentDiv.setAttribute("class", "recipecontainer");
             contentDiv.setAttribute("class", "recipediv");
-            leftrec.setAttribute("class", "recipediv");
+            leftrec.setAttribute("class", "recipeleft");
             rightrec.setAttribute("class", "recipediv");
             titleDiv.setAttribute("class", "recipediv");
             imageDiv.setAttribute("class", "recipediv");
             sourceDiv.setAttribute("class", "recipediv");
-            ingredientList.setAttribute("class", "recipediv");
+            ingredientList.setAttribute("class", "recipelist");
             let recipetitle = recipedata[i].recipe.label;
             let sourcename = recipedata[i].recipe.source;
             let recingredientsarray = recipedata[i].recipe.ingredients;
@@ -412,10 +412,6 @@ function ShowRecipes() {
   }
 }
 
-// function ingredientsTable(recipedata) {
-//   let ingredients = recipedata.recipe.ingredients;
-//   console.log(ingredients);
-//}
 //https://example.com/path/to/page?name=ferret&color=purple
 // API ID: 05567a42
 

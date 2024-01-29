@@ -432,9 +432,31 @@ border-radius:10px;
 
 .recipediv {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: wrap;
     margin-bottom: 20px;
-    font-size: xxx-large;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    min-width: 85%;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.recipeleft {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.recipecontainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.recipelist {
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-size: xx-large;
 }
