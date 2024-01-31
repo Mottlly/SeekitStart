@@ -63,7 +63,7 @@ overflow-y:scroll;
 margin:0;
 padding:0;
 min-height:60px;
-border-bottom: solid 1px #5CB8FF;
+border-bottom: solid 1px #CCFFCC;
 
 }
 
@@ -224,7 +224,7 @@ tr:nth-child(odd) td {
 
 li {
 float:left;
-border-right:solid 1px #5CB8FF;
+border-right:solid 1px #CCFFCC;
 
 }
 
