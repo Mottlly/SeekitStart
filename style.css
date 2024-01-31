@@ -7,7 +7,9 @@ margin:0px;
 }
 
 #badness {
-background-color:#0B0C10;
+background-color:#7E6B8F;
+color:#0B0C10;
+border-radius: 10px;
 min-height: 0;
 min-width: 0;
 overflow:hidden;
@@ -16,7 +18,9 @@ overflow-y:scroll;
 }
 
 #yellow {
-background-color:#0B0C10;
+background-color:#5CB8FF;
+border:none;
+color:#0B0C10;
 display:flex;
 flex: 1;
 flex-direction:column;
@@ -78,6 +82,7 @@ flex:1;
 flex-direction: column;
 align-self:center;
 width:auto;
+border:none;
 }
 
 #footer {
@@ -194,6 +199,24 @@ max-height:100%;
 table-layout:fixed;
 
 }
+
+.almostexpiredfood {
+    vertical-align: middle;
+    margin-left:auto;
+    margin-right:auto;
+    border-collapse:collapse;
+    font-size:1.3em;
+    color:#CCFFCC;
+    background-color:#5CB8FF;
+    max-height:100%;
+    table-layout:fixed;
+    
+    }
+
+.almostexpiredfood td {
+    background-color: #5CB8FF;
+}
+
 
 td {
 border: 1px solid #CCFFCC;
@@ -418,11 +441,11 @@ border-radius:10px;
 
 .deletebutton {
     background-color:#1F2833;
-    color:#CCFFCC;
+    color:red;
     border-style:double;
     font-size:0.75em;
     border-radius:10px;
-    border-color:#CCFFCC;  
+    border-color:red;  
 }
 
 .wideimage {

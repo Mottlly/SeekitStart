@@ -116,6 +116,7 @@ function loadPantryData() {
             [i] +
             " " +
             "onclick='removeitem(this.value)'> X </button>" +
+            "     " +
             DisplayArray[i].foodname;
           row.appendChild(cell);
         } else {
