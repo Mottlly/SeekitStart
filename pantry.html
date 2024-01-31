@@ -24,24 +24,41 @@
         <div id="pantryform" class="unbordereddiv">
             <h1 class="heading"> Add New Items Here! </h1>
             <form id="submitform">
-                <input  id="fname" type="text" placeholder="FoodName" class="pantryform">
-                <input  id="expdate" type="date" placeholder="ExpiryDate"class="pantryform">
-                <input  id="ftype" type="text" placeholder="FoodType"class="pantryform"  list="foodtypes">
+                <div class="pantryformheadings">
+                    <h3> Food Name </h3> 
+                <input  id="fname" type="text" placeholder="Chicken" class="pantryform">
+                </div>
+                <div class="pantryformheadings">
+                    <h3> Expiry Date </h3> 
+                <input  id="expdate" type="date" placeholder="2024-11-22" class="pantryform">
+                </div>
+                <div class="pantryformheadings">
+                    <h3> Food Type </h3> 
+                    <input  id="ftype" type="text" placeholder="Fruits" class="pantryform"  list="foodtypes">
                     <datalist id="foodtypes">
                         <option value="Fruits"></option>
                         <option value="Vegetables"></option>
                         <option value="Starches"></option>
-                        <option value="Meats and Seafood"></option>
+                        <option value="Meats or Seafood"></option>
                         <option value="Dairy"></option>
                     </datalist>
-                <input  id="numb" type="text" placeholder="Number"class="pantryform">
-                <input  id="owns" type="text" placeholder="Owner"class="pantryform">
-                <input  id ="costpu" type="text" placeholder="CostPerUnit"class="pantryform">
+                </div>
+                <div class="pantryformheadings">
+                    <h3> Quantity </h3> 
+                <input  id="numb" type="text" placeholder="1187"class="pantryform">
+                </div>
+                <div class="pantryformheadings">
+                    <h3> Ownership </h3> 
+                <input  id="owns" type="text" placeholder="Connor"class="pantryform">
+                </div>
+                <div class="pantryformheadings">
+                    <h3> Cost per Unit </h3> 
+                <input  id ="costpu" type="text" placeholder="$1.87"class="pantryform">
+                </div>
             </form>
             <div id="pantryformbut">
             <button id="submititem" class="button" type="button" onclick="StoreFood()">Submit</button>
-            <button id="clearitem" class="button" type="button" onclick="ClearForm()">Clear Entry</button>
-            <button id="clearpantry" class="button" type="button" onclick="ClearPantry()">Clear Pantry</button>
+            <button id="clearitem" class="button" type="button" onclick="ClearForm()">Clear</button>
             </div>
     </div>
     

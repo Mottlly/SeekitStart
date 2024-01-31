@@ -115,10 +115,11 @@ overflow-y:scroll;
 }
 
 #submitform {
-    display:flex;
-    padding: 40px;
-    justify-content:space-evenly;
-    gap:1em;
+    display: flex;
+    padding-bottom: 40px;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
 }
 
 #pantryformbut {
@@ -426,6 +427,7 @@ width:30px;
 height:auto;
 padding:10px;
 border-color:#CCFFCC;
+color:#CCFFCC;
 border-radius:10px;
 
 }
@@ -494,4 +496,12 @@ border-radius:10px;
     align-items: flex-start;
     margin-bottom: 20px;
     font-size: x-large;
+}
+
+.pantryformheadings {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
 }
