@@ -380,7 +380,7 @@ function ShowRecipes() {
             contentDiv.setAttribute("class", "recipediv");
             leftrec.setAttribute("class", "recipeleft");
             rightrec.setAttribute("class", "recipediv");
-            titleDiv.setAttribute("class", "recipediv");
+            titleDiv.setAttribute("class", "recipetitlediv");
             imageDiv.setAttribute("class", "recipediv");
             sourceDiv.setAttribute("class", "recipediv");
             ingredientList.setAttribute("class", "recipelist");
