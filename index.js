@@ -393,9 +393,14 @@ function ShowRecipes() {
               ingredientList.appendChild(ingredientadd);
             }
             let recipeimage = document.createElement("img");
-            sourceDiv.innerHTML = sourcename;
+            sourceDiv.innerHTML = "Source: " + sourcename;
             recipeimage.src = recipedata[i].recipe.image;
-            titleDiv.innerHTML = recipetitle;
+            titleDiv.innerHTML =
+              "<a href=" +
+              recipedata[i].recipe.url +
+              " style=color:#66FCF1;>" +
+              recipetitle +
+              "</a>";
             grandparent.appendChild(parentDiv);
             parentDiv.appendChild(titleDiv);
             parentDiv.appendChild(contentDiv);
