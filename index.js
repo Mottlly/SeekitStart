@@ -273,13 +273,13 @@ function setGradient() {
     var expiredPercentString = expiredPercent.toString();
     var closeExpiredString = closeExpiredPercent.toString();
     let newGrad =
-      "conic-gradient(#1F2833 0.00% " +
+      "conic-gradient(#7E6B8F 0.00% " +
       expiredPercentString +
-      "%, #45A29E " +
+      "%, #5CB8FF " +
       expiredPercentString +
       "% " +
       closeExpiredString +
-      "%, #5CDB95 " +
+      "%, #8FF599 " +
       closeExpiredString +
       "% 100.00% )";
     console.log(newGrad);

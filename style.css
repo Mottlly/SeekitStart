@@ -1,7 +1,7 @@
 body {
 font-family:'tahoma', sans-serif;
 background-color: #0B0C10;
-color:#66FCF1;
+color:#CCFFCC;
 margin:0px;
 
 }
@@ -30,7 +30,7 @@ background-color:#0B0C10;
 width:300px;
 height:300px;
 border-radius:50%;
-background: conic-gradient(#5CDB95 0.00% 33.33333333333333%, #45A29E 33.33333333333333% 66.66666666666666%, #1F2833 66.66666666666666% 100% );;
+background: conic-gradient(#8FF599 0.00% 33.33333333333333%, #5CB8FF 33.33333333333333% 66.66666666666666%, #7E6B8F 66.66666666666666% 100% );;
 align-self:center;
 
 }
@@ -63,7 +63,7 @@ overflow-y:scroll;
 margin:0;
 padding:0;
 min-height:60px;
-border-bottom: solid 1px #45A29E;
+border-bottom: solid 1px #5CB8FF;
 
 }
 
@@ -102,7 +102,7 @@ height:70vh;
 padding:30px;
 border-radius: 10px;
 border-style: double;
-border-color:#66FCF1;
+border-color:#CCFFCC;
 display:flex;
 flex-direction:column;
 gap:3em;
@@ -123,17 +123,17 @@ overflow-y:scroll;
 }
 
 #greenbox {
-background-color:#5CDB95;
+background-color:#8FF599;
 width:30px;
 }
 
 #bluebox {
-background-color:#45A29E;
+background-color:#5CB8FF;
 width:30px;
 }
 
 #blackbox {
-background-color:#1F2833;
+background-color:#7E6B8F;
 width:30px;
 }
 
@@ -186,7 +186,7 @@ table {
 vertical-align: middle;
 margin-left:auto;
 margin-right:auto;
-border: 2px #66FCF1 solid;
+border: 2px #CCFFCC solid;
 border-collapse:collapse;
 font-size:1.3em;
 background-color:#0B0C10;
@@ -196,7 +196,7 @@ table-layout:fixed;
 }
 
 td {
-border: 1px solid #66FCF1;
+border: 1px solid #CCFFCC;
 padding: 10px;
 text-align: center;
 overflow:hidden;
@@ -205,7 +205,7 @@ white-space:nowrap;
 }
 
 th {
-border: 1px solid #66FCF1;
+border: 1px solid #CCFFCC;
 padding: 10px;
 text-align: center;
 background-color:#0B0C10;
@@ -224,13 +224,13 @@ tr:nth-child(odd) td {
 
 li {
 float:left;
-border-right:solid 1px #45A29E;
+border-right:solid 1px #5CB8FF;
 
 }
 
 li a {
 display:block;
-color:#66FCF1;
+color:#CCFFCC;
 text-align:center;
 padding: 20px 25px;
 text-decoration:solid;
@@ -264,7 +264,7 @@ font-weight:bold;
 .bordereddiv {
 border-radius: 10px;
 border-style: double;
-border-color:#66FCF1;
+border-color:#CCFFCC;
 padding:15px;
 }
 
@@ -274,7 +274,7 @@ padding:15px;
     }
 
     .borderddiv::-webkit-scrollbar-thumb {
-    background-color:#66FCF1;
+    background-color:#CCFFCC;
     border-radius: 5px;
     }
 
@@ -297,7 +297,7 @@ padding:15px;
 }
 
 .unborderddiv::-webkit-scrollbar-thumb {
-background-color:#66FCF1;
+background-color:#CCFFCC;
 border-radius: 5px;
 }
 
@@ -327,26 +327,26 @@ border-radius:5px;
 .freshlegendstring {
     padding:15px;
     color: #0B0C10;
-    background-color:#5CDB95;
+    background-color:#8FF599;
 }
 
 .aboutlegendstring {
     padding:15px;
-    background-color:#45A29E;
+    background-color:#5CB8FF;
     color: #0B0C10;
 }
 
 .spoillegendstring {
     padding:15px;
-    background-color:#1F2833;
-    color:#66FCF1;
+    background-color:#7E6B8F;
+    color:#0B0C10;
 }
 
 input[type="text"] {
     width: 90%;
     height: 99%;
     background-color:#1F2833;
-    color:#66FCF1;
+    color:#CCFFCC;
 
 }
 
@@ -354,7 +354,7 @@ input[type="apitext"] {
     width: 90%;
     height: 99%;
     background-color:#1F2833;
-    color:#66FCF1;
+    color:#CCFFCC;
     font-size: x-large;
 
 }
@@ -363,7 +363,7 @@ input[type="date"] {
     width: 90%;
     height: 99%;
     background-color:#1F2833;
-    color:#66FCF1;
+    color:#CCFFCC;
 }
 
 
@@ -402,27 +402,27 @@ flex-direction:column;
 width:30px;
 height:auto;
 padding:10px;
-border-color:#66FCF1;
+border-color:#CCFFCC;
 border-radius:10px;
 
 }
 
 .button {
     background-color:#1F2833;
-    color:#66FCF1;
+    color:#CCFFCC;
     border-style:double;
     font-size:1.5em;
     border-radius:10px;
-    border-color:#66FCF1;
+    border-color:#CCFFCC;
 }
 
 .deletebutton {
     background-color:#1F2833;
-    color:#66FCF1;
+    color:#CCFFCC;
     border-style:double;
     font-size:0.75em;
     border-radius:10px;
-    border-color:#66FCF1;  
+    border-color:#CCFFCC;  
 }
 
 .wideimage {
