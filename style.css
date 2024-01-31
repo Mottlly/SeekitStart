@@ -448,6 +448,8 @@ border-radius:10px;
     min-width: 85%;
     justify-content: space-around;
     align-items: flex-start;
+    font-size:xx-large;
+    text-decoration: underline;
 }
 
 .recipeleft {
@@ -468,5 +470,5 @@ border-radius:10px;
     flex-direction:column;
     align-items: flex-start;
     margin-bottom: 20px;
-    font-size: xx-large;
+    font-size: x-large;
 }
