@@ -399,7 +399,7 @@ function ShowRecipes() {
             titleDiv.innerHTML =
               "<a href=" +
               recipedata[i].recipe.url +
-              " style=color:#66FCF1;>" +
+              " style=color:#CCFFCC;>" +
               recipetitle +
               "</a>";
             grandparent.appendChild(parentDiv);
