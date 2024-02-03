@@ -464,6 +464,18 @@ border-radius:10px;
     min-width: 85%;
     justify-content: space-around;
     align-items: flex-start;
+    padding-left:10%;
+}
+
+.ingredientdiv {
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    flex-direction:column;
+    min-width: 85%;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left:10%;
 }
 
 .recipetitlediv {

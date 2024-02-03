@@ -369,6 +369,7 @@ function ShowRecipes() {
             let rightrec = document.createElement("div");
             let sourceDiv = document.createElement("div");
             let ingredientList = document.createElement("div");
+            let ingredientadd = document.createElement("div");
             parentDiv.setAttribute("id", "recipe" + [i]);
             contentDiv.setAttribute("id", "recipe" + [i]);
             leftrec.setAttribute("id", "lefty" + [i]);
@@ -384,10 +385,12 @@ function ShowRecipes() {
             titleDiv.setAttribute("class", "recipetitlediv");
             imageDiv.setAttribute("class", "recipediv");
             sourceDiv.setAttribute("class", "recipediv");
-            ingredientList.setAttribute("class", "recipelist");
+            ingredientList.setAttribute("class", "ingredientdiv");
             let recipetitle = recipedata[i].recipe.label;
             let sourcename = recipedata[i].recipe.source;
             let recingredientsarray = recipedata[i].recipe.ingredients;
+            ingredientadd.innerHTML = "<u>Ingredient List<u>";
+            ingredientList.appendChild(ingredientadd);
             for (let j = 0; j < recingredientsarray.length; j++) {
               let ingredientadd = document.createElement("div");
               ingredientadd.innerHTML = recingredientsarray[j].food;
