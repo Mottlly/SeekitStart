@@ -16,8 +16,8 @@
         <li> <a>Seekit: The Pantry Manager</a> </li>
         <li> <a href="index.html"> DASHBOARD </a> </li>
         <li> <a href="pantry.html"> PANTRY VIEW </a> </li>
+        <li> <a href="api.html"> RECIPE SEARCH </a> </li>
         <li> <a href="help.html"> HELP </a> </li>
-        <li> <a href="api.html"> API </a> </li>
     </ul>
 
     </div>
@@ -27,7 +27,7 @@
         <div id="yellow" class="bordereddiv">
             <h1 class="heading"> Almost Spoiled </h1>
 
-            <table id="almostexpiredfood" width="100%">
+            <table id="almostexpiredfood" class="almostexpiredfood" width="100%">
                 <tr>
                     <th> Food Name </th>
                     <th> Status </th>
@@ -61,7 +61,7 @@
             </div>
             <div id="badness" class="unbordereddiv">
                 <h1 class="heading"> Spoiled Food </h1>
-                <table id="expiredfood">
+                <table id="expiredfood" class="almostexpiredfood">
                     <tr>
                         <th> Food Name </th>
                         <th> Status </th>
@@ -93,12 +93,21 @@
         </table>
 
     </div>
+
     <div id="pantryform" class="unbordereddiv">
         <h1 class="heading"> Add New Items Here! </h1>
         <form id="submitform">
-            <input  id="fname" type="text" placeholder="FoodName" class="pantryform">
-            <input  id="expdate" type="date" placeholder="ExpiryDate"class="pantryform">
-            <input  id="ftype" type="text" placeholder="FoodType"class="pantryform"  list="foodtypes">
+            <div class="pantryformheadings">
+                <h3> Food Name </h3> 
+            <input  id="fname" type="text" placeholder="Chicken" class="pantryform">
+            </div>
+            <div class="pantryformheadings">
+                <h3> Expiry Date </h3> 
+            <input  id="expdate" type="date" placeholder="2024-11-22" class="pantryform">
+            </div>
+            <div class="pantryformheadings">
+                <h3> Food Type </h3> 
+                <input  id="ftype" type="text" placeholder="Fruits" class="pantryform"  list="foodtypes">
                 <datalist id="foodtypes">
                     <option value="Fruits"></option>
                     <option value="Vegetables"></option>
@@ -106,14 +115,19 @@
                     <option value="Meats or Seafood"></option>
                     <option value="Dairy"></option>
                 </datalist>
-            <input  id="numb" type="text" placeholder="Number"class="pantryform">
-            <input  id="owns" type="text" placeholder="Owner"class="pantryform">
-            <input  id ="costpu" type="text" placeholder="CostPerUnit"class="pantryform">
-        </form>
-        <div id="pantryformbut">
-        <button id="submititem" class="button" type="button" onclick="StoreFood()">Submit</button>
-        <button id="clearitem" class="button" type="button" onclick="ClearForm()">Clear</button>
-        </div>
+            </div>
+            <div class="pantryformheadings">
+                <h3> Quantity </h3> 
+            <input  id="numb" type="text" placeholder="1187"class="pantryform">
+            </div>
+            <div class="pantryformheadings">
+                <h3> Ownership </h3> 
+            <input  id="owns" type="text" placeholder="Connor"class="pantryform">
+            </div>
+            <div class="pantryformheadings">
+                <h3> Cost per Unit </h3> 
+            <input  id ="costpu" type="text" placeholder="$1.87"class="pantryform">
+            </div>
 </div>
 
     <div id="footer" class="bordereddiv">
