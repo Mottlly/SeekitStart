@@ -83,6 +83,7 @@ flex-direction: column;
 align-self:center;
 width:auto;
 border:none;
+padding-bottom:0;
 }
 
 #footer {
