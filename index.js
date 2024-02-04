@@ -92,6 +92,8 @@ function StoreFood() {
               window.localStorage.getItem("GlobalArray")
             );
             RebuildTable(inputPull);
+            loadExpiryData1();
+            loadExpiryData2();
             alert("Item Added!");
           }
         }
