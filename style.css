@@ -55,6 +55,9 @@ align-items: center;
 background-color:#0B0C10;
 max-height:400px;
 overflow-y:scroll;
+border-radius: 10px;
+border-style: double;
+border-color:#CCFFCC;
 }
 
 #databasemain{
@@ -127,6 +130,13 @@ overflow-y:scroll;
     display:flex;
     justify-content:center;
     gap:2em;
+}
+
+#dashformbut {
+    display:flex;
+    justify-content:center;
+    gap:2em;
+    margin-bottom:45px;
 }
 
 #greenbox {
