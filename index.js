@@ -409,6 +409,16 @@ function ShowRecipes() {
               ingredientadd.innerHTML = recingredientsarray[j].food;
               ingredientList.appendChild(ingredientadd);
             }
+            for (let k = 0; k < nutrientsarray.length; k++) {
+              let nutrientadd = document.createElement("div");
+              nutrientadd.innerHTML =
+                nutrientsarray[k].label +
+                ":      " +
+                nutrientsarray[k].quantity.toFixed(2) +
+                "   " +
+                nutrientsarray[k].unit;
+              nutritionAdd.appendChild(nutrientadd);
+            }
             let recipeimage = document.createElement("img");
             sourceDiv.innerHTML = "Source: " + sourcename;
             recipeimage.src = recipedata[i].recipe.image;
@@ -426,6 +436,7 @@ function ShowRecipes() {
             leftrec.appendChild(imageDiv);
             leftrec.appendChild(sourceDiv);
             rightrec.appendChild(ingredientList);
+            rightrec.appendChild(nutritionAdd);
             document.getElementById("image" + [i]).appendChild(recipeimage);
           }
         }
