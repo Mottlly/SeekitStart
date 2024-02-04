@@ -311,6 +311,7 @@ function RebuildTable(filtereditems) {
           [i] +
           " " +
           "onclick='removeitem(this.value)'> X </button>" +
+          "  " +
           filtereditems[i].foodname;
         row.appendChild(cell);
       } else {
