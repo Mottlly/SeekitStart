@@ -140,11 +140,15 @@ overflow-y:scroll;
 }
 
 #submititem {
-
+    cursor: pointer;
 }
 
 #clearitem {
-    
+    cursor: pointer;
+}
+
+#clearpantry {
+    cursor: pointer;
 }
 
 #greenbox {
@@ -211,6 +215,7 @@ text-align: center;
 
 #apisearchbutton {
 max-height:max-content;
+    cursor: pointer;
 }
 
 table {
