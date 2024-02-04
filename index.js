@@ -137,9 +137,9 @@ function loadPantryData() {
 function removeitem(row) {
   const SmallerArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
-  ClearPantry();
   SmallerArray.splice(row, 1);
   localStorage.setItem("GlobalArray", JSON.stringify(SmallerArray));
+  location.reload();
 }
 
 function loadExpiryData1() {
@@ -147,6 +147,9 @@ function loadExpiryData1() {
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
   if (document.getElementById("almostexpiredfood") != null) {
     table = document.getElementById("almostexpiredfood");
+    while (table.rows.length > 1) {
+      table.deleteRow(1);
+    }
     for (let i = 0; i < DisplayArray.length; i++) {
       var table = document.getElementById("almostexpiredfood");
       var row = document.createElement("tr");
@@ -172,6 +175,9 @@ function loadExpiryData2() {
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
   if (document.getElementById("expiredfood") != null) {
     table = document.getElementById("expiredfood");
+    while (table.rows.length > 1) {
+      table.deleteRow(1);
+    }
     for (let i = 0; i < DisplayArray.length; i++) {
       var table = document.getElementById("expiredfood");
       var row = document.createElement("tr");
@@ -332,11 +338,6 @@ function RebuildTable(filtereditems) {
     }
   }
 }
-
-// if (element < -1000) td.style = "background:red";
-// else if (element >= -1000 && element <= -100) td.style = "background: pink";
-// else if (element == 0) td.style = "background: ANY OTHER COLOR";
-// else if (element > 0) td.style = "background: green";
 
 function CallEdamam() {
   var xhttp = new XMLHttpRequest();
