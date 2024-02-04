@@ -296,9 +296,11 @@ function setGradient() {
 
 function ClearPantry() {
   const ClearArray = [];
-  localStorage.setItem("GlobalArray", JSON.stringify(ClearArray));
-  loadPantryData();
-  location.reload();
+  if (confirm("Are you sure you want to delete the entire database?")) {
+    localStorage.setItem("GlobalArray", JSON.stringify(ClearArray));
+    loadPantryData();
+    location.reload();
+  }
 }
 
 function RebuildTable(filtereditems) {
