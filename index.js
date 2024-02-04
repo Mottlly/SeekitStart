@@ -121,6 +121,9 @@ function loadPantryData() {
           row.appendChild(cell);
         } else {
           cell.innerHTML = Object.values(DisplayArray[i])[j];
+          if (DisplayArray[i].expdate < todayDate) {
+            cell.style = "color:red";
+          }
           row.appendChild(cell);
           table.appendChild(row);
         }
@@ -316,12 +319,20 @@ function RebuildTable(filtereditems) {
         row.appendChild(cell);
       } else {
         cell.innerHTML = Object.values(filtereditems[i])[j];
+        if (filtereditems[i].expdate < todayDate) {
+          cell.style = "color:red";
+        }
         row.appendChild(cell);
         table.appendChild(row);
       }
     }
   }
 }
+
+// if (element < -1000) td.style = "background:red";
+// else if (element >= -1000 && element <= -100) td.style = "background: pink";
+// else if (element == 0) td.style = "background: ANY OTHER COLOR";
+// else if (element > 0) td.style = "background: green";
 
 function CallEdamam() {
   var xhttp = new XMLHttpRequest();
