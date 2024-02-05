@@ -94,6 +94,7 @@ function StoreFood() {
             RebuildTable(inputPull);
             loadExpiryData1();
             loadExpiryData2();
+            setGradient();
             alert("Item Added!");
           }
         }
