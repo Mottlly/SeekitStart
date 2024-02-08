@@ -203,27 +203,29 @@ function filterByFType(filtervalue) {
 }
 
 function sortbydate(sortvalue) {
-  let DisplayArray =
-    JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
-  let table = document.getElementById("database");
-  if (sortvalue === "Nil") {
-    while (table.rows.length > 1) {
-      table.deleteRow(1);
-    }
-    loadPantryData();
-  } else {
-    if (sortvalue === "Newest_To_Oldest") {
-      let filteredpantryitems = DisplayArray.sort(function (a, b) {
-        return new Date(b.expdate) - new Date(a.expdate);
-      });
+  if (document.getElementById("databasemain") != null) {
+    let DisplayArray =
+      JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
+    let table = document.getElementById("database");
+    if (sortvalue === "Nil") {
+      while (table.rows.length > 1) {
+        table.deleteRow(1);
+      }
+      loadPantryData();
+    } else {
+      if (sortvalue === "Newest_To_Oldest") {
+        let filteredpantryitems = DisplayArray.sort(function (a, b) {
+          return new Date(b.expdate) - new Date(a.expdate);
+        });
 
-      RebuildTable(filteredpantryitems);
-    }
-    if (sortvalue === "Oldest_To_Newest") {
-      let filteredpantryitems = DisplayArray.sort(function (a, b) {
-        return new Date(a.expdate) - new Date(b.expdate);
-      });
-      RebuildTable(filteredpantryitems);
+        RebuildTable(filteredpantryitems);
+      }
+      if (sortvalue === "To_Oldest_Newest") {
+        let filteredpantryitems = DisplayArray.sort(function (a, b) {
+          return new Date(a.expdate) - new Date(b.expdate);
+        });
+        RebuildTable(filteredpantryitems);
+      }
     }
   }
 }
@@ -464,6 +466,7 @@ window.onload = () => {
   loadPantryData();
   loadExpiryData1();
   loadExpiryData2();
+  sortbydate("To_Oldest_Newest");
   setGradient();
   CallEdamam();
 };
