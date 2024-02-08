@@ -533,3 +533,13 @@ border-radius:10px;
     justify-content: space-around;
     align-items: center;
 }
+
+.creditsmaindiv {
+    display:flex;
+    flex-direction:row;
+    margin-left:50px;
+}
+
+.creditstitlediv {
+    margin-left:50px;
+}
