@@ -459,9 +459,6 @@ function ShowRecipes() {
   }
 }
 
-//https://example.com/path/to/page?name=ferret&color=purple
-// API ID: 05567a42
-
 window.onload = () => {
   loadPantryData();
   loadExpiryData1();
