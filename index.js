@@ -336,11 +336,6 @@ function RebuildTable(filtereditems) {
   }
 }
 
-// if (element < -1000) td.style = "background:red";
-// else if (element >= -1000 && element <= -100) td.style = "background: pink";
-// else if (element == 0) td.style = "background: ANY OTHER COLOR";
-// else if (element > 0) td.style = "background: green";
-
 function CallEdamam() {
   var xhttp = new XMLHttpRequest();
   if (document.getElementById("recipes") != null) {
