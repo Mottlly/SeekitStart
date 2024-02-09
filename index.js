@@ -230,6 +230,12 @@ function sortbydate(sortvalue) {
   }
 }
 
+function sortbydateload(sortvalue) {
+  let datefilter = document.getElementById("datefilter");
+  console.log(datefilter);
+  sortbydate(sortvalue);
+}
+
 function sortbyname(sortvalue) {
   let DisplayArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
@@ -466,7 +472,7 @@ window.onload = () => {
   loadPantryData();
   loadExpiryData1();
   loadExpiryData2();
-  sortbydate("To_Oldest_Newest");
+  sortbydateload("Oldest_To_Newest");
   setGradient();
   CallEdamam();
 };
