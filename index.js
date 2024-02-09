@@ -220,7 +220,7 @@ function sortbydate(sortvalue) {
 
         RebuildTable(filteredpantryitems);
       }
-      if (sortvalue === "To_Oldest_Newest") {
+      if (sortvalue === "Oldest_To_Newest") {
         let filteredpantryitems = DisplayArray.sort(function (a, b) {
           return new Date(a.expdate) - new Date(b.expdate);
         });
@@ -230,10 +230,9 @@ function sortbydate(sortvalue) {
   }
 }
 
-function sortbydateload(sortvalue) {
-  let datefilter = document.getElementById("datefilter");
-  console.log(datefilter);
-  sortbydate(sortvalue);
+function sortbydateload() {
+  document.getElementById("datefilter").value = "Oldest_To_Newest";
+  sortbydate("Oldest_To_Newest");
 }
 
 function sortbyname(sortvalue) {
