@@ -551,9 +551,13 @@ border-radius:10px;
 .creditsmaindiv {
     display:flex;
     flex-direction:row;
-    margin-left:50px;
+    margin-left:5%;
 }
 
 .creditstitlediv {
-    margin-left:50px;
+    margin-left:5%;
+}
+
+.creditsstories {
+    margin-left:5%;
 }
