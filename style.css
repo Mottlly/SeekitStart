@@ -3,6 +3,7 @@ font-family:'tahoma', sans-serif;
 background-color: #0B0C10;
 color:#CCFFCC;
 margin:0px;
+font-size: calc(13px + 0.390625vw);
 
 }
 
@@ -48,6 +49,7 @@ flex-direction:column;
 display:flex;
 justify-content:space-around;
 align-items: center;
+margin-top:2%;
 }
 
 
@@ -69,14 +71,14 @@ border-color:#CCFFCC;
 #navbar {
 margin:0;
 padding:0;
-min-height:60px;
-border-bottom: solid 1px #CCFFCC;
+margin-bottom: 60px;
 
 }
 
 #container {
 display:flex;
 flex-wrap:wrap;
+margin-top:2%;
 }
 
 #right {
@@ -166,7 +168,7 @@ background-color:#7E6B8F;
 width:30px;
 }
 
-#recipetitle {
+.recipetitle {
 text-align: center;
 }
 
@@ -216,6 +218,19 @@ text-align: center;
 #apisearchbutton {
 max-height:max-content;
     cursor: pointer;
+}
+
+#creditscontainer {
+    display:flex;
+    flex-direction: column;
+}
+
+#creditsfooter {
+    margin-top:3%;
+    bottom:0;
+    text-align:center;
+    background-color:#1F2833;
+    padding: 15px;  
 }
 
 table {
@@ -302,17 +317,27 @@ margin-left:auto;
 margin-right:auto;
 font-weight:bold;
 
+
 }
 
 .navul {
     position:fixed;
+    display:flex;
+    flex-wrap:nowrap;
     top:0;
-    width:100%;
+    width:100vw;
     background-color:#0B0C10;
     list-style-type: none;
     margin: 0px;
+    margin-bottom:1%;
     padding: 0px;
     overflow:hidden;
+    border-bottom: solid 1px #CCFFCC;
+}
+
+.navli {
+text-wrap: nowrap;
+width:min-content;
 }
 
 .bordereddiv {
@@ -382,18 +407,24 @@ border-radius:5px;
     padding:15px;
     color: #0B0C10;
     background-color:#8FF599;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
 
 .aboutlegendstring {
     padding:15px;
     background-color:#5CB8FF;
     color: #0B0C10;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
 
 .spoillegendstring {
     padding:15px;
     background-color:#7E6B8F;
     color:#0B0C10;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
 
 input[type="text"] {
@@ -555,4 +586,32 @@ border-radius:10px;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
+}
+
+.pantryformheadinglabel {
+    text-wrap:nowrap;
+    text-overflow: ellipsis;
+}
+
+.creditsmaindiv {
+    display:flex;
+    flex-direction:row;
+    margin-left:5%;
+}
+
+.creditstitlediv {
+    margin-left:5%;
+}
+
+.creditsstories {
+    margin-left:3%;
+    margin-right:3%;
+}
+
+.creditindcontainer {
+    max-height:40%;
+}
+
+.creditlinks {
+    text-align:center
 }

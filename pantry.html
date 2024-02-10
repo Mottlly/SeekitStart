@@ -13,11 +13,12 @@
     <div id="navbar">
 
         <ul class="navul">
-            <li> <a>Seekit: The Pantry Manager</a> </li>
-            <li> <a href="index.html"> DASHBOARD </a> </li>
-            <li> <a href="pantry.html"> PANTRY VIEW </a> </li>
-            <li> <a href="api.html"> RECIPE SEARCH </a> </li>
-            <li> <a href="help.html"> HELP </a> </li>
+            <li class="navli"> <a>Seekit: Pantry Manager</a> </li>
+            <li class="navli"> <a href="index.html"> DASHBOARD </a> </li>
+            <li class="navli"> <a href="pantry.html"> PANTRY VIEW </a> </li>
+            <li class="navli"> <a href="api.html"> RECIPE SEARCH </a> </li>
+            <li class="navli"> <a href="help.html"> HELP </a> </li>
+            <li class="navli"> <a href="Credits.html"> CREDITS </a> </li>
         </ul>
     
         </div>
@@ -71,12 +72,12 @@
                 <th> Food Name 
                     <select class="pantry_filter" onchange="sortbyname (this.value)">
                         <option value="Nil">    </option>
-                        <option value="A_To_Z"> A to Z </option>
+                        <option id ="defaultsort" value="A_To_Z"> A to Z </option>
                         <option value="Z_To_A"> Z to A </option>
                     </select>
                 </th>
                 <th> Expiry Date 
-                    <select class="pantry_filter" onchange="sortbydate (this.value)">
+                    <select id = datefilter class="pantry_filter" onchange="sortbydate (this.value)">
                         <option value="Nil">   </option>
                         <option value="Oldest_To_Newest"> Oldest First </option>
                         <option value="Newest_To_Oldest"> Newest First </option>

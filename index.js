@@ -212,29 +212,36 @@ function filterByFType(filtervalue) {
 }
 
 function sortbydate(sortvalue) {
-  let DisplayArray =
-    JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
-  let table = document.getElementById("database");
-  if (sortvalue === "Nil") {
-    while (table.rows.length > 1) {
-      table.deleteRow(1);
-    }
-    loadPantryData();
-  } else {
-    if (sortvalue === "Newest_To_Oldest") {
-      let filteredpantryitems = DisplayArray.sort(function (a, b) {
-        return new Date(b.expdate) - new Date(a.expdate);
-      });
+  if (document.getElementById("databasemain") != null) {
+    let DisplayArray =
+      JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
+    let table = document.getElementById("database");
+    if (sortvalue === "Nil") {
+      while (table.rows.length > 1) {
+        table.deleteRow(1);
+      }
+      loadPantryData();
+    } else {
+      if (sortvalue === "Newest_To_Oldest") {
+        let filteredpantryitems = DisplayArray.sort(function (a, b) {
+          return new Date(b.expdate) - new Date(a.expdate);
+        });
 
-      RebuildTable(filteredpantryitems);
-    }
-    if (sortvalue === "Oldest_To_Newest") {
-      let filteredpantryitems = DisplayArray.sort(function (a, b) {
-        return new Date(a.expdate) - new Date(b.expdate);
-      });
-      RebuildTable(filteredpantryitems);
+        RebuildTable(filteredpantryitems);
+      }
+      if (sortvalue === "Oldest_To_Newest") {
+        let filteredpantryitems = DisplayArray.sort(function (a, b) {
+          return new Date(a.expdate) - new Date(b.expdate);
+        });
+        RebuildTable(filteredpantryitems);
+      }
     }
   }
+}
+
+function sortbydateload() {
+  document.getElementById("datefilter").value = "Oldest_To_Newest";
+  sortbydate("Oldest_To_Newest");
 }
 
 function sortbyname(sortvalue) {
@@ -463,13 +470,11 @@ function ShowRecipes() {
   }
 }
 
-//https://example.com/path/to/page?name=ferret&color=purple
-// API ID: 05567a42
-
 window.onload = () => {
   loadPantryData();
   loadExpiryData1();
   loadExpiryData2();
+  sortbydateload("Oldest_To_Newest");
   setGradient();
   CallEdamam();
 };
