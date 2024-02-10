@@ -207,6 +207,8 @@ function filterByFType(filtervalue) {
     const filteredpantryitems = DisplayArray.filter(
       (pantryitem) => pantryitem.ftype === filtervalue
     );
+    document.getElementById("datefilter").value = "Nil";
+    document.getElementById("namefilter").value = "Nil";
     RebuildTable(filteredpantryitems);
   }
 }
@@ -226,13 +228,16 @@ function sortbydate(sortvalue) {
         let filteredpantryitems = DisplayArray.sort(function (a, b) {
           return new Date(b.expdate) - new Date(a.expdate);
         });
-
+        document.getElementById("namefilter").value = "Nil";
+        document.getElementById("TypeSelector").value = "Nil";
         RebuildTable(filteredpantryitems);
       }
       if (sortvalue === "Oldest_To_Newest") {
         let filteredpantryitems = DisplayArray.sort(function (a, b) {
           return new Date(a.expdate) - new Date(b.expdate);
         });
+        document.getElementById("namefilter").value = "Nil";
+        document.getElementById("TypeSelector").value = "Nil";
         RebuildTable(filteredpantryitems);
       }
     }
@@ -263,6 +268,8 @@ function sortbyname(sortvalue) {
           return 1;
         } else return 0;
       });
+      document.getElementById("datefilter").value = "Nil";
+      document.getElementById("TypeSelector").value = "Nil";
       RebuildTable(filteredpantryitems);
     }
     if (sortvalue === "Z_To_A") {
@@ -274,6 +281,8 @@ function sortbyname(sortvalue) {
           return 1;
         } else return 0;
       });
+      document.getElementById("datefilter").value = "Nil";
+      document.getElementById("TypeSelector").value = "Nil";
       RebuildTable(filteredpantryitems);
     }
   }

@@ -71,14 +71,14 @@
         <table id="database" width=95%> 
             <tr>
                 <th> Food Name 
-                    <select class="pantry_filter" onchange="sortbyname (this.value)">
+                    <select id="namefilter" class="pantry_filter" onchange="sortbyname (this.value)">
                         <option value="Nil">    </option>
                         <option id ="defaultsort" value="A_To_Z"> A to Z </option>
                         <option value="Z_To_A"> Z to A </option>
                     </select>
                 </th>
                 <th> Expiry Date 
-                    <select id = datefilter class="pantry_filter" onchange="sortbydate (this.value)">
+                    <select id ="datefilter" class="pantry_filter" onchange="sortbydate (this.value)">
                         <option value="Nil">   </option>
                         <option value="Oldest_To_Newest"> Oldest First </option>
                         <option value="Newest_To_Oldest"> Newest First </option>
