@@ -195,6 +195,19 @@ text-align: center;
 max-height:max-content;
 }
 
+#creditscontainer {
+    display:flex;
+    flex-direction: column;
+}
+
+#creditsfooter {
+    margin-top:3%;
+    bottom:0;
+    text-align:center;
+    background-color:#1F2833;
+    padding: 15px;  
+}
+
 table {
 vertical-align: middle;
 margin-left:auto;
@@ -559,5 +572,10 @@ border-radius:10px;
 }
 
 .creditsstories {
-    margin-left:5%;
+    margin-left:3%;
+    margin-right:3%;
+}
+
+.creditindcontainer {
+    max-height:40%;
 }
