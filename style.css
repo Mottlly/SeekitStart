@@ -57,6 +57,9 @@ margin-top:2%;
 background-color:#0B0C10;
 max-height:400px;
 overflow-y:scroll;
+border-radius: 10px;
+border-style: double;
+border-color:#CCFFCC;
 }
 
 #databasemain{
@@ -131,6 +134,25 @@ overflow-y:scroll;
     gap:2em;
 }
 
+#dashformbut {
+    display:flex;
+    justify-content:center;
+    gap:2em;
+    margin-bottom:45px;
+}
+
+#submititem {
+    cursor: pointer;
+}
+
+#clearitem {
+    cursor: pointer;
+}
+
+#clearpantry {
+    cursor: pointer;
+}
+
 #greenbox {
 background-color:#8FF599;
 width:30px;
@@ -195,6 +217,7 @@ text-align: center;
 
 #apisearchbutton {
 max-height:max-content;
+    cursor: pointer;
 }
 
 #creditscontainer {

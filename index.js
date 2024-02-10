@@ -92,6 +92,9 @@ function StoreFood() {
               window.localStorage.getItem("GlobalArray")
             );
             RebuildTable(inputPull);
+            loadExpiryData1();
+            loadExpiryData2();
+            setGradient();
             alert("Item Added!");
           }
         }
@@ -135,9 +138,9 @@ function loadPantryData() {
 function removeitem(row) {
   const SmallerArray =
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
-  ClearPantry();
   SmallerArray.splice(row, 1);
   localStorage.setItem("GlobalArray", JSON.stringify(SmallerArray));
+  location.reload();
 }
 
 function loadExpiryData1() {
@@ -145,6 +148,9 @@ function loadExpiryData1() {
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
   if (document.getElementById("almostexpiredfood") != null) {
     table = document.getElementById("almostexpiredfood");
+    while (table.rows.length > 1) {
+      table.deleteRow(1);
+    }
     for (let i = 0; i < DisplayArray.length; i++) {
       var table = document.getElementById("almostexpiredfood");
       var row = document.createElement("tr");
@@ -170,6 +176,9 @@ function loadExpiryData2() {
     JSON.parse(window.localStorage.getItem("GlobalArray")) || [];
   if (document.getElementById("expiredfood") != null) {
     table = document.getElementById("expiredfood");
+    while (table.rows.length > 1) {
+      table.deleteRow(1);
+    }
     for (let i = 0; i < DisplayArray.length; i++) {
       var table = document.getElementById("expiredfood");
       var row = document.createElement("tr");
@@ -301,9 +310,11 @@ function setGradient() {
 
 function ClearPantry() {
   const ClearArray = [];
-  localStorage.setItem("GlobalArray", JSON.stringify(ClearArray));
-  loadPantryData();
-  location.reload();
+  if (confirm("Are you sure you want to delete the entire database?")) {
+    localStorage.setItem("GlobalArray", JSON.stringify(ClearArray));
+    loadPantryData();
+    location.reload();
+  }
 }
 
 function RebuildTable(filtereditems) {
