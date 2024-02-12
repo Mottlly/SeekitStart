@@ -245,8 +245,10 @@ function sortbydate(sortvalue) {
 }
 
 function sortbydateload() {
-  document.getElementById("datefilter").value = "Oldest_To_Newest";
-  sortbydate("Oldest_To_Newest");
+  if (document.getElementById("databasemain") != null) {
+    document.getElementById("datefilter").value = "Oldest_To_Newest";
+    sortbydate("Oldest_To_Newest");
+  }
 }
 
 function sortbyname(sortvalue) {
