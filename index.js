@@ -239,6 +239,10 @@ function sortbydate(sortvalue) {
         document.getElementById("namefilter").value = "Nil";
         document.getElementById("TypeSelector").value = "Nil";
         RebuildTable(filteredpantryitems);
+        localStorage.setItem(
+          "GlobalArray",
+          JSON.stringify(filteredpantryitems)
+        );
       }
     }
   }
@@ -273,6 +277,7 @@ function sortbyname(sortvalue) {
       document.getElementById("datefilter").value = "Nil";
       document.getElementById("TypeSelector").value = "Nil";
       RebuildTable(filteredpantryitems);
+      localStorage.setItem("GlobalArray", JSON.stringify(filteredpantryitems));
     }
     if (sortvalue === "Z_To_A") {
       let filteredpantryitems = DisplayArray.sort(function (a, b) {
@@ -286,6 +291,7 @@ function sortbyname(sortvalue) {
       document.getElementById("datefilter").value = "Nil";
       document.getElementById("TypeSelector").value = "Nil";
       RebuildTable(filteredpantryitems);
+      localStorage.setItem("GlobalArray", JSON.stringify(filteredpantryitems));
     }
   }
 }
