@@ -353,7 +353,6 @@ function RebuildTable(filtereditems) {
         }
         row.appendChild(cell);
         table.appendChild(row);
-        localStorage.setItem("GlobalArray", JSON.stringify(filtereditems));
       }
     }
   }
