@@ -209,7 +209,7 @@ function filterByFType(filtervalue) {
     );
     document.getElementById("datefilter").value = "Nil";
     document.getElementById("namefilter").value = "Nil";
-    RebuildTable(filteredpantryitems);
+    RebuildTableFType(filteredpantryitems);
   }
 }
 
@@ -360,6 +360,25 @@ function RebuildTable(filtereditems) {
         row.appendChild(cell);
         table.appendChild(row);
       }
+    }
+  }
+}
+
+function RebuildTableFType(filtereditems) {
+  let table = document.getElementById("database");
+  while (table.rows.length > 1) {
+    table.deleteRow(1);
+  }
+  for (let i = 0; i < filtereditems.length; i++) {
+    var row = document.createElement("tr");
+    for (let j = 0; j < Object.keys(filtereditems[i]).length; j++) {
+      var cell = document.createElement("td");
+      cell.innerHTML = Object.values(filtereditems[i])[j];
+      if (filtereditems[i].expdate < todayDate) {
+        cell.style = "color:red";
+      }
+      row.appendChild(cell);
+      table.appendChild(row);
     }
   }
 }
