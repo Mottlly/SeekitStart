@@ -1,4 +1,4 @@
-# :green_apple: :grapes: :tomato: **Welcome to Seekit! The beginning of my future in Coding** :honey_pot: :bread: :cherries:
+# **Welcome to Seekit! The beginning of my future in Coding**
 
 > #### For want is nexte to waste, and shame doeth synne ensue.
 >
