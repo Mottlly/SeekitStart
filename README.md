@@ -8,15 +8,19 @@
 
 I have lived in appartments with shared pantries and refridgerators for my entire adult life. As a consequence, I have wasted a truly upsetting amount of money on food which was (unintentionally i'm sure) misplaced or forgotten. Hence, I wanted to make a simple site where I could keep track of all my food, and warn me when something is about to go bad so that I can eat it before it does.
 
-![dashboardimage](/Assets/images/DashReadMe.png) ![pantryimage](/Assets/images/PantReadMe.png) ![searchimage](/Assets/images/SearchReadMe.png)
-
-> Clearly my first attempt at a Figma Design XD
-
 ## **Features**
 
 1. A Dashboard where the user can see all of their foods organized by their expiry category, along with a graphic depicting the state of their pantry
+
+![dashboardimage](/Assets/images/DashReadMe.png)
+
 2. A pantry page where the user can enter items, and sort them during the recipe planning stage of their week.
+
+![pantryimage](/Assets/images/PantReadMe.png)
+
 3. An API-Powered recipe search page, where the user can search for recipe keywords, and get recommendations of things to make with their about-to-expire foods.
+
+![searchimage](/Assets/images/SearchReadMe.png)
 
 ## **Technologies Used**
 
