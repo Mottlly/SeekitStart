@@ -8,7 +8,7 @@
 
 I have lived in appartments with shared pantries and refridgerators for my entire adult life. As a consequence, I have wasted a truly upsetting amount of money on food which was (unintentionally i'm sure) misplaced or forgotten. Hence, I wanted to make a simple site where I could keep track of all my food, and warn me when something is about to go bad so that I can eat it before it does.
 
-![my first shitty attempt at a figma design!](/Assets/images/seekit1.png)
+![dashboardimage](/Assets/images/DashReadMe.png) ![pantryimage](/Assets/images/PantReadMe.png) ![searchimage](/Assets/images/SearchReadMe.png)
 
 > Clearly my first attempt at a Figma Design XD
 
