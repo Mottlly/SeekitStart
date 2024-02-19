@@ -4,7 +4,7 @@
 >
 > > Richard Edwardes in _The Paradise of Dainty Devices_, 1576
 
-## Try it [here](https://mottlly.github.io/SeekitStart/)
+## [Try it here!](https://mottlly.github.io/SeekitStart/)
 
 ## **Motivation** :sparkles:
 
