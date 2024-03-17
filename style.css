@@ -234,6 +234,10 @@ max-height:max-content;
     padding: 15px;  
 }
 
+#filters {
+    margin-bottom: 2vh;
+}
+
 table {
 vertical-align: middle;
 margin-left:auto;
@@ -616,3 +620,4 @@ border-radius:10px;
 .creditlinks {
     text-align:center
 }
+
