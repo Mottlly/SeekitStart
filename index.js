@@ -405,12 +405,16 @@ function ShowRecipes() {
   var xhttp = new XMLHttpRequest();
   let foodvalue = document.getElementById("keyword");
   let keyword = foodvalue.value;
+  let cuisinevalue = document.getElementById("cuisine");
+  let cuisine = cuisinevalue.value;
   if (document.getElementById("recipes") != null) {
     xhttp.open(
       "GET",
       "https://api.edamam.com/api/recipes/v2?type=public&q=" +
         keyword +
-        "&app_id=05567a42&app_key=b62303535d6536769387714d37717b61&random=true&field=label&field=image&field=source&field=url&field=ingredients&field=totalNutrients",
+        "&app_id=05567a42&app_key=b62303535d6536769387714d37717b61&cuisineType=" +
+        cuisine +
+        "&random=true&field=label&field=image&field=source&field=url&field=ingredients&field=totalNutrients",
       true
     );
     xhttp.send();
