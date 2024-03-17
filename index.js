@@ -407,22 +407,17 @@ function ShowRecipes() {
   let keyword = foodvalue.value;
   let cuisinevalue = document.getElementById("cuisine");
   let cuisine = cuisinevalue.value;
-  if (keyword != undefined && cuisine === "") {
-    xhttp.open(
-      "GET",
-      "https://api.edamam.com/api/recipes/v2?type=public&q=" +
-        keyword +
-        "&app_id=05567a42&app_key=b62303535d6536769387714d37717b61&random=true&field=label&field=image&field=source&field=url&field=ingredients&field=totalNutrients",
-      true
-    );
-  }
-  if (keyword != undefined && cuisine != "") {
+  let mealtypevalue = document.getElementById("mealtype");
+  let mealtype = mealtypevalue.value;
+  if (keyword != "") {
     xhttp.open(
       "GET",
       "https://api.edamam.com/api/recipes/v2?type=public&q=" +
         keyword +
         "&app_id=05567a42&app_key=b62303535d6536769387714d37717b61&cuisineType=" +
         cuisine +
+        "&mealType=" +
+        mealtype +
         "&random=true&field=label&field=image&field=source&field=url&field=ingredients&field=totalNutrients",
       true
     );

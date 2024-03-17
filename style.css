@@ -236,6 +236,7 @@ max-height:max-content;
 
 #filters {
     margin-bottom: 2vh;
+    display:flex;
 }
 
 table {
