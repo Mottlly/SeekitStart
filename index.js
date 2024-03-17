@@ -407,7 +407,16 @@ function ShowRecipes() {
   let keyword = foodvalue.value;
   let cuisinevalue = document.getElementById("cuisine");
   let cuisine = cuisinevalue.value;
-  if (document.getElementById("recipes") != null) {
+  if (keyword != undefined && cuisine === "") {
+    xhttp.open(
+      "GET",
+      "https://api.edamam.com/api/recipes/v2?type=public&q=" +
+        keyword +
+        "&app_id=05567a42&app_key=b62303535d6536769387714d37717b61&random=true&field=label&field=image&field=source&field=url&field=ingredients&field=totalNutrients",
+      true
+    );
+  }
+  if (keyword != undefined && cuisine != "") {
     xhttp.open(
       "GET",
       "https://api.edamam.com/api/recipes/v2?type=public&q=" +
@@ -417,97 +426,97 @@ function ShowRecipes() {
         "&random=true&field=label&field=image&field=source&field=url&field=ingredients&field=totalNutrients",
       true
     );
-    xhttp.send();
-    xhttp.onload = () => {
-      if (xhttp.readyState === xhttp.DONE) {
-        let response = JSON.parse(xhttp.response);
-        let recipedata = response.hits;
-        console.log(recipedata);
-        if (recipedata.length != 0) {
-          for (let i = 0; i < recipedata.length; i++) {
-            let grandparent = document.getElementById("recipes");
-            let parentDiv = document.createElement("div");
-            let titleDiv = document.createElement("div");
-            let imageDiv = document.createElement("div");
-            let contentDiv = document.createElement("div");
-            let leftrec = document.createElement("div");
-            let rightrec = document.createElement("div");
-            let sourceDiv = document.createElement("div");
-            let ingredientList = document.createElement("div");
+  }
+  xhttp.send();
+  xhttp.onload = () => {
+    if (xhttp.readyState === xhttp.DONE) {
+      let response = JSON.parse(xhttp.response);
+      let recipedata = response.hits;
+      console.log(recipedata);
+      if (recipedata.length != 0) {
+        for (let i = 0; i < recipedata.length; i++) {
+          let grandparent = document.getElementById("recipes");
+          let parentDiv = document.createElement("div");
+          let titleDiv = document.createElement("div");
+          let imageDiv = document.createElement("div");
+          let contentDiv = document.createElement("div");
+          let leftrec = document.createElement("div");
+          let rightrec = document.createElement("div");
+          let sourceDiv = document.createElement("div");
+          let ingredientList = document.createElement("div");
+          let ingredientadd = document.createElement("div");
+          let nutritionAdd = document.createElement("div");
+          parentDiv.setAttribute("id", "recipe" + [i]);
+          contentDiv.setAttribute("id", "recipe" + [i]);
+          leftrec.setAttribute("id", "lefty" + [i]);
+          rightrec.setAttribute("id", "righty" + [i]);
+          titleDiv.setAttribute("id", "title" + [i]);
+          imageDiv.setAttribute("id", "image" + [i]);
+          sourceDiv.setAttribute("id", "source" + [i]);
+          ingredientList.setAttribute("id", "ingredients" + [i]);
+          nutritionAdd.setAttribute("id", "nutrition" + [i]);
+          parentDiv.setAttribute("class", "recipecontainer");
+          contentDiv.setAttribute("class", "recipediv");
+          leftrec.setAttribute("class", "recipeleft");
+          rightrec.setAttribute("class", "recipediv");
+          titleDiv.setAttribute("class", "recipetitlediv");
+          imageDiv.setAttribute("class", "recipediv");
+          sourceDiv.setAttribute("class", "recipediv");
+          ingredientList.setAttribute("class", "ingredientdiv");
+          nutritionAdd.setAttribute("class", "ingredientdiv");
+          let recipetitle = recipedata[i].recipe.label;
+          let sourcename = recipedata[i].recipe.source;
+          let recingredientsarray = recipedata[i].recipe.ingredients;
+          let nutrientsarray = [
+            recipedata[i].recipe.totalNutrients.ENERC_KCAL,
+            recipedata[i].recipe.totalNutrients.CHOCDF,
+            recipedata[i].recipe.totalNutrients.FAT,
+            recipedata[i].recipe.totalNutrients.PROCNT,
+            recipedata[i].recipe.totalNutrients.SUGAR,
+            recipedata[i].recipe.totalNutrients.VITB12,
+            recipedata[i].recipe.totalNutrients.FE,
+          ];
+          console.log(nutrientsarray);
+          ingredientadd.innerHTML = "<u>Ingredient List<u>";
+          ingredientList.appendChild(ingredientadd);
+          for (let j = 0; j < recingredientsarray.length; j++) {
             let ingredientadd = document.createElement("div");
-            let nutritionAdd = document.createElement("div");
-            parentDiv.setAttribute("id", "recipe" + [i]);
-            contentDiv.setAttribute("id", "recipe" + [i]);
-            leftrec.setAttribute("id", "lefty" + [i]);
-            rightrec.setAttribute("id", "righty" + [i]);
-            titleDiv.setAttribute("id", "title" + [i]);
-            imageDiv.setAttribute("id", "image" + [i]);
-            sourceDiv.setAttribute("id", "source" + [i]);
-            ingredientList.setAttribute("id", "ingredients" + [i]);
-            nutritionAdd.setAttribute("id", "nutrition" + [i]);
-            parentDiv.setAttribute("class", "recipecontainer");
-            contentDiv.setAttribute("class", "recipediv");
-            leftrec.setAttribute("class", "recipeleft");
-            rightrec.setAttribute("class", "recipediv");
-            titleDiv.setAttribute("class", "recipetitlediv");
-            imageDiv.setAttribute("class", "recipediv");
-            sourceDiv.setAttribute("class", "recipediv");
-            ingredientList.setAttribute("class", "ingredientdiv");
-            nutritionAdd.setAttribute("class", "ingredientdiv");
-            let recipetitle = recipedata[i].recipe.label;
-            let sourcename = recipedata[i].recipe.source;
-            let recingredientsarray = recipedata[i].recipe.ingredients;
-            let nutrientsarray = [
-              recipedata[i].recipe.totalNutrients.ENERC_KCAL,
-              recipedata[i].recipe.totalNutrients.CHOCDF,
-              recipedata[i].recipe.totalNutrients.FAT,
-              recipedata[i].recipe.totalNutrients.PROCNT,
-              recipedata[i].recipe.totalNutrients.SUGAR,
-              recipedata[i].recipe.totalNutrients.VITB12,
-              recipedata[i].recipe.totalNutrients.FE,
-            ];
-            console.log(nutrientsarray);
-            ingredientadd.innerHTML = "<u>Ingredient List<u>";
+            ingredientadd.innerHTML = recingredientsarray[j].food;
             ingredientList.appendChild(ingredientadd);
-            for (let j = 0; j < recingredientsarray.length; j++) {
-              let ingredientadd = document.createElement("div");
-              ingredientadd.innerHTML = recingredientsarray[j].food;
-              ingredientList.appendChild(ingredientadd);
-            }
-            for (let k = 0; k < nutrientsarray.length; k++) {
-              let nutrientadd = document.createElement("div");
-              nutrientadd.innerHTML =
-                nutrientsarray[k].label +
-                ":      " +
-                nutrientsarray[k].quantity.toFixed(2) +
-                "   " +
-                nutrientsarray[k].unit;
-              nutritionAdd.appendChild(nutrientadd);
-            }
-            let recipeimage = document.createElement("img");
-            sourceDiv.innerHTML = "Source: " + sourcename;
-            recipeimage.src = recipedata[i].recipe.image;
-            titleDiv.innerHTML =
-              "<a href=" +
-              recipedata[i].recipe.url +
-              " style=color:#CCFFCC;>" +
-              recipetitle +
-              "</a>";
-            grandparent.appendChild(parentDiv);
-            parentDiv.appendChild(titleDiv);
-            parentDiv.appendChild(contentDiv);
-            contentDiv.appendChild(leftrec);
-            contentDiv.appendChild(rightrec);
-            leftrec.appendChild(imageDiv);
-            leftrec.appendChild(sourceDiv);
-            rightrec.appendChild(ingredientList);
-            rightrec.appendChild(nutritionAdd);
-            document.getElementById("image" + [i]).appendChild(recipeimage);
           }
+          for (let k = 0; k < nutrientsarray.length; k++) {
+            let nutrientadd = document.createElement("div");
+            nutrientadd.innerHTML =
+              nutrientsarray[k].label +
+              ":      " +
+              nutrientsarray[k].quantity.toFixed(2) +
+              "   " +
+              nutrientsarray[k].unit;
+            nutritionAdd.appendChild(nutrientadd);
+          }
+          let recipeimage = document.createElement("img");
+          sourceDiv.innerHTML = "Source: " + sourcename;
+          recipeimage.src = recipedata[i].recipe.image;
+          titleDiv.innerHTML =
+            "<a href=" +
+            recipedata[i].recipe.url +
+            " style=color:#CCFFCC;>" +
+            recipetitle +
+            "</a>";
+          grandparent.appendChild(parentDiv);
+          parentDiv.appendChild(titleDiv);
+          parentDiv.appendChild(contentDiv);
+          contentDiv.appendChild(leftrec);
+          contentDiv.appendChild(rightrec);
+          leftrec.appendChild(imageDiv);
+          leftrec.appendChild(sourceDiv);
+          rightrec.appendChild(ingredientList);
+          rightrec.appendChild(nutritionAdd);
+          document.getElementById("image" + [i]).appendChild(recipeimage);
         }
       }
-    };
-  }
+    }
+  };
 }
 
 window.onload = () => {
