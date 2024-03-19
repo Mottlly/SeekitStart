@@ -402,6 +402,7 @@ function CallEdamam() {
 }
 
 function ShowRecipes() {
+  clearRecipes();
   var xhttp = new XMLHttpRequest();
   let foodvalue = document.getElementById("keyword");
   let keyword = foodvalue.value;
@@ -518,6 +519,13 @@ function ShowRecipes() {
       }
     }
   };
+}
+
+function clearRecipes() {
+  let recipes = document.getElementById("recipes");
+  while (recipes.hasChildNodes()) {
+    recipes.removeChild(recipes.firstChild);
+  }
 }
 
 window.onload = () => {
