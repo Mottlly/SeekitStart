@@ -58,6 +58,24 @@
                         <option value="Snack"></option>
                     </datalist>
                 </form>
+                <form id="filter">  
+                    <input  id=diet type="apitext" placeholder="High-Protein" class="apiform"  list="diettypes">
+                    <datalist id="diettypes">
+                        <option value="high-protein"></option>
+                        <option value="high-fibre"></option>
+                        <option value="low-sodium"></option>
+                        <option value="low-carb"></option>
+                    </datalist>
+                </form>
+                <form id="filter">  
+                    <input  id=healthtype type="apitext" placeholder="Vegetarian" class="apiform"  list="healthtypes">
+                    <datalist id="healthtypes">
+                        <option value="vegetarian"></option>
+                        <option value="vegan"></option>
+                        <option value="wheat-free"></option>
+                        <option value="pork-free"></option>
+                    </datalist>
+                </form>
             </div>
             <button id="apisearchbutton" class="button" type="button" onclick="ShowRecipes ()"> Search 
                 </button>
