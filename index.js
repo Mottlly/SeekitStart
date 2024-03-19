@@ -429,6 +429,12 @@ function ShowRecipes() {
     if (keyword.length != 0 && mealtype.length != 10) {
       var call = call.concat(mealtype);
     }
+    if (keyword.length != 0 && diettype.length != 6) {
+      var call = call.concat(diettype);
+    }
+    if (keyword.length != 0 && healthtype.length != 8) {
+      var call = call.concat(healthtype);
+    }
     if (keyword.length != 0 && mealtype.length != 10 && cuisine.length != 13) {
       var call = call.concat(mealtype, cuisine);
     }
