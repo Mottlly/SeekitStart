@@ -410,8 +410,14 @@ function ShowRecipes() {
   let cuisine = "&cuisineType=" + cuisinevalue.value;
   let mealtypevalue = document.getElementById("mealtype");
   let mealtype = "&mealType=" + mealtypevalue.value;
+  let diettypevalue = document.getElementById("diettype");
+  let diettype = "&diet=" + diettypevalue.value;
+  let healthtypevalue = document.getElementById("healthtype");
+  let healthtype = "&health=" + healthtypevalue.value;
   console.log(cuisine);
   console.log(mealtype);
+  console.log(diettype);
+  console.log(healthtype);
   if (keyword.length != 0) {
     var call =
       "https://api.edamam.com/api/recipes/v2?type=public&q=" +
