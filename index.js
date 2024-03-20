@@ -414,10 +414,6 @@ function ShowRecipes() {
   let diettype = "&diet=" + diettypevalue.value;
   let healthtypevalue = document.getElementById("healthtype");
   let healthtype = "&health=" + healthtypevalue.value;
-  console.log(cuisine);
-  console.log(mealtype);
-  console.log(diettype);
-  console.log(healthtype);
   if (keyword.length != 0) {
     var call =
       "https://api.edamam.com/api/recipes/v2?type=public&q=" +
@@ -434,9 +430,6 @@ function ShowRecipes() {
     }
     if (keyword.length != 0 && healthtype.length != 8) {
       var call = call.concat(healthtype);
-    }
-    if (keyword.length != 0 && mealtype.length != 10 && cuisine.length != 13) {
-      var call = call.concat(mealtype, cuisine);
     }
     console.log(call);
     xhttp.open("GET", call, true);
